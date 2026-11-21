@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marwan El-Menshawy — Media Coverage | Photography | Visual Storytelling</title>
+<meta name="description" content="Marwan El-Menshawy is a photographer and media coverage professional with 15 years of experience turning moments into meaningful visual stories. Event, corporate and brand photography.">
+<meta name="theme-color" content="#090909">
+<!-- Replace https://example.com with your real domain once deployed -->
+<link rel="canonical" href="https://example.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marwan El-Menshawy — Capturing Moments. Creating Stories.">
+<meta property="og:description" content="Photographer and media coverage professional with 15 years behind the lens.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/images/og-cover.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_EG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090909'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23D6FF3F' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marwan El-Menshawy",
+  "alternateName": "مروان المنشاوي",
+  "jobTitle": "Photographer & Media Coverage Professional",
+  "description": "Photographer and media coverage professional with 15 years of photography experience.",
+  "url": "https://example.com/",
+  "knowsAbout": ["Photography", "Media Coverage", "Event Photography", "Corporate Photography", "Brand Photography", "Visual Storytelling"]
+}
+</script>
+<style>
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+:root{
+  --bg:#090909; --bg2:#111111; --card:#171717;
+  --tx:#F5F5F5; --tx2:#A1A1A1; --tx3:#6b6b6b;
+  --acc:#D6FF3F; --acc-ink:#0b0b0b;
+  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+  --f-en:'Space Grotesk', system-ui, sans-serif;
+  --f-ar:'IBM Plex Sans Arabic', 'Space Grotesk', system-ui, sans-serif;
+  --font:var(--f-en);
+  --pad:clamp(20px, 5vw, 72px);
+  --max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --ease-io:cubic-bezier(.7,0,.2,1);
+  --track:-.035em; --track-wide:.22em;
+  --nav-h:76px;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+html[lang="ar"]{ --font:var(--f-ar); --track:0; --track-wide:0; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--tx);
+  font-family:var(--font); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+html[lang="ar"] body{ line-height:1.85; }
+body::after{ /* cinematic film grain */
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:200;
+  background-image:var(--grain); opacity:.05; mix-blend-mode:overlay;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+button{ cursor:pointer; background:none; border:0; padding:0; }
+::selection{ background:var(--acc); color:var(--acc-ink); }
+:focus-visible{ outline:2px solid var(--acc); outline-offset:3px; border-radius:2px; }
+.sr-only{ position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip{ position:fixed; top:-60px; inset-inline-start:16px; z-index:300; background:var(--acc); color:var(--acc-ink); padding:10px 16px; font-weight:600; transition:top .2s; }
+.skip:focus{ top:16px; }
+.wrap{ width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--pad); }
+.ico{ width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+[dir="rtl"] .flip{ transform:scaleX(-1); }
+
+/* ---------- type primitives ---------- */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.7em;
+  font-size:12px; font-weight:500; letter-spacing:var(--track-wide); text-transform:uppercase; color:var(--tx2);
+}
+html[lang="ar"] .eyebrow{ font-size:14px; }
+.eyebrow::before{ content:""; width:28px; height:1px; background:currentColor; opacity:.6; }
+.eyebrow .n{ color:var(--acc); }
+.h-sec{
+  font-weight:600; letter-spacing:var(--track); line-height:.98;
+  font-size:clamp(2.4rem, 6.2vw, 5.6rem); margin:.35em 0 0;
+}
+html[lang="ar"] .h-sec{ line-height:1.25; font-weight:700; }
+.h-sec em{ font-style:normal; color:var(--tx2); }
+.lead{ color:var(--tx2); font-size:clamp(1rem, 1.3vw, 1.15rem); max-width:56ch; }
+
+/* ---------- buttons ---------- */
+.btn{
+  --b:var(--tx); position:relative; display:inline-flex; align-items:center; gap:.75em;
+  padding:1em 1.6em; border:1px solid var(--line2); border-radius:999px;
+  font-size:15px; font-weight:500; letter-spacing:.01em; overflow:hidden; isolation:isolate;
+  transition:color .45s var(--ease), border-color .45s var(--ease), transform .3s var(--ease);
+}
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1; background:var(--b);
+  transform:translateY(101%); transition:transform .5s var(--ease); border-radius:inherit;
+}
+.btn:hover::before,.btn:focus-visible::before{ transform:none; }
+.btn:hover,.btn:focus-visible{ color:var(--bg); border-color:var(--b); }
+.btn:active{ transform:scale(.97); }
+.btn .ico{ transition:transform .4s var(--ease); }
+.btn:hover .ico{ transform:translateX(4px); }
+[dir="rtl"] .btn:hover .ico.flip{ transform:scaleX(-1) translateX(4px); }
+.btn-acc{ background:var(--acc); color:var(--acc-ink); border-color:var(--acc); --b:var(--tx); }
+.btn-acc:hover{ color:var(--bg); }
+.link-u{ position:relative; display:inline-flex; gap:.5em; align-items:center; font-weight:500; }
+.link-u::after{ content:""; position:absolute; inset-inline:0; bottom:-3px; height:1px; background:currentColor; transform:scaleX(.25); transform-origin:var(--o,left); transition:transform .5s var(--ease); }
+[dir="rtl"] .link-u::after{ --o:right; }
+.link-u:hover::after{ transform:scaleX(1); }
+
+/* =========================================================
+   PLACEHOLDER FRAMES (replaced automatically once you add src)
+   ========================================================= */
+.media{ position:relative; overflow:hidden; background:var(--card); }
+.media img{ width:100%; height:100%; object-fit:cover; }
+.ph{ position:absolute; inset:0; background:var(--g); }
+.ph::before{ content:""; position:absolute; inset:0; background-image:var(--grain); opacity:.35; mix-blend-mode:overlay; }
+.ph::after{ content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 40%, transparent 35%, rgba(0,0,0,.65) 100%); }
+.ph[data-tone="1"]{ --g:radial-gradient(90% 70% at 28% 30%, #4a3b2c 0%, #1d1712 48%, #0c0b0a 100%); }
+.ph[data-tone="2"]{ --g:radial-gradient(80% 70% at 70% 25%, #2c3a47 0%, #141a20 50%, #0a0b0c 100%); }
+.ph[data-tone="3"]{ --g:radial-gradient(90% 80% at 40% 70%, #343b25 0%, #161910 52%, #0a0a09 100%); }
+.ph[data-tone="4"]{ --g:radial-gradient(80% 80% at 60% 45%, #3a3a3a 0%, #191919 50%, #0b0b0b 100%); }
+.ph[data-tone="5"]{ --g:radial-gradient(85% 75% at 30% 65%, #4a2c20 0%, #1e130e 52%, #0b0909 100%); }
+.ph[data-tone="6"]{ --g:linear-gradient(160deg, #23262b 0%, #101113 55%, #0a0a0a 100%); }
+.ph-label{
+  position:absolute; z-index:2; inset-inline-start:14px; bottom:12px;
+  font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:rgba(245,245,245,.55);
+  display:flex; gap:.6em; align-items:center;
+}
+html[lang="ar"] .ph-label{ letter-spacing:0; font-size:12px; }
+.ph-label b{ color:var(--acc); font-weight:500; }
+.ph-mark{ position:absolute; z-index:2; inset:12px; pointer-events:none; }
+.ph-mark i{ position:absolute; width:14px; height:14px; border-color:rgba(255,255,255,.35); border-style:solid; border-width:0; }
+.ph-mark i:nth-child(1){ top:0; left:0; border-top-width:1px; border-left-width:1px; }
+.ph-mark i:nth-child(2){ top:0; right:0; border-top-width:1px; border-right-width:1px; }
+.ph-mark i:nth-child(3){ bottom:0; left:0; border-bottom-width:1px; border-left-width:1px; }
+.ph-mark i:nth-child(4){ bottom:0; right:0; border-bottom-width:1px; border-right-width:1px; }
+.ph-silhouette{ position:absolute; z-index:1; inset:auto 0 0 0; height:78%; display:grid; place-items:end center; opacity:.22; }
+.ph-silhouette svg{ width:62%; height:auto; fill:#cfcfcf; }
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+.loader{ position:fixed; inset:0; z-index:250; display:grid; place-items:center; pointer-events:none; }
+.loader .lid{ position:absolute; inset-inline:0; height:50.5%; background:#050505; transition:transform 1s var(--ease-io); }
+.loader .lid.t{ top:0; } .loader .lid.b{ bottom:0; }
+.loader .lmark{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:14px; transition:opacity .4s; }
+.loader .ring{ width:44px; height:44px; border-radius:50%; border:1.5px solid var(--line2); border-top-color:var(--acc); animation:spin 1s linear infinite; }
+.loader .lname{ font-size:11px; letter-spacing:.35em; color:var(--tx2); }
+.loaded .loader .lid.t{ transform:translateY(-101%); }
+.loaded .loader .lid.b{ transform:translateY(101%); }
+.loaded .loader .lmark{ opacity:0; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position:fixed; z-index:100; inset:0 0 auto 0; height:var(--nav-h);
+  display:flex; align-items:center; transition:background .5s, border-color .5s, height .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{ background:rgba(9,9,9,.82); -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2); border-color:var(--line); --nav-h:64px; }
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand{ font-weight:700; font-size:15px; letter-spacing:.14em; display:flex; align-items:center; gap:10px; white-space:nowrap; }
+html[lang="ar"] .brand{ letter-spacing:0; font-size:18px; }
+.brand .dot{ width:8px; height:8px; border-radius:50%; background:var(--acc); box-shadow:0 0 0 4px rgba(214,255,63,.12); }
+.nav-links{ display:flex; align-items:center; gap:clamp(16px, 2.2vw, 34px); list-style:none; margin:0; padding:0; }
+.nav-links a{ font-size:14px; color:var(--tx2); position:relative; padding:6px 0; transition:color .3s; }
+html[lang="ar"] .nav-links a{ font-size:15px; }
+.nav-links a:hover,.nav-links a.active{ color:var(--tx); }
+.nav-links a::after{ content:""; position:absolute; inset-inline:0; bottom:0; height:1px; background:var(--acc); transform:scaleX(0); transition:transform .45s var(--ease); }
+.nav-links a.active::after{ transform:scaleX(1); }
+.nav-right{ display:flex; align-items:center; gap:14px; }
+.lang{ display:inline-flex; border:1px solid var(--line2); border-radius:999px; padding:3px; }
+.lang button{ min-width:40px; height:30px; padding:0 10px; border-radius:999px; font-size:13px; color:var(--tx2); transition:background .3s, color .3s; }
+.lang button[aria-pressed="true"]{ background:var(--tx); color:var(--bg); }
+.lang button[data-l="ar"]{ font-family:var(--f-ar); }
+.burger{ display:none; width:44px; height:44px; border:1px solid var(--line2); border-radius:50%; place-items:center; }
+.burger span{ display:block; width:16px; height:1.5px; background:var(--tx); position:relative; transition:transform .4s var(--ease), background .3s; }
+.burger span::before,.burger span::after{ content:""; position:absolute; inset-inline:0; height:1.5px; background:var(--tx); transition:transform .4s var(--ease); }
+.burger span::before{ top:-5px; } .burger span::after{ top:5px; }
+.menu-open .burger span{ background:transparent; }
+.menu-open .burger span::before{ transform:translateY(5px) rotate(45deg); }
+.menu-open .burger span::after{ transform:translateY(-5px) rotate(-45deg); }
+.mmenu{
+  position:fixed; inset:0; z-index:90; background:var(--bg); padding:calc(var(--nav-h) + 30px) var(--pad) 40px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  clip-path:inset(0 0 100% 0); transition:clip-path .7s var(--ease-io); visibility:hidden;
+}
+.menu-open .mmenu{ clip-path:inset(0 0 0 0); visibility:visible; }
+.mmenu ol{ list-style:none; margin:0; padding:0; counter-reset:m; }
+.mmenu li{ counter-increment:m; border-bottom:1px solid var(--line); overflow:hidden; }
+.mmenu a{ display:flex; align-items:baseline; gap:16px; padding:14px 0; font-size:clamp(2rem, 9vw, 3.2rem); font-weight:600; letter-spacing:var(--track); transform:translateY(100%); transition:transform .7s var(--ease); }
+.mmenu a::before{ content:"0" counter(m); font-size:12px; color:var(--acc); letter-spacing:.1em; font-weight:400; }
+.menu-open .mmenu a{ transform:none; }
+.menu-open .mmenu li:nth-child(2) a{ transition-delay:.05s } .menu-open .mmenu li:nth-child(3) a{ transition-delay:.1s }
+.menu-open .mmenu li:nth-child(4) a{ transition-delay:.15s } .menu-open .mmenu li:nth-child(5) a{ transition-delay:.2s }
+.menu-open .mmenu li:nth-child(6) a{ transition-delay:.25s }
+.mmenu .mfoot{ color:var(--tx2); font-size:14px; }
+
+/* =========================================================
+   HERO — viewfinder concept
+   ========================================================= */
+.hero{ position:relative; min-height:100svh; display:flex; align-items:flex-end; overflow:hidden; padding-top:calc(var(--nav-h) + 70px); padding-bottom:clamp(56px, 9vh, 96px); }
+.hero-bg{ position:absolute; inset:-8% 0 0 0; z-index:0; will-change:transform; }
+.hero-bg .media{ position:absolute; inset:0; }
+.hero-bg::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(9,9,9,.55) 0%, rgba(9,9,9,.2) 35%, rgba(9,9,9,.75) 75%, var(--bg) 100%); }
+.hud{ position:absolute; z-index:2; inset:calc(var(--nav-h) + 14px) var(--pad) 22px; pointer-events:none; font-size:11px; letter-spacing:.16em; color:rgba(245,245,245,.6); font-family:var(--f-en); direction:ltr; }
+.hud .c{ position:absolute; width:28px; height:28px; border:solid rgba(245,245,245,.45); border-width:0; }
+.hud .c1{ top:0; left:0; border-top-width:1px; border-left-width:1px; }
+.hud .c2{ top:0; right:0; border-top-width:1px; border-right-width:1px; }
+.hud .c3{ bottom:0; left:0; border-bottom-width:1px; border-left-width:1px; }
+.hud .c4{ bottom:0; right:0; border-bottom-width:1px; border-right-width:1px; }
+.hud .rec{ position:absolute; top:10px; left:42px; display:flex; align-items:center; gap:8px; }
+.hud .rec i{ width:8px; height:8px; border-radius:50%; background:var(--acc); animation:blink 1.6s steps(1) infinite; }
+.hud .tc{ position:absolute; top:10px; right:42px; font-variant-numeric:tabular-nums; }
+.hud .exif{ position:absolute; bottom:8px; right:42px; display:flex; gap:18px; }
+.hud .focus{ position:absolute; left:50%; top:42%; width:64px; height:44px; transform:translate(-50%,-50%); border:1px solid rgba(245,245,245,.28); }
+.hud .focus::before,.hud .focus::after{ content:""; position:absolute; background:rgba(245,245,245,.35); }
+.hud .focus::before{ left:50%; top:-10px; width:1px; height:8px; }
+.hud .focus::after{ top:50%; left:-10px; height:1px; width:8px; }
+@keyframes blink{ 50%{ opacity:.15; } }
+.hero .wrap{ position:relative; z-index:3; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(24px,4vw,64px); align-items:end; }
+.hero-label{ margin-bottom:clamp(18px,3vh,34px); }
+.hero-label .eyebrow{ color:var(--tx); }
+.hero h1{
+  margin:0; font-weight:700; letter-spacing:-.05em; line-height:.86;
+  font-size:clamp(3.1rem, min(10.4vw, 15.5vh), 10.5rem); text-transform:uppercase;
+}
+html[lang="ar"] .hero h1{ letter-spacing:0; line-height:1.12; font-size:clamp(3rem, min(9.4vw, 14vh), 8.8rem); text-transform:none; }
+.hero h1 .ln{ display:block; }
+.hero h1 .ln.o{ color:transparent; -webkit-text-stroke:1.5px var(--tx); }
+html[lang="ar"] .hero h1 .ln.o{ -webkit-text-stroke:1.2px var(--tx); }
+.hero h1 .ln.o .w:last-child{ color:var(--acc); -webkit-text-stroke:0; }
+.w{ display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.04em; }
+.w > span{ display:inline-block; transform:translateY(105%); transition:transform 1.1s var(--ease); transition-delay:calc(var(--i) * 90ms + 500ms); }
+.loaded .w > span{ transform:none; }
+.hero-sub{ display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,60px); align-items:flex-end; justify-content:space-between; margin-top:clamp(24px,4vh,44px); }
+.hero-sub p{ margin:0; max-width:46ch; color:var(--tx2); font-size:clamp(1rem,1.25vw,1.12rem); }
+.hero-sub p strong{ color:var(--tx); font-weight:500; }
+.ctas{ display:flex; flex-wrap:wrap; gap:12px; }
+.hero-portrait{ width:clamp(170px, 19vw, 290px); aspect-ratio:4/5; position:relative; margin-bottom:6px; }
+.hero-portrait .media{ position:absolute; inset:0; border:1px solid var(--line2); }
+.hero-portrait figcaption{ display:none; position:absolute; top:100%; inset-inline-start:0; margin-top:10px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx2); }
+html[lang="ar"] .hero-portrait figcaption{ letter-spacing:0; font-size:13px; }
+.hero-portrait .tag{ position:absolute; z-index:3; top:-14px; inset-inline-end:-14px; width:84px; height:84px; border-radius:50%; background:var(--acc); color:var(--acc-ink); display:grid; place-items:center; text-align:center; font-weight:700; line-height:1; font-size:26px; }
+.hero-portrait .tag small{ display:block; font-size:9px; letter-spacing:.12em; font-weight:600; margin-top:3px; }
+html[lang="ar"] .hero-portrait .tag small{ letter-spacing:0; font-size:10px; }
+.scroll-ind{ position:absolute; z-index:3; left:50%; bottom:18px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:10px; font-size:10px; letter-spacing:.3em; color:var(--tx2); }
+html[lang="ar"] .scroll-ind{ letter-spacing:0; font-size:12px; }
+.scroll-ind .bar{ width:1px; height:46px; background:var(--line2); position:relative; overflow:hidden; }
+.scroll-ind .bar::after{ content:""; position:absolute; inset:0; background:var(--tx); transform:translateY(-100%); animation:drip 2.2s var(--ease-io) infinite; }
+@keyframes drip{ 0%{transform:translateY(-100%)} 60%,100%{transform:translateY(100%)} }
+.fade-in{ opacity:0; transform:translateY(16px); transition:opacity 1s var(--ease), transform 1s var(--ease); transition-delay:var(--d, 1s); }
+.loaded .fade-in{ opacity:1; transform:none; }
+
+/* =========================================================
+   MARQUEE STRIP
+   ========================================================= */
+.strip{ border-block:1px solid var(--line); overflow:hidden; padding:20px 0; background:var(--bg); }
+.strip-track{ display:flex; width:max-content; animation:marq 38s linear infinite; }
+[dir="rtl"] .strip-track{ animation-name:marq-r; }
+.strip-track span{ display:inline-flex; align-items:center; gap:34px; padding-inline-end:34px; font-size:clamp(1.1rem,2vw,1.6rem); font-weight:500; letter-spacing:var(--track); white-space:nowrap; color:var(--tx2); }
+.strip-track span i{ width:7px; height:7px; border-radius:50%; background:var(--acc); }
+@keyframes marq{ to{ transform:translateX(-50%); } }
+@keyframes marq-r{ to{ transform:translateX(50%); } }
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+section{ position:relative; }
+.sec{ padding-block:clamp(90px, 14vw, 180px); }
+.sec-head{ display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; margin-bottom:clamp(44px, 7vw, 90px); }
+.sec-head .lead{ margin:0; }
+
+/* reveal */
+.rv{ opacity:0; transform:translateY(34px); transition:opacity 1.1s var(--ease), transform 1.1s var(--ease); transition-delay:calc(var(--i,0) * 80ms); }
+.rv.in{ opacity:1; transform:none; }
+.rv-img{ clip-path:inset(12% 0 12% 0); transition:clip-path 1.4s var(--ease); }
+.rv-img .media > *{ transform:scale(1.15); transition:transform 1.8s var(--ease); }
+.rv-img.in{ clip-path:inset(0 0 0 0); }
+.rv-img.in .media > *{ transform:none; }
+
+/* ---------- ABOUT ---------- */
+.about-grid{ display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:clamp(40px, 7vw, 120px); align-items:start; }
+.about-visual{ position:relative; }
+.about-visual .frame{ aspect-ratio:4/5; position:relative; }
+.about-visual .frame .media{ position:absolute; inset:0; }
+.about-visual .small{ position:absolute; width:44%; aspect-ratio:1; inset-inline-end:-12%; bottom:-10%; border:8px solid var(--bg); }
+.about-visual .small .media{ position:absolute; inset:0; }
+.big15{
+  position:absolute; inset-inline-start:-4%; top:-6%; z-index:2; pointer-events:none;
+  font-size:clamp(7rem, 17vw, 16rem); font-weight:700; line-height:.8; letter-spacing:-.06em;
+  color:transparent; -webkit-text-stroke:1.5px var(--acc); font-family:var(--f-en);
+}
+.about-copy .h-sec{ font-size:clamp(2.2rem, 5vw, 4.4rem); }
+.about-copy p{ color:var(--tx2); font-size:clamp(1.02rem,1.3vw,1.15rem); max-width:58ch; }
+.about-copy p.first::first-line{ color:var(--tx); }
+.pull{ margin:40px 0; padding-block:28px; border-block:1px solid var(--line); font-size:clamp(1.4rem, 2.5vw, 2.1rem); line-height:1.25; font-weight:500; letter-spacing:var(--track); color:var(--tx); }
+html[lang="ar"] .pull{ line-height:1.6; }
+.pull mark{ background:none; color:var(--acc); }
+.facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:44px 0; border-top:1px solid var(--line); }
+.facts div{ padding:20px 18px 0 0; border-inline-end:1px solid var(--line); padding-inline-start:18px; }
+.facts div:first-child{ padding-inline-start:0; }
+.facts div:last-child{ border:0; }
+.facts b{ display:block; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:600; letter-spacing:var(--track); line-height:1; }
+.facts b sup{ color:var(--acc); font-size:.45em; vertical-align:top; }
+.facts span{ display:block; margin-top:10px; font-size:13px; color:var(--tx2); letter-spacing:.04em; }
+
+/* ---------- SERVICES ---------- */
+#services{ background:var(--bg2); }
+.svc{ display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(30px,5vw,80px); align-items:start; }
+.svc-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+.svc-item{ border-bottom:1px solid var(--line); }
+.svc-btn{
+  width:100%; display:grid; grid-template-columns:52px 1fr auto; gap:18px; align-items:center;
+  padding:clamp(22px,2.6vw,34px) 0; text-align:start; position:relative;
+}
+.svc-btn .num{ font-size:13px; color:var(--tx3); font-variant-numeric:tabular-nums; font-family:var(--f-en); transition:color .4s; }
+.svc-btn .t{ font-size:clamp(1.5rem, 3.2vw, 2.7rem); font-weight:600; letter-spacing:var(--track); line-height:1.08; transition:transform .6s var(--ease), color .4s; display:block; }
+.svc-btn .ic{ width:48px; height:48px; border-radius:50%; border:1px solid var(--line2); display:grid; place-items:center; color:var(--tx2); transition:all .45s var(--ease); }
+.svc-btn .ic .ico{ width:20px; height:20px; }
+.svc-item .desc{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .6s var(--ease); }
+.svc-item .desc > div{ overflow:hidden; }
+.svc-item .desc p{ margin:0 0 6px; padding-inline-start:70px; color:var(--tx2); max-width:52ch; }
+.svc-item .desc .row{ display:flex; gap:18px; align-items:center; padding-inline-start:70px; padding-bottom:28px; }
+.svc-item .desc .mob-vis{ display:none; }
+.svc-item.on .desc{ grid-template-rows:1fr; }
+.svc-item.on .num{ color:var(--acc); }
+.svc-item.on .t,.svc-btn:hover .t{ transform:translateX(10px); }
+[dir="rtl"] .svc-item.on .t,[dir="rtl"] .svc-btn:hover .t{ transform:translateX(-10px); }
+.svc-item.on .ic{ background:var(--acc); color:var(--acc-ink); border-color:var(--acc); transform:rotate(-8deg); }
+.svc-stage{ position:sticky; top:calc(var(--nav-h) + 30px); aspect-ratio:4/5; }
+.svc-stage .layer{ position:absolute; inset:0; opacity:0; transform:scale(1.04); transition:opacity .8s var(--ease), transform 1.2s var(--ease); }
+.svc-stage .layer.on{ opacity:1; transform:none; }
+.svc-stage .layer .media{ position:absolute; inset:0; }
+.svc-stage .cap{ position:absolute; z-index:3; inset-inline:20px; top:20px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx2); }
+html[lang="ar"] .svc-stage .cap{ letter-spacing:0; font-size:13px; }
+.svc-stage .cap b{ color:var(--tx); font-weight:500; }
+.svc-note{ margin-top:28px; font-size:13px; color:var(--tx3); }
+
+/* ---------- PORTFOLIO ---------- */
+.filters{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
+.chip{ height:40px; padding:0 18px; border-radius:999px; border:1px solid var(--line2); font-size:14px; color:var(--tx2); transition:all .35s var(--ease); display:inline-flex; align-items:center; gap:8px; }
+.chip sup{ font-size:10px; color:var(--tx3); font-family:var(--f-en); }
+.chip:hover{ color:var(--tx); border-color:var(--tx2); }
+.chip[aria-pressed="true"]{ background:var(--tx); color:var(--bg); border-color:var(--tx); }
+.chip[aria-pressed="true"] sup{ color:var(--bg); opacity:.6; }
+.gallery{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); grid-auto-rows:clamp(52px, 6.2vw, 90px); grid-auto-flow:dense; gap:clamp(10px,1.3vw,18px); }
+.g-item{ position:relative; grid-column:span 4; grid-row:span 4; }
+.g-item.a{ grid-column:span 7; grid-row:span 6; }
+.g-item.b{ grid-column:span 5; grid-row:span 6; }
+.g-item.c{ grid-column:span 4; grid-row:span 4; }
+.g-item.d{ grid-column:span 8; grid-row:span 5; }
+.g-item.e{ grid-column:span 4; grid-row:span 5; }
+.g-btn{ position:absolute; inset:0; display:block; width:100%; text-align:start; overflow:hidden; }
+.g-btn .media{ position:absolute; inset:0; }
+.g-btn .media > *{ transition:transform 1.2s var(--ease), filter .8s; }
+.g-btn:hover .media > *,.g-btn:focus-visible .media > *{ transform:scale(1.05); }
+.g-btn .ov{ position:absolute; z-index:4; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:clamp(16px,2vw,26px); background:linear-gradient(0deg, rgba(0,0,0,.78) 0%, transparent 55%); }
+.g-btn .ov .cat{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--acc); }
+html[lang="ar"] .g-btn .ov .cat{ letter-spacing:0; font-size:13px; }
+.g-btn .ov .tt{ font-size:clamp(1.05rem,1.6vw,1.45rem); font-weight:600; letter-spacing:var(--track); line-height:1.2; margin-top:4px; }
+.g-btn .ov .meta{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; font-size:13px; color:var(--tx2); max-height:0; opacity:0; overflow:hidden; transition:max-height .6s var(--ease), opacity .5s; }
+.g-btn:hover .ov .meta,.g-btn:focus-visible .ov .meta{ max-height:40px; opacity:1; }
+.g-btn .open{ position:absolute; z-index:5; top:16px; inset-inline-end:16px; width:42px; height:42px; border-radius:50%; background:var(--acc); color:var(--acc-ink); display:grid; place-items:center; transform:scale(0) rotate(-45deg); transition:transform .5s var(--ease); }
+.g-btn:hover .open,.g-btn:focus-visible .open{ transform:none; }
+.g-btn .ph-label{ top:14px; bottom:auto; }
+.g-item.hide{ display:none; }
+.g-item.pop{ animation:pop .8s var(--ease) both; animation-delay:calc(var(--i,0) * 60ms); }
+@keyframes pop{ from{ opacity:0; transform:translateY(24px) scale(.98); } }
+.gal-foot{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-top:44px; color:var(--tx3); font-size:13px; }
+
+/* ---------- LIGHTBOX & ARTICLE (dialogs) ---------- */
+dialog{ padding:0; border:0; background:transparent; color:var(--tx); max-width:none; max-height:none; width:100%; height:100%; }
+dialog::backdrop{ background:rgba(5,5,5,.94); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+dialog[open]{ animation:dlg .5s var(--ease); }
+@keyframes dlg{ from{ opacity:0; } }
+.lb{ display:grid; grid-template-rows:auto 1fr auto; height:100%; padding:18px var(--pad) 22px; }
+.lb-top{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:13px; color:var(--tx2); }
+.lb-top .count{ direction:ltr; unicode-bidi:isolate; font-family:var(--f-en); font-variant-numeric:tabular-nums; letter-spacing:.1em; }
+.icon-btn{ width:48px; height:48px; border-radius:50%; border:1px solid var(--line2); display:grid; place-items:center; transition:all .35s var(--ease); }
+.icon-btn:hover{ background:var(--tx); color:var(--bg); border-color:var(--tx); }
+.lb-stage{ position:relative; display:grid; place-items:center; min-height:0; padding-block:16px; }
+.lb-frame{ position:relative; width:min(100%, calc((100svh - 230px) * 1.5)); aspect-ratio:3/2; max-height:100%; }
+.lb-frame.portrait{ aspect-ratio:4/5; width:min(100%, calc((100svh - 230px) * .8)); }
+.lb-frame .media{ position:absolute; inset:0; }
+.lb-frame .media img{ object-fit:contain; background:#050505; }
+.lb-frame.swap{ animation:swap .55s var(--ease); }
+@keyframes swap{ from{ opacity:0; transform:translateX(calc(var(--dir,1) * 30px)); } }
+.lb-nav{ position:absolute; top:50%; transform:translateY(-50%); z-index:5; background:rgba(9,9,9,.6); }
+.lb-nav.prev{ inset-inline-start:0; } .lb-nav.next{ inset-inline-end:0; }
+.lb-cap{ display:grid; grid-template-columns:1fr auto; gap:20px; align-items:end; border-top:1px solid var(--line); padding-top:16px; }
+.lb-cap h3{ margin:0; font-size:clamp(1.1rem,2vw,1.6rem); font-weight:600; letter-spacing:var(--track); }
+.lb-cap p{ margin:4px 0 0; color:var(--tx2); font-size:14px; max-width:70ch; }
+.lb-cap .m{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx2); text-align:end; }
+html[lang="ar"] .lb-cap .m{ letter-spacing:0; font-size:13px; }
+.lb-cap .m b{ color:var(--acc); font-weight:500; }
+
+.art{ height:100%; overflow-y:auto; background:var(--bg); overscroll-behavior:contain; }
+.art-bar{ position:sticky; top:0; z-index:3; display:flex; justify-content:space-between; align-items:center; padding:14px var(--pad); background:rgba(9,9,9,.85); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.art-bar .p{ position:absolute; inset-inline-start:0; bottom:-1px; height:2px; background:var(--acc); width:0; }
+.art-head{ max-width:900px; margin-inline:auto; padding:60px var(--pad) 30px; }
+.art-head h2{ font-size:clamp(2rem,5vw,3.8rem); line-height:1.05; letter-spacing:var(--track); margin:14px 0 20px; }
+html[lang="ar"] .art-head h2{ line-height:1.35; }
+.art-cover{ max-width:1200px; margin-inline:auto; padding-inline:var(--pad); }
+.art-cover .media{ aspect-ratio:16/8; }
+.art-body{ max-width:720px; margin-inline:auto; padding:50px var(--pad) 120px; color:#d6d6d6; font-size:1.12rem; }
+.art-body p{ margin:0 0 1.4em; }
+.art-body .ph-note{ border:1px dashed var(--line2); padding:20px; color:var(--tx2); font-size:15px; }
+
+/* ---------- EXPERIENCE ---------- */
+.exp{ overflow:hidden; }
+.exp-top{ display:grid; grid-template-columns:auto 1fr; gap:clamp(30px,6vw,110px); align-items:end; }
+.exp-num{ font-family:var(--f-en); font-size:clamp(10rem, 30vw, 27rem); font-weight:700; line-height:.75; letter-spacing:-.07em; margin:0; position:relative; }
+.exp-num span{ background:linear-gradient(180deg, var(--tx) 30%, rgba(245,245,245,.08) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.exp-num small{ position:absolute; top:6%; inset-inline-end:-8px; transform:translateX(100%); font-size:12px; letter-spacing:.25em; font-weight:500; color:var(--acc); writing-mode:vertical-rl; line-height:1; }
+[dir="rtl"] .exp-num small{ transform:translateX(-100%); }
+.exp-hl{ display:inline-flex; align-items:center; gap:12px; margin-top:24px; padding:10px 18px; border:1px solid var(--acc); color:var(--acc); border-radius:999px; font-size:13px; letter-spacing:.14em; font-weight:500; text-transform:uppercase; }
+html[lang="ar"] .exp-hl{ letter-spacing:0; font-size:15px; }
+.contact-sheet{ margin-top:clamp(60px,8vw,110px); }
+.cs-head{ display:flex; justify-content:space-between; gap:20px; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx2); margin-bottom:14px; }
+html[lang="ar"] .cs-head{ letter-spacing:0; font-size:14px; }
+.cs-row{ display:grid; grid-template-columns:repeat(15, minmax(0,1fr)); gap:6px; padding:10px 0; border-block:1px dashed var(--line2); direction:ltr; }
+.cs-row div{ position:relative; aspect-ratio:3/4; background:var(--card); overflow:hidden; }
+.cs-row div::before{ content:""; position:absolute; inset:0; background:var(--acc); transform:scaleY(0); transform-origin:bottom; transition:transform .7s var(--ease); transition-delay:calc(var(--i) * 70ms); opacity:.9; }
+.cs-row div span{ position:absolute; z-index:2; bottom:4px; left:5px; font-size:10px; color:var(--tx3); font-family:var(--f-en); transition:color .3s; transition-delay:calc(var(--i) * 70ms + .3s); }
+.contact-sheet.in .cs-row div::before{ transform:none; }
+.contact-sheet.in .cs-row div span{ color:var(--acc-ink); }
+.skills{ list-style:none; margin:clamp(60px,8vw,110px) 0 0; padding:0; display:grid; grid-template-columns:repeat(2, 1fr); column-gap:clamp(30px,6vw,100px); }
+.skills li{ display:flex; align-items:baseline; gap:18px; padding:20px 0; border-bottom:1px solid var(--line); font-size:clamp(1.3rem,2.6vw,2.2rem); font-weight:500; letter-spacing:var(--track); transition:color .4s, padding .5s var(--ease); }
+.skills li small{ font-size:12px; color:var(--tx3); font-family:var(--f-en); min-width:26px; }
+.skills li:hover{ color:var(--acc); padding-inline-start:10px; }
+
+/* ---------- TESTIMONIALS ---------- */
+#testimonials{ background:var(--bg2); }
+.tst{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2vw,24px); }
+.tcard{ position:relative; background:var(--card); padding:clamp(26px,3vw,40px); display:flex; flex-direction:column; min-height:360px; border:1px solid transparent; transition:border-color .5s, transform .6s var(--ease); }
+.tcard:nth-child(2){ transform:translateY(40px); }
+.tcard:hover{ border-color:var(--line2); }
+.tcard .q{ font-size:80px; line-height:.6; color:var(--acc); font-family:Georgia, serif; height:40px; }
+.tcard blockquote{ margin:20px 0 auto; font-size:clamp(1.05rem,1.4vw,1.25rem); line-height:1.5; color:var(--tx2); }
+.tcard .who{ display:flex; gap:14px; align-items:center; margin-top:30px; padding-top:22px; border-top:1px solid var(--line); }
+.tcard .av{ width:46px; height:46px; border-radius:50%; position:relative; overflow:hidden; flex:none; }
+.tcard .av .media{ position:absolute; inset:0; }
+.tcard .who b{ display:block; font-weight:500; }
+.tcard .who span{ font-size:13px; color:var(--tx3); }
+.badge{ position:absolute; top:18px; inset-inline-end:18px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:5px 10px; border:1px dashed var(--line2); color:var(--tx3); border-radius:999px; }
+html[lang="ar"] .badge{ letter-spacing:0; font-size:12px; }
+
+/* ---------- PRESS ---------- */
+.press-empty{ position:relative; display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+.press-empty .slot{ border:1px dashed var(--line2); min-height:150px; position:relative; }
+.press-empty .slot.s1{ grid-column:span 7; grid-row:span 2; min-height:360px; }
+.press-empty .slot.s2{ grid-column:span 5; }
+.press-empty .slot.s3{ grid-column:span 5; }
+.press-empty .slot::after{ content:attr(data-k); position:absolute; top:16px; inset-inline-start:18px; font-size:11px; letter-spacing:.18em; color:var(--tx3); text-transform:uppercase; }
+html[lang="ar"] .press-empty .slot::after{ letter-spacing:0; font-size:13px; }
+.press-msg{ position:absolute; inset-inline-start:clamp(24px,4vw,56px); bottom:clamp(24px,4vw,50px); max-width:440px; z-index:2; }
+.press-msg h3{ font-size:clamp(1.4rem,2.4vw,2rem); margin:0 0 10px; letter-spacing:var(--track); font-weight:600; }
+.press-msg p{ margin:0; color:var(--tx2); font-size:15px; }
+.press-list{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+.press-card{ grid-column:span 4; }
+.press-card:first-child{ grid-column:span 8; grid-row:span 2; }
+.press-card .media{ aspect-ratio:16/10; }
+.press-card h3{ font-size:1.3rem; margin:14px 0 6px; }
+.press-card p{ margin:0; color:var(--tx2); font-size:14px; }
+
+/* ---------- BLOG ---------- */
+#insights{ background:var(--bg2); }
+.blog{ display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(24px,3vw,44px); }
+.blog-side{ display:flex; flex-direction:column; gap:clamp(24px,3vw,36px); }
+.post{ display:block; text-align:start; width:100%; }
+.post .media{ aspect-ratio:16/10; }
+.post.feat .media{ aspect-ratio:4/3.2; }
+.post.side{ display:grid; grid-template-columns:42% 1fr; gap:22px; align-items:start; }
+.post.side .media{ aspect-ratio:1/1; }
+.post .media > *{ transition:transform 1.1s var(--ease); }
+.post:hover .media > *{ transform:scale(1.05); }
+.post .pm{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:18px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--tx2); }
+html[lang="ar"] .post .pm{ letter-spacing:0; font-size:13px; }
+.post.side .pm{ margin-top:0; }
+.post .pm .cat{ color:var(--acc); }
+.post h3{ margin:10px 0 8px; font-size:clamp(1.25rem,2vw,1.7rem); line-height:1.15; letter-spacing:var(--track); font-weight:600; transition:color .3s; }
+html[lang="ar"] .post h3{ line-height:1.45; }
+.post.feat h3{ font-size:clamp(1.6rem,3vw,2.6rem); }
+.post p{ margin:0; color:var(--tx2); font-size:15px; }
+.post:hover h3{ color:var(--acc); }
+
+/* ---------- CONTACT ---------- */
+.contact{ display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:clamp(40px,7vw,120px); }
+.contact .h-sec{ font-size:clamp(2.4rem, 5.6vw, 5rem); }
+.channels{ list-style:none; margin:44px 0 0; padding:0; border-top:1px solid var(--line); }
+.channels li{ border-bottom:1px solid var(--line); }
+.channels a,.channels .na{ display:flex; align-items:center; gap:16px; padding:18px 0; }
+.channels .ic{ width:42px; height:42px; border-radius:50%; border:1px solid var(--line2); display:grid; place-items:center; transition:all .4s var(--ease); flex:none; }
+.channels a:hover .ic{ background:var(--acc); color:var(--acc-ink); border-color:var(--acc); }
+.channels .lbl{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx3); display:block; }
+html[lang="ar"] .channels .lbl{ letter-spacing:0; font-size:13px; }
+.channels .val{ display:block; font-size:16px; direction:ltr; unicode-bidi:plaintext; }
+.channels .na .val{ color:var(--tx3); font-style:italic; }
+.channels .arr{ margin-inline-start:auto; color:var(--tx3); transition:transform .4s var(--ease), color .3s; }
+.channels a:hover .arr{ color:var(--tx); transform:translate(3px,-3px); }
+
+form.cform{ display:grid; grid-template-columns:1fr 1fr; gap:6px 28px; }
+.fld{ position:relative; padding-top:22px; }
+.fld.full{ grid-column:1/-1; }
+.fld label{ position:absolute; top:0; inset-inline-start:0; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx2); }
+html[lang="ar"] .fld label{ letter-spacing:0; font-size:14px; }
+.fld label .opt{ color:var(--tx3); text-transform:none; letter-spacing:0; }
+.fld input,.fld select,.fld textarea{
+  width:100%; background:transparent; border:0; border-bottom:1px solid var(--line2); border-radius:0;
+  padding:12px 0 14px; font-size:17px; outline:none; transition:border-color .3s; appearance:none; -webkit-appearance:none;
+}
+.fld select{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23A1A1A1' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 4px center; padding-inline-end:24px; }
+[dir="rtl"] .fld select{ background-position:left 4px center; }
+.fld select option{ background:var(--card); color:var(--tx); }
+.fld textarea{ resize:vertical; min-height:130px; }
+.fld input:focus,.fld select:focus,.fld textarea:focus{ border-color:var(--acc); }
+.fld input::placeholder,.fld textarea::placeholder{ color:var(--tx3); }
+.fld .err{ display:block; min-height:20px; font-size:13px; color:#ff8a7a; margin-top:6px; }
+.fld [aria-invalid="true"]{ border-color:#ff8a7a; }
+.hp{ position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); opacity:0; }
+.form-foot{ grid-column:1/-1; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px; margin-top:22px; }
+.form-foot small{ color:var(--tx3); font-size:13px; max-width:40ch; }
+.btn[disabled]{ opacity:.6; pointer-events:none; }
+.btn .spin{ width:16px; height:16px; border-radius:50%; border:2px solid currentColor; border-top-color:transparent; animation:spin .8s linear infinite; display:none; }
+.btn.busy .spin{ display:inline-block; } .btn.busy .ico{ display:none; }
+.status{ grid-column:1/-1; margin-top:18px; padding:16px 18px; border:1px solid var(--line2); font-size:15px; display:none; gap:12px; align-items:flex-start; }
+.status.show{ display:flex; animation:pop .6s var(--ease); }
+.status.ok{ border-color:var(--acc); color:var(--tx); }
+.status.ok .ico{ color:var(--acc); }
+.status.bad{ border-color:#ff8a7a; }
+.status.warn{ border-style:dashed; color:var(--tx2); }
+
+/* ---------- FOOTER ---------- */
+footer{ border-top:1px solid var(--line); padding-top:clamp(80px,10vw,140px); overflow:hidden; }
+.f-cta{ display:block; font-size:clamp(2.4rem, 7.4vw, 7.4rem); font-weight:700; letter-spacing:-.045em; line-height:.95; max-width:15ch; transition:color .4s; }
+html[lang="ar"] .f-cta{ letter-spacing:0; line-height:1.3; }
+.f-cta:hover{ color:var(--acc); }
+.f-cta .ico{ width:.6em; height:.6em; vertical-align:middle; stroke-width:1.3; transition:transform .6s var(--ease); }
+.f-cta:hover .ico{ transform:translate(8px,-8px); }
+[dir="rtl"] .f-cta:hover .ico{ transform:scaleX(-1) translate(8px,-8px); }
+.f-grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-top:clamp(70px,9vw,120px); padding-block:44px; border-top:1px solid var(--line); }
+.f-grid h4{ margin:0 0 16px; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx3); font-weight:500; }
+html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
+.f-grid ul{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.f-grid a{ color:var(--tx2); transition:color .3s; } .f-grid a:hover{ color:var(--tx); }
+.f-grid .muted{ color:var(--tx3); font-style:italic; font-size:14px; }
+.f-brand p{ color:var(--tx2); margin:14px 0 0; max-width:34ch; }
+.socials{ display:flex; gap:10px; margin-top:22px; }
+.socials a,.socials span{ width:42px; height:42px; border-radius:50%; border:1px solid var(--line2); display:grid; place-items:center; transition:all .35s var(--ease); }
+.socials a:hover{ background:var(--tx); color:var(--bg); }
+.socials span{ opacity:.35; }
+.f-bottom{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; padding-block:26px 34px; border-top:1px solid var(--line); font-size:13px; color:var(--tx3); }
+.totop{ display:inline-flex; align-items:center; gap:10px; color:var(--tx2); }
+.totop .icon-btn{ width:42px; height:42px; }
+.totop:hover .icon-btn{ background:var(--acc); color:var(--acc-ink); border-color:var(--acc); }
+.f-giant{ font-size:clamp(3rem, 15.5vw, 16rem); font-weight:700; letter-spacing:-.06em; line-height:.78; white-space:nowrap; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.12); text-align:center; margin-bottom:-.12em; user-select:none; font-family:var(--f-en); direction:ltr; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1080px){
+  .nav-links{ display:none; }
+  .burger{ display:grid; }
+  .svc{ grid-template-columns:1fr; }
+  .svc-stage{ display:none; }
+  .svc-item .desc .mob-vis{ display:block; position:relative; aspect-ratio:16/10; margin:0 0 20px; margin-inline-start:70px; }
+  .svc-item .desc .mob-vis .media{ position:absolute; inset:0; }
+  .f-grid{ grid-template-columns:1fr 1fr; }
+  .tst{ grid-template-columns:1fr 1fr; }
+  .tcard:nth-child(2){ transform:none; }
+}
+@media (max-width:860px){
+  .hero .wrap{ grid-template-columns:1fr; }
+  .hero-portrait{ order:-1; width:clamp(110px, 30vw, 170px); margin:0 0 6px; }
+  .hero .wrap{ gap:28px; }
+  .scroll-ind{ display:none; }
+  .hero-portrait figcaption{ display:none; }
+  .hero-portrait .tag{ width:64px; height:64px; font-size:20px; }
+  .hud .exif,.hud .focus{ display:none; }
+  .about-grid,.contact,.blog{ grid-template-columns:1fr; }
+  .about-visual{ max-width:520px; }
+  .sec-head{ grid-template-columns:1fr; }
+  .exp-top{ grid-template-columns:1fr; }
+  .skills{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:repeat(6, minmax(0,1fr)); grid-auto-rows:clamp(48px, 13vw, 80px); }
+  .g-item.a,.g-item.d{ grid-column:span 6; grid-row:span 5; }
+  .g-item.b,.g-item.e{ grid-column:span 3; grid-row:span 5; }
+  .g-item.c{ grid-column:span 3; grid-row:span 4; }
+  .g-btn .ov .meta{ max-height:40px; opacity:1; }
+  .g-btn .open{ transform:none; width:34px; height:34px; }
+  .press-empty .slot.s1,.press-empty .slot.s2,.press-empty .slot.s3{ grid-column:1/-1; }
+  .press-empty .slot.s1{ min-height:300px; }
+  .press-card,.press-card:first-child{ grid-column:1/-1; }
+}
+@media (max-width:620px){
+  body{ font-size:16px; }
+  .hero h1{ font-size:clamp(2.7rem, 13.5vw, 5rem); }
+  html[lang="ar"] .hero h1{ font-size:clamp(2.6rem, 13vw, 4.6rem); }
+  .ctas .btn{ flex:1 1 auto; justify-content:center; }
+  .tst{ grid-template-columns:1fr; }
+  .tcard{ min-height:0; }
+  form.cform{ grid-template-columns:1fr; }
+  .facts{ grid-template-columns:1fr; }
+  .facts div{ border-inline-end:0; border-bottom:1px solid var(--line); padding:18px 0; }
+  .post.side{ grid-template-columns:1fr; }
+  .post.side .pm{ margin-top:14px; }
+  .svc-btn{ grid-template-columns:34px 1fr auto; gap:12px; }
+  .svc-item .desc p,.svc-item .desc .row{ padding-inline-start:46px; }
+  .svc-item .desc .mob-vis{ margin-inline-start:46px; }
+  .f-grid{ grid-template-columns:1fr; }
+  .cs-row{ grid-template-columns:repeat(15, minmax(0,1fr)); gap:3px; }
+  .cs-row div span{ display:none; }
+  .lb-cap{ grid-template-columns:1fr; }
+  .lb-cap .m{ text-align:start; }
+  .lb-nav{ top:auto; bottom:6px; transform:none; }
+  .about-visual .small{ inset-inline-end:-4%; }
+  .lang button{ min-width:34px; padding:0 8px; }
+}
+@media (min-width:1800px){ :root{ --max:1680px; } body{ font-size:18px; } }
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important; transition-delay:0s!important; }
+  .rv,.fade-in{ opacity:1; transform:none; }
+  .rv-img{ clip-path:none; } .rv-img .media > *{ transform:none; }
+  .w > span{ transform:none; }
+  .strip-track{ animation:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="lid t"></div><div class="lid b"></div>
+  <div class="lmark"><div class="ring"></div><div class="lname">MARWAN EL-MENSHAWY</div></div>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#home" class="brand" aria-label="Marwan El-Menshawy — home"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL-MENSHAWY</span></a>
+    <nav aria-label="Primary" data-i18n-aria="navAria">
+      <ul class="nav-links" id="navLinks"></ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-l="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-l="ar" aria-pressed="false" lang="ar">ع</button>
+      </div>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" data-i18n-aria="menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <ol id="mLinks"></ol>
+  <div class="mfoot" data-i18n="tagline">Capturing Moments. Creating Stories.</div>
+</div>
+
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <div class="hero-bg" id="heroBg"><div class="media" data-slot="heroBg"></div></div>
+  <div class="hud" aria-hidden="true">
+    <i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i>
+    <div class="rec"><i></i>REC</div>
+    <div class="tc" id="tc">00:15:00:00</div>
+    <div class="focus"></div>
+    <div class="exif"><span>ƒ/2.8</span><span>1/250</span><span>ISO 400</span><span>35MM</span></div>
+  </div>
+  <div class="wrap">
+    <div>
+      <div class="hero-label fade-in" style="--d:.4s"><span class="eyebrow" data-i18n="heroLabel">Photography / Media Coverage / Visual Storytelling</span></div>
+      <h1 id="heroTitle">
+        <span class="ln" data-split="heroL1">Capturing Moments.</span>
+        <span class="ln o" data-split="heroL2">Creating Stories.</span>
+      </h1>
+      <div class="hero-sub">
+        <p class="fade-in" style="--d:1.1s" data-i18n-html="heroText"></p>
+        <div class="ctas fade-in" style="--d:1.25s">
+          <a href="#portfolio" class="btn btn-acc"><span data-i18n="ctaWork">Explore My Work</span><svg class="ico flip" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a href="#contact" class="btn"><span data-i18n="ctaTalk">Let's Work Together</span></a>
+        </div>
+      </div>
+    </div>
+    <figure class="hero-portrait fade-in" style="--d:.9s; margin:0">
+      <div class="tag" aria-hidden="true"><div>15<small data-i18n="yrs">YEARS</small></div></div>
+      <div class="media" data-slot="heroPortrait"></div>
+      <figcaption data-i18n="portraitCap">Marwan El-Menshawy</figcaption>
+    </figure>
+  </div>
+  <a href="#about" class="scroll-ind" data-i18n-aria="scroll" aria-label="Scroll down"><span data-i18n="scrollTxt">SCROLL</span><span class="bar"></span></a>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div></div>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about" aria-labelledby="aboutTitle">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <div class="big15 rv" aria-hidden="true">15</div>
+      <div class="frame rv-img rv"><div class="media" data-slot="aboutPortrait"></div></div>
+      <div class="small rv-img rv" style="--i:3"><div class="media" data-slot="aboutDetail"></div></div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow rv"><span class="n">01</span><span data-i18n="aboutEyebrow">About</span></span>
+      <h2 class="h-sec rv" id="aboutTitle" data-i18n="aboutTitle">Behind Every Frame, There's a Story.</h2>
+      <p class="first rv" data-i18n="aboutP1" style="margin-top:34px"></p>
+      <p class="rv" data-i18n="aboutP2"></p>
+      <div class="pull rv" data-i18n-html="aboutPull"></div>
+      <div class="facts rv">
+        <div><b>15<sup>+</sup></b><span data-i18n="fact1">Years of photography</span></div>
+        <div><b>06</b><span data-i18n="fact2">Core services</span></div>
+        <div><b>02</b><span data-i18n="fact3">Languages · EN / AR</span></div>
+      </div>
+      <a href="#portfolio" class="btn rv"><span data-i18n="aboutCta">Explore the Portfolio</span><svg class="ico flip" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec" id="services" aria-labelledby="svcTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv"><span class="n">02</span><span data-i18n="svcEyebrow">Services</span></span>
+        <h2 class="h-sec rv" id="svcTitle" data-i18n="svcTitle">What I Do</h2>
+      </div>
+      <p class="lead rv" data-i18n="svcLead"></p>
+    </div>
+    <div class="svc">
+      <ul class="svc-list" id="svcList"></ul>
+      <div class="svc-stage" id="svcStage" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="sec" id="portfolio" aria-labelledby="pfTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv"><span class="n">03</span><span data-i18n="pfEyebrow">Selected Work</span></span>
+        <h2 class="h-sec rv" id="pfTitle" data-i18n-html="pfTitle"></h2>
+      </div>
+      <p class="lead rv" data-i18n="pfLead"></p>
+    </div>
+    <div class="filters rv" id="filters" role="group" data-i18n-aria="filterAria"></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="gal-foot"><span data-i18n="pfNote"></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="sec exp" id="experience" aria-labelledby="expTitle">
+  <div class="wrap">
+    <div class="exp-top">
+      <p class="exp-num rv" aria-hidden="true"><span>15</span><small data-i18n="yrsLong">YEARS</small></p>
+      <div>
+        <span class="eyebrow rv"><span class="n">04</span><span data-i18n="expEyebrow">Experience</span></span>
+        <h2 class="h-sec rv" id="expTitle" data-i18n="expTitle">15 Years of Seeing Things Differently.</h2>
+        <p class="lead rv" data-i18n="expLead" style="margin-top:24px"></p>
+        <div class="exp-hl rv"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="expHl">15 Years of Photography Experience</span></div>
+      </div>
+    </div>
+    <div class="contact-sheet rv" id="sheet">
+      <div class="cs-head"><span data-i18n="csL">Contact sheet · one frame per year</span><span>2011 → 2026</span></div>
+      <div class="cs-row" id="csRow"></div>
+    </div>
+    <ul class="skills" id="skills"></ul>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="sec" id="testimonials" aria-labelledby="tTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv"><span class="n">05</span><span data-i18n="tEyebrow">Testimonials</span></span>
+        <h2 class="h-sec rv" id="tTitle" data-i18n="tTitle">Words From People I've Worked With.</h2>
+      </div>
+    </div>
+    <div class="tst" id="tst"></div>
+  </div>
+</section>
+
+<!-- ================= MEDIA & PRESS ================= -->
+<section class="sec" id="press" aria-labelledby="prTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv"><span class="n">06</span><span data-i18n="prEyebrow">Media &amp; Press</span></span>
+        <h2 class="h-sec rv" id="prTitle" data-i18n="prTitle">Stories Beyond the Frame.</h2>
+      </div>
+      <p class="lead rv" data-i18n="prLead"></p>
+    </div>
+    <div id="pressBox"></div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="sec" id="insights" aria-labelledby="bTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv"><span class="n">07</span><span data-i18n="bEyebrow">Insights</span></span>
+        <h2 class="h-sec rv" id="bTitle" data-i18n="bTitle">Notes From Behind the Lens.</h2>
+      </div>
+      <p class="lead rv" data-i18n="bLead"></p>
+    </div>
+    <div class="blog" id="blog"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec" id="contact" aria-labelledby="cTitle">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow rv"><span class="n">08</span><span data-i18n="cEyebrow">Contact</span></span>
+      <h2 class="h-sec rv" id="cTitle" data-i18n="cTitle">Have a Story Worth Capturing?</h2>
+      <p class="lead rv" data-i18n="cLead" style="margin-top:24px"></p>
+      <ul class="channels rv" id="channels"></ul>
+    </div>
+    <form class="cform rv" id="cform" novalidate>
+      <div class="fld"><label for="f-name"><span data-i18n="fName">Name</span> *</label><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="e-name"><span class="err" id="e-name" aria-live="polite"></span></div>
+      <div class="fld"><label for="f-email"><span data-i18n="fEmail">Email</span> *</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="150" aria-describedby="e-email" dir="ltr"><span class="err" id="e-email" aria-live="polite"></span></div>
+      <div class="fld"><label for="f-phone"><span data-i18n="fPhone">Phone</span> <span class="opt" data-i18n="optional">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" aria-describedby="e-phone" dir="ltr"><span class="err" id="e-phone" aria-live="polite"></span></div>
+      <div class="fld"><label for="f-company"><span data-i18n="fCompany">Company</span> <span class="opt" data-i18n="optional">(optional)</span></label><input id="f-company" name="company" type="text" autocomplete="organization" maxlength="120"><span class="err"></span></div>
+      <div class="fld full"><label for="f-service"><span data-i18n="fService">Service required</span> *</label><select id="f-service" name="service" required aria-describedby="e-service"></select><span class="err" id="e-service" aria-live="polite"></span></div>
+      <div class="fld full"><label for="f-details"><span data-i18n="fDetails">Project details</span> *</label><textarea id="f-details" name="details" required maxlength="3000" aria-describedby="e-details" data-i18n-ph="fDetailsPh"></textarea><span class="err" id="e-details" aria-live="polite"></span></div>
+      <!-- spam protection: honeypot (humans never see it) + minimum fill time -->
+      <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="form-foot">
+        <small data-i18n="fNote"></small>
+        <button type="submit" class="btn btn-acc" id="fSubmit"><span data-i18n="fSend">Send Inquiry</span><span class="spin" aria-hidden="true"></span><svg class="ico flip" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+      <div class="status" id="fStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <a href="#contact" class="f-cta rv"><span data-i18n="fCta">Every Moment Has a Story. Let's Capture Yours.</span> <svg class="ico flip" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="brand"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL-MENSHAWY</span></div>
+        <p data-i18n="fTag"></p>
+        <div class="socials" id="fSocials"></div>
+      </div>
+      <div><h4 data-i18n="fNav">Navigate</h4><ul id="fNavList"></ul></div>
+      <div><h4 data-i18n="fServices">Services</h4><ul id="fSvcList"></ul></div>
+      <div><h4 data-i18n="fContact">Contact</h4><ul id="fContactList"></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="yr"></span> Marwan El-Menshawy. <span data-i18n="rights">All rights reserved.</span></span>
+      <a href="#home" class="totop"><span data-i18n="toTop">Back to top</span><span class="icon-btn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></span></a>
+    </div>
+  </div>
+  <div class="f-giant" aria-hidden="true">EL-MENSHAWY</div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<dialog id="lightbox" aria-labelledby="lbTitle">
+  <div class="lb">
+    <div class="lb-top">
+      <span class="count" id="lbCount">01 / 01</span>
+      <button class="icon-btn" type="button" id="lbClose" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="lb-stage">
+      <button class="icon-btn lb-nav prev" type="button" id="lbPrev" data-i18n-aria="prev" aria-label="Previous"><svg class="ico flip" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="lb-frame" id="lbFrame"><div class="media" id="lbMedia"></div></div>
+      <button class="icon-btn lb-nav next" type="button" id="lbNext" data-i18n-aria="next" aria-label="Next"><svg class="ico flip" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+    <div class="lb-cap">
+      <div><h3 id="lbTitle"></h3><p id="lbDesc"></p></div>
+      <div class="m" id="lbMeta"></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ================= ARTICLE READER ================= -->
+<dialog id="article" aria-labelledby="artTitle">
+  <div class="art" id="artScroll">
+    <div class="art-bar">
+      <span class="brand"><span class="dot" aria-hidden="true"></span><span data-i18n="bEyebrow">Insights</span></span>
+      <button class="icon-btn" type="button" id="artClose" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <span class="p" id="artProg"></span>
+    </div>
+    <div class="art-head"><div class="post"><div class="pm" id="artMeta"></div></div><h2 id="artTitle"></h2><p class="lead" id="artExcerpt"></p></div>
+    <div class="art-cover"><div class="media" id="artCover"></div></div>
+    <div class="art-body" id="artBody"></div>
+  </div>
+</dialog>
+
+<script>
+/* =====================================================================
+   1) CONFIG — fill these in. Anything left empty shows as a placeholder
+      (never a fake link). See the notes at the end of this file.
+   ===================================================================== */
+const CONFIG = {
+  email: "",          // e.g. "hello@yourdomain.com"
+  phone: "",          // e.g. "+20 100 000 0000" (display only)
+  whatsapp: "",       // digits only with country code, e.g. "201000000000"
+  instagram: "",      // full URL, e.g. "https://instagram.com/yourhandle"
+  linkedin: "",       // full URL
+  behance: "",        // optional full URL
+  location: { en: "", ar: "" }, // e.g. { en:"Cairo, Egypt", ar:"القاهرة، مصر" }
+  // Contact form backend: a Formspree / Getform / Basin endpoint, or your own API.
+  // Receives a JSON POST. Leave empty and the form will honestly say it is not connected.
+  formEndpoint: "",
+  hidePressWhenEmpty: false,       // true = hide the Media & Press section until you add items
+  hideTestimonialsWhenEmpty: false // true = hide testimonials while only placeholders exist
+};
+
+/* =====================================================================
+   2) CONTENT — all editable content lives here (bilingual).
+      To use a real photo, set src: "images/your-file.jpg".
+      "tone" only styles the placeholder frame until a src is set.
+   ===================================================================== */
+const IMAGES = {
+  heroBg:       { src: "", tone: 1, label: { en: "Hero background · wide cinematic frame", ar: "خلفية رئيسية · لقطة سينمائية عريضة" }, alt: { en: "Cinematic photograph by Marwan El-Menshawy", ar: "صورة سينمائية بعدسة مروان المنشاوي" } },
+  heroPortrait: { src: "", tone: 4, portrait: true, label: { en: "Your portrait", ar: "صورتك الشخصية" }, alt: { en: "Portrait of Marwan El-Menshawy", ar: "صورة شخصية لمروان المنشاوي" } },
+  aboutPortrait:{ src: "", tone: 6, portrait: true, label: { en: "About portrait · behind the camera", ar: "صورة النبذة · خلف الكاميرا" }, alt: { en: "Marwan El-Menshawy with his camera", ar: "مروان المنشاوي مع الكاميرا" } },
+  aboutDetail:  { src: "", tone: 5, label: { en: "Detail shot", ar: "لقطة تفصيلية" }, alt: { en: "Camera detail", ar: "تفصيلة من الكاميرا" } }
+};
+
+const SERVICES = [
+  { id: "event", icon: "camera", tone: 1,
+    title: { en: "Event Photography", ar: "تصوير الفعاليات" },
+    desc:  { en: "Capturing important moments, atmosphere, people, and details.", ar: "توثيق اللحظات المهمة، والأجواء، والناس، والتفاصيل." } },
+  { id: "media", icon: "megaphone", tone: 2,
+    title: { en: "Media Coverage", ar: "التغطية الإعلامية" },
+    desc:  { en: "Professional visual documentation of events and activities.", ar: "توثيق بصري احترافي للفعاليات والأنشطة." } },
+  { id: "corporate", icon: "briefcase", tone: 6,
+    title: { en: "Corporate Photography", ar: "تصوير الشركات" },
+    desc:  { en: "Visual content for businesses, organizations, and professional environments.", ar: "محتوى بصري للشركات والمؤسسات وبيئات العمل الاحترافية." } },
+  { id: "brand", icon: "gem", tone: 5,
+    title: { en: "Brand Photography", ar: "تصوير العلامات التجارية" },
+    desc:  { en: "Creating photographs that communicate a brand's identity.", ar: "صور تعبّر عن هوية العلامة التجارية وتنقل روحها." } },
+  { id: "content", icon: "phone", tone: 3,
+    title: { en: "Content Creation", ar: "صناعة المحتوى" },
+    desc:  { en: "Developing visual content for digital platforms and social media.", ar: "تطوير محتوى بصري للمنصات الرقمية ووسائل التواصل الاجتماعي." } },
+  { id: "bts", icon: "clapper", tone: 4,
+    title: { en: "Behind-the-Scenes Coverage", ar: "تغطية الكواليس" },
+    desc:  { en: "Documenting the people, processes, and stories behind experiences.", ar: "توثيق الأشخاص والعمليات والقصص التي تقف خلف كل تجربة." } }
+];
+
+const CATEGORIES = [
+  { id: "all",       en: "All",                ar: "الكل" },
+  { id: "events",    en: "Events",             ar: "فعاليات" },
+  { id: "corporate", en: "Corporate",          ar: "شركات" },
+  { id: "portraits", en: "Portraits",          ar: "بورتريه" },
+  { id: "lifestyle", en: "Lifestyle",          ar: "لايف ستايل" },
+  { id: "bts",       en: "Behind the Scenes",  ar: "الكواليس" },
+  { id: "media",     en: "Media Coverage",     ar: "تغطية إعلامية" }
+];
+
+/* Portfolio projects. size: a (large) · b (tall) · c (small) · d (wide) · e (medium-tall)
+   Add a project by copying one block. Each project can have any number of images. */
+const PROJECTS = [
+  { category: "events", size: "a", date: "YYYY", client: "",
+    title: { en: "Project title — Event 01", ar: "عنوان المشروع — فعالية 01" },
+    desc:  { en: "Placeholder description. Replace with the story behind this event.", ar: "وصف مؤقت. استبدله بالقصة خلف هذه الفعالية." },
+    images: [ { src: "", tone: 1 }, { src: "", tone: 5 }, { src: "", tone: 4 } ] },
+  { category: "portraits", size: "b", date: "YYYY", client: "",
+    title: { en: "Project title — Portrait Series", ar: "عنوان المشروع — سلسلة بورتريه" },
+    desc:  { en: "Placeholder description for a portrait series.", ar: "وصف مؤقت لسلسلة صور شخصية." },
+    images: [ { src: "", tone: 6, portrait: true }, { src: "", tone: 4, portrait: true } ] },
+  { category: "corporate", size: "c", date: "YYYY", client: "",
+    title: { en: "Project title — Corporate 01", ar: "عنوان المشروع — شركات 01" },
+    desc:  { en: "Placeholder description for a corporate shoot.", ar: "وصف مؤقت لجلسة تصوير لشركة." },
+    images: [ { src: "", tone: 2 }, { src: "", tone: 6 } ] },
+  { category: "media", size: "c", date: "YYYY", client: "",
+    title: { en: "Project title — Media Coverage 01", ar: "عنوان المشروع — تغطية إعلامية 01" },
+    desc:  { en: "Placeholder description for a media coverage project.", ar: "وصف مؤقت لمشروع تغطية إعلامية." },
+    images: [ { src: "", tone: 4 }, { src: "", tone: 2 } ] },
+  { category: "bts", size: "c", date: "YYYY", client: "",
+    title: { en: "Project title — Behind the Scenes", ar: "عنوان المشروع — خلف الكواليس" },
+    desc:  { en: "Placeholder description for behind-the-scenes coverage.", ar: "وصف مؤقت لتغطية الكواليس." },
+    images: [ { src: "", tone: 5 } ] },
+  { category: "lifestyle", size: "d", date: "YYYY", client: "",
+    title: { en: "Project title — Lifestyle 01", ar: "عنوان المشروع — لايف ستايل 01" },
+    desc:  { en: "Placeholder description for a lifestyle story.", ar: "وصف مؤقت لقصة لايف ستايل." },
+    images: [ { src: "", tone: 3 }, { src: "", tone: 1 } ] },
+  { category: "events", size: "e", date: "YYYY", client: "",
+    title: { en: "Project title — Event 02", ar: "عنوان المشروع — فعالية 02" },
+    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
+    images: [ { src: "", tone: 5, portrait: true } ] },
+  { category: "corporate", size: "e", date: "YYYY", client: "",
+    title: { en: "Project title — Corporate 02", ar: "عنوان المشروع — شركات 02" },
+    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
+    images: [ { src: "", tone: 6, portrait: true } ] },
+  { category: "media", size: "e", date: "YYYY", client: "",
+    title: { en: "Project title — Media Coverage 02", ar: "عنوان المشروع — تغطية إعلامية 02" },
+    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
+    images: [ { src: "", tone: 2, portrait: true } ] }
+];
+
+const SKILLS = [
+  { en: "Photography", ar: "التصوير الفوتوغرافي" },
+  { en: "Visual Storytelling", ar: "السرد البصري" },
+  { en: "Event Documentation", ar: "توثيق الفعاليات" },
+  { en: "Media Coverage", ar: "التغطية الإعلامية" },
+  { en: "Composition", ar: "التكوين البصري" },
+  { en: "Creative Direction", ar: "الإخراج الإبداعي" },
+  { en: "Visual Content Creation", ar: "صناعة المحتوى البصري" }
+];
+
+/* Testimonials — PLACEHOLDERS ONLY. Replace with genuine client feedback and set placeholder:false. */
+const TESTIMONIALS = [
+  { placeholder: true, img: "", tone: 4,
+    quote: { en: "This space is reserved for genuine feedback from a client. Replace this text with their real words.", ar: "هذه المساحة مخصصة لرأي حقيقي من أحد العملاء. استبدل هذا النص بكلماته الفعلية." },
+    name: { en: "[Client name]", ar: "[اسم العميل]" }, role: { en: "[Position, Company]", ar: "[المنصب، الشركة]" } },
+  { placeholder: true, img: "", tone: 2,
+    quote: { en: "Add a real testimonial here once a client has approved sharing it publicly.", ar: "أضف هنا شهادة حقيقية بعد موافقة العميل على نشرها." },
+    name: { en: "[Client name]", ar: "[اسم العميل]" }, role: { en: "[Position, Company]", ar: "[المنصب، الشركة]" } },
+  { placeholder: true, img: "", tone: 5,
+    quote: { en: "Short, specific quotes work best — what the client valued about working together.", ar: "الاقتباسات القصيرة والمحددة هي الأفضل — ما الذي قدّره العميل في التعاون معك." },
+    name: { en: "[Client name]", ar: "[اسم العميل]" }, role: { en: "[Position, Company]", ar: "[المنصب، الشركة]" } }
+];
+
+/* Media & Press — add ONLY verified items. Example shape:
+   { src:"images/press1.jpg", tone:1, outlet:{en:"Outlet",ar:"..."}, title:{en:"...",ar:"..."}, date:"2026", url:"https://..." } */
+const PRESS = [];
+
+/* Blog posts — placeholders. body is an array of paragraphs per language. */
+const POSTS = [
+  { src: "", tone: 1, date: "", minutes: 6,
+    cat:   { en: "Experience", ar: "تجربة" },
+    title: { en: "Lessons From 15 Years of Photography", ar: "دروس من 15 عامًا في التصوير" },
+    excerpt: { en: "Draft topic — what a decade and a half behind the lens teaches you about people, light and timing.", ar: "موضوع مقترح — ما الذي تعلّمك إياه خمسة عشر عامًا خلف العدسة عن الناس والضوء والتوقيت." },
+    body: { en: [], ar: [] } },
+  { src: "", tone: 2, date: "", minutes: 4,
+    cat:   { en: "Media Coverage", ar: "تغطية إعلامية" },
+    title: { en: "What Great Event Coverage Really Requires", ar: "ما الذي تتطلبه التغطية الجيدة للفعاليات؟" },
+    excerpt: { en: "Draft topic — preparation, positioning and the moments most people miss.", ar: "موضوع مقترح — التحضير، واختيار المكان، واللحظات التي يفوتها الكثيرون." },
+    body: { en: [], ar: [] } },
+  { src: "", tone: 5, date: "", minutes: 5,
+    cat:   { en: "Behind the Scenes", ar: "الكواليس" },
+    title: { en: "The Story Behind the Frame", ar: "القصة خلف الإطار" },
+    excerpt: { en: "Draft topic — a behind-the-scenes look at one shoot, from brief to final edit.", ar: "موضوع مقترح — نظرة من الكواليس على جلسة تصوير واحدة، من الفكرة إلى التعديل النهائي." },
+    body: { en: [], ar: [] } }
+];
+
+/* =====================================================================
+   3) INTERFACE TRANSLATIONS
+   ===================================================================== */
+const T = {
+  en: {
+    skip: "Skip to content", brand: "MARWAN EL-MENSHAWY", navAria: "Primary", menu: "Menu",
+    nav: { home: "Home", about: "About", services: "Services", portfolio: "Portfolio", insights: "Insights", contact: "Contact" },
+    tagline: "Capturing Moments. Creating Stories.",
+    docTitle: "Marwan El-Menshawy — Media Coverage | Photography | Visual Storytelling",
+    heroLabel: "Photography / Media Coverage / Visual Storytelling",
+    heroL1: "Capturing Moments.", heroL2: "Creating Stories.",
+    heroText: "I'm <strong>Marwan El-Menshawy</strong>, a photographer and media coverage professional with 15 years of experience turning moments into meaningful visual stories.",
+    ctaWork: "Explore My Work", ctaTalk: "Let's Work Together",
+    yrs: "YEARS", yrsLong: "YEARS", portraitCap: "Marwan El-Menshawy", scroll: "Scroll to About", scrollTxt: "SCROLL",
+    strip: ["15 Years Behind the Lens", "Event Photography", "Media Coverage", "Corporate", "Brand Stories", "Visual Content"],
+    aboutEyebrow: "About", aboutTitle: "Behind Every Frame, There's a Story.",
+    aboutP1: "Photography has been part of my journey for 15 years. What started as a passion became a way of seeing the world differently, understanding moments, and capturing stories through images.",
+    aboutP2: "Today, I'm taking that experience further by building a professional business around photography, media coverage, and visual content creation.",
+    aboutPull: "My goal is simple: create visuals that <mark>communicate, connect,</mark> and leave an impression.",
+    fact1: "Years of photography", fact2: "Core services", fact3: "Languages · EN / AR",
+    aboutCta: "Explore the Portfolio",
+    svcEyebrow: "Services", svcTitle: "What I Do",
+    svcLead: "From a single event to ongoing brand content — visual work built to communicate, document and last.",
+    inquire: "Inquire about this", svcLabel: "Service",
+    pfEyebrow: "Selected Work", pfTitle: "Selected Frames.<br><em>Real Stories.</em>",
+    pfLead: "A curated selection across events, corporate work, portraits and media coverage. Select any frame to view the full project.",
+    filterAria: "Filter portfolio by category",
+    pfNote: "Frames marked “Placeholder” will be replaced with real photography.", pfCta: "Commission a project",
+    view: "View project", photos: "photos", photo: "photo", client: "Client",
+    expEyebrow: "Experience", expTitle: "15 Years of Seeing Things Differently.",
+    expLead: "Fifteen years of practice has shaped an instinct for light, timing and people — the foundation for a professional media coverage practice built on real experience.",
+    expHl: "15 Years of Photography Experience", csL: "Contact sheet · one frame per year",
+    tEyebrow: "Testimonials", tTitle: "Words From People I've Worked With.", phBadge: "Placeholder",
+    prEyebrow: "Media & Press", prTitle: "Stories Beyond the Frame.",
+    prLead: "Featured coverage, published work, collaborations and press mentions.",
+    prEmptyT: "Featured stories are on their way.",
+    prEmptyP: "Only verified publications, collaborations and media mentions appear here. This space will fill as new work is published.",
+    prSlots: ["Feature story", "Published work", "Collaboration"], prRead: "Read",
+    bEyebrow: "Insights", bTitle: "Notes From Behind the Lens.",
+    bLead: "Experiences, behind-the-scenes stories and lessons from 15 years of photography.",
+    comingSoon: "Coming soon", minRead: "min read", readArticle: "Read article",
+    artPlaceholder: "This article hasn't been written yet. Add paragraphs to the post's “body” in the content file and they will appear here.",
+    cEyebrow: "Contact", cTitle: "Have a Story Worth Capturing?",
+    cLead: "Whether you're planning an event, building a brand, or looking for professional media coverage, let's create something meaningful.",
+    chWhatsApp: "WhatsApp", chEmail: "Email", chInstagram: "Instagram", chLinkedIn: "LinkedIn", chBehance: "Behance", chPhone: "Phone", chLocation: "Based in",
+    notSet: "To be added",
+    fName: "Name", fEmail: "Email", fPhone: "Phone", fCompany: "Company", fService: "Service required", fDetails: "Project details",
+    optional: "(optional)", fDetailsPh: "Tell me about the event, date, location and what you'd like to capture…",
+    fChoose: "Select a service", fOther: "Something else",
+    fNote: "Your details are used only to reply to your inquiry.", fSend: "Send Inquiry",
+    eName: "Please enter your name.", eEmail: "Please enter a valid email address.", ePhone: "Please enter a valid phone number.",
+    eService: "Please choose a service.", eDetails: "Please share a few details (at least 15 characters).",
+    sOk: "Thank you — your message has been sent. I'll get back to you soon.",
+    sBad: "Something went wrong sending your message. Please try again, or reach out directly by email or WhatsApp.",
+    sSpam: "Your message couldn't be sent. Please try again in a moment.",
+    sNoBackend: "The contact form isn't connected to an email service yet, so your message was not sent. Please use one of the direct contact options instead.",
+    fCta: "Every Moment Has a Story. Let's Capture Yours.",
+    fTag: "Media Coverage | Photography | Visual Storytelling. Capturing Moments. Creating Stories.",
+    fNav: "Navigate", fServices: "Services", fContact: "Contact", rights: "All rights reserved.", toTop: "Back to top",
+    close: "Close", prev: "Previous image", next: "Next image", phWord: "Placeholder"
+  },
+  ar: {
+    skip: "انتقل إلى المحتوى", brand: "مروان المنشاوي", navAria: "التنقل الرئيسي", menu: "القائمة",
+    nav: { home: "الرئيسية", about: "نبذة", services: "الخدمات", portfolio: "الأعمال", insights: "مقالات", contact: "تواصل" },
+    tagline: "ألتقط اللحظات. أصنع القصص.",
+    docTitle: "مروان المنشاوي — تغطية إعلامية | تصوير | سرد بصري",
+    heroLabel: "تصوير / تغطية إعلامية / سرد بصري",
+    heroL1: "ألتقط اللحظات.", heroL2: "أصنع القصص.",
+    heroText: "أنا <strong>مروان المنشاوي</strong>، مصوّر ومتخصص في التغطية الإعلامية، بخبرة 15 عامًا في تحويل اللحظات إلى قصص بصرية ذات معنى.",
+    ctaWork: "استكشف أعمالي", ctaTalk: "لنعمل معًا",
+    yrs: "عامًا", yrsLong: "عامًا", portraitCap: "مروان المنشاوي", scroll: "انتقل إلى النبذة", scrollTxt: "مرّر",
+    strip: ["15 عامًا خلف العدسة", "تصوير الفعاليات", "تغطية إعلامية", "تصوير الشركات", "قصص العلامات التجارية", "محتوى بصري"],
+    aboutEyebrow: "نبذة", aboutTitle: "خلف كل صورة، قصة.",
+    aboutP1: "رافقني التصوير في رحلتي على مدار 15 عامًا. ما بدأ شغفًا أصبح طريقة مختلفة لرؤية العالم، وفهم اللحظات، ورواية القصص من خلال الصور.",
+    aboutP2: "واليوم، أنقل هذه الخبرة إلى مرحلة جديدة ببناء عمل احترافي في التصوير والتغطية الإعلامية وصناعة المحتوى البصري.",
+    aboutPull: "هدفي بسيط: صور <mark>تتحدث، وتقرّب،</mark> وتترك أثرًا.",
+    fact1: "عامًا في التصوير", fact2: "خدمات أساسية", fact3: "لغتان · العربية / الإنجليزية",
+    aboutCta: "استكشف الأعمال",
+    svcEyebrow: "الخدمات", svcTitle: "ماذا أقدّم",
+    svcLead: "من فعالية واحدة إلى محتوى مستمر لعلامتك التجارية — عمل بصري يتواصل ويوثّق ويبقى.",
+    inquire: "استفسر عن هذه الخدمة", svcLabel: "خدمة",
+    pfEyebrow: "أعمال مختارة", pfTitle: "لقطات مختارة.<br><em>قصص حقيقية.</em>",
+    pfLead: "مختارات من الفعاليات وأعمال الشركات والبورتريه والتغطية الإعلامية. اختر أي صورة لعرض المشروع كاملًا.",
+    filterAria: "تصفية الأعمال حسب الفئة",
+    pfNote: "الإطارات المعلَّمة بكلمة «مؤقت» سيتم استبدالها بصور حقيقية.", pfCta: "اطلب مشروعًا",
+    view: "عرض المشروع", photos: "صور", photo: "صورة", client: "العميل",
+    expEyebrow: "الخبرة", expTitle: "15 عامًا من رؤية الأشياء بشكل مختلف.",
+    expLead: "خمسة عشر عامًا من الممارسة صقلت حسًّا بالضوء والتوقيت والناس — وهي الأساس لعمل احترافي في التغطية الإعلامية قائم على خبرة حقيقية.",
+    expHl: "15 عامًا من الخبرة في التصوير", csL: "شريط التحميض · إطار لكل عام",
+    tEyebrow: "آراء العملاء", tTitle: "كلمات ممن عملت معهم.", phBadge: "مؤقت",
+    prEyebrow: "الإعلام والصحافة", prTitle: "قصص أبعد من الإطار.",
+    prLead: "تغطيات مميزة، وأعمال منشورة، وتعاونات، وإشارات إعلامية.",
+    prEmptyT: "القصص المميزة في الطريق.",
+    prEmptyP: "لا يظهر هنا إلا ما هو موثّق من منشورات وتعاونات وإشارات إعلامية. ستمتلئ هذه المساحة مع نشر أعمال جديدة.",
+    prSlots: ["قصة مميزة", "عمل منشور", "تعاون"], prRead: "اقرأ",
+    bEyebrow: "مقالات", bTitle: "ملاحظات من خلف العدسة.",
+    bLead: "تجارب، وقصص من الكواليس، ودروس من 15 عامًا في التصوير.",
+    comingSoon: "قريبًا", minRead: "دقائق قراءة", readArticle: "اقرأ المقال",
+    artPlaceholder: "لم تُكتب هذه المقالة بعد. أضف الفقرات إلى حقل «body» الخاص بالمقال في ملف المحتوى وستظهر هنا.",
+    cEyebrow: "تواصل", cTitle: "لديك قصة تستحق أن تُلتقط؟",
+    cLead: "سواء كنت تخطط لفعالية، أو تبني علامة تجارية، أو تبحث عن تغطية إعلامية احترافية، لنصنع معًا شيئًا له معنى.",
+    chWhatsApp: "واتساب", chEmail: "البريد الإلكتروني", chInstagram: "إنستغرام", chLinkedIn: "لينكدإن", chBehance: "بيهانس", chPhone: "الهاتف", chLocation: "المقر",
+    notSet: "سيُضاف قريبًا",
+    fName: "الاسم", fEmail: "البريد الإلكتروني", fPhone: "رقم الهاتف", fCompany: "الشركة", fService: "الخدمة المطلوبة", fDetails: "تفاصيل المشروع",
+    optional: "(اختياري)", fDetailsPh: "أخبرني عن الفعالية، والتاريخ، والمكان، وما الذي تودّ توثيقه…",
+    fChoose: "اختر خدمة", fOther: "شيء آخر",
+    fNote: "تُستخدم بياناتك للرد على استفسارك فقط.", fSend: "أرسل الاستفسار",
+    eName: "من فضلك اكتب اسمك.", eEmail: "من فضلك اكتب بريدًا إلكترونيًا صحيحًا.", ePhone: "من فضلك اكتب رقم هاتف صحيحًا.",
+    eService: "من فضلك اختر خدمة.", eDetails: "من فضلك شارك بعض التفاصيل (15 حرفًا على الأقل).",
+    sOk: "شكرًا لك — تم إرسال رسالتك، وسأتواصل معك قريبًا.",
+    sBad: "حدث خطأ أثناء إرسال رسالتك. حاول مرة أخرى، أو تواصل مباشرة عبر البريد الإلكتروني أو واتساب.",
+    sSpam: "تعذّر إرسال رسالتك. حاول مرة أخرى بعد لحظات.",
+    sNoBackend: "نموذج التواصل غير مرتبط بخدمة بريد بعد، لذلك لم تُرسل رسالتك. من فضلك استخدم إحدى وسائل التواصل المباشر.",
+    fCta: "لكل لحظة قصة. دعنا نلتقط قصتك.",
+    fTag: "تغطية إعلامية | تصوير | سرد بصري. ألتقط اللحظات. أصنع القصص.",
+    fNav: "التنقل", fServices: "الخدمات", fContact: "التواصل", rights: "جميع الحقوق محفوظة.", toTop: "العودة للأعلى",
+    close: "إغلاق", prev: "الصورة السابقة", next: "الصورة التالية", phWord: "مؤقت"
+  }
+};
+
+/* =====================================================================
+   4) APP LOGIC (no editing needed below)
+   ===================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+let lang = store.get("me-lang") === "ar" ? "ar" : "en";
+let currentFilter = "all";
+const t = k => (T[lang][k] !== undefined ? T[lang][k] : T.en[k]);
+const L = o => (o == null ? "" : typeof o === "string" ? o : (o[lang] || o.en || ""));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pad2 = n => String(n).padStart(2, "0");
+
+const ICONS = {
+  camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+  megaphone: '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+  briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  gem: '<path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
+  phone: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="m10 9 5 3-5 3z"/>',
+  clapper: '<path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
+  arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  upright: '<path d="M7 17 17 7"/><path d="M7 7h10v10"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+  wa: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>',
+  ig: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
+  li: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+  be: '<path d="M3 6h5.5a3 3 0 0 1 0 6H3zM3 12h6a3 3 0 0 1 0 6H3z"/><path d="M14 13h7a3.5 3.5 0 1 0-1 2.5"/><path d="M15 7h5"/>',
+  tel: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+  pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  check: '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+  alert: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>'
+};
+const icon = (n, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]}</svg>`;
+const SIL = '<svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="32" r="20"/><path d="M8 110c2-28 20-46 42-46s40 18 42 46z"/></svg>';
+
+/* Media renderer: real <img> when src is set, labelled placeholder frame otherwise */
+function media(o = {}, label, alt, eager) {
+  if (o.src) return `<img src="${esc(o.src)}" alt="${esc(L(alt || o.alt))}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  const lbl = label != null ? label : L(o.label);
+  return `<div class="ph" data-tone="${o.tone || 4}" role="img" aria-label="${esc(t("phWord") + (lbl ? " — " + lbl : ""))}">
+    ${o.portrait ? `<div class="ph-silhouette">${SIL}</div>` : ""}
+    <div class="ph-mark"><i></i><i></i><i></i><i></i></div>
+    <span class="ph-label"><b>●</b>${esc(t("phWord"))}${lbl ? " · " + esc(lbl) : ""}</span></div>`;
+}
+
+const NAV = ["home", "about", "services", "portfolio", "insights", "contact"];
+const catName = id => L(CATEGORIES.find(c => c.id === id) || {});
+
+/* ---------- renderers ---------- */
+function renderNav() {
+  $("#navLinks").innerHTML = NAV.map(k => `<li><a href="#${k}" data-sec="${k}">${esc(t("nav")[k])}</a></li>`).join("");
+  $("#mLinks").innerHTML = NAV.map(k => `<li><a href="#${k}">${esc(t("nav")[k])}</a></li>`).join("");
+  $("#fNavList").innerHTML = NAV.map(k => `<li><a href="#${k}">${esc(t("nav")[k])}</a></li>`).join("");
+}
+function renderSlots() {
+  $$("[data-slot]").forEach(el => { const k = el.dataset.slot; el.innerHTML = media(IMAGES[k], null, null, k === "heroBg" || k === "heroPortrait"); });
+}
+function renderStrip() {
+  const items = t("strip").map(s => `<span>${esc(s)}<i></i></span>`).join("");
+  $("#strip").innerHTML = items + items;
+}
+function renderServices() {
+  $("#svcList").innerHTML = SERVICES.map((s, i) => `
+    <li class="svc-item rv${i === 0 ? " on" : ""}" style="--i:${i}" data-i="${i}">
+      <button class="svc-btn" type="button" aria-expanded="${i === 0}" aria-controls="svc-d-${i}" id="svc-b-${i}">
+        <span class="num">${pad2(i + 1)}</span>
+        <span class="t">${esc(L(s.title))}</span>
+        <span class="ic">${icon(s.icon)}</span>
+      </button>
+      <div class="desc" id="svc-d-${i}" role="region" aria-labelledby="svc-b-${i}"><div>
+        <div class="mob-vis"><div class="media">${media({ tone: s.tone }, L(s.title))}</div></div>
+        <p>${esc(L(s.desc))}</p>
+        <div class="row"><a href="#contact" class="link-u" data-svc="${s.id}">${esc(t("inquire"))} ${icon("arrow", "flip")}</a></div>
+      </div></div>
+    </li>`).join("");
+  $("#svcStage").innerHTML = SERVICES.map((s, i) => `
+    <div class="layer${i === 0 ? " on" : ""}" data-i="${i}">
+      <div class="media">${media(s.img ? { src: s.img } : { tone: s.tone }, L(s.title), s.title)}</div>
+      <div class="cap"><span>${esc(t("svcLabel"))} ${pad2(i + 1)}/${pad2(SERVICES.length)}</span><b>${esc(L(s.title))}</b></div>
+    </div>`).join("");
+  $("#fSvcList").innerHTML = SERVICES.map(s => `<li><a href="#services">${esc(L(s.title))}</a></li>`).join("");
+  const sel = $("#f-service"), keep = sel.value;
+  sel.innerHTML = `<option value="">${esc(t("fChoose"))}</option>` + SERVICES.map(s => `<option value="${s.id}">${esc(L(s.title))}</option>`).join("") + `<option value="other">${esc(t("fOther"))}</option>`;
+  sel.value = keep;
+}
+function setService(i) {
+  $$(".svc-item").forEach(li => { const on = +li.dataset.i === i; li.classList.toggle("on", on); $(".svc-btn", li).setAttribute("aria-expanded", on); });
+  $$("#svcStage .layer").forEach(l => l.classList.toggle("on", +l.dataset.i === i));
+}
+function renderFilters() {
+  $("#filters").innerHTML = CATEGORIES.map(c => {
+    const n = c.id === "all" ? PROJECTS.length : PROJECTS.filter(p => p.category === c.id).length;
+    if (!n) return "";
+    return `<button type="button" class="chip" data-f="${c.id}" aria-pressed="${c.id === currentFilter}">${esc(L(c))}<sup>${pad2(n)}</sup></button>`;
+  }).join("");
+}
+function renderGallery(animate) {
+  $("#gallery").innerHTML = PROJECTS.map((p, i) => {
+    const show = currentFilter === "all" || p.category === currentFilter;
+    const n = p.images.length;
+    return `<div class="g-item ${p.size || "c"}${show ? "" : " hide"}${animate && show ? " pop" : " rv"}" style="--i:${i % 6}" data-p="${i}">
+      <button type="button" class="g-btn" aria-label="${esc(t("view") + ": " + L(p.title))}">
+        <div class="media">${media(p.images[0], catName(p.category), p.title)}</div>
+        <span class="open">${icon("plus")}</span>
+        <span class="ov"><span class="cat">${esc(catName(p.category))}</span><span class="tt">${esc(L(p.title))}</span>
+        <span class="meta"><span>${esc(p.date || "")}</span><span>${pad2(n)} ${esc(n === 1 ? t("photo") : t("photos"))}</span></span></span>
+      </button></div>`;
+  }).join("");
+  observe();
+}
+function renderExperience() {
+  $("#csRow").innerHTML = Array.from({ length: 15 }, (_, i) => `<div style="--i:${i}"><span>${pad2(i + 1)}</span></div>`).join("");
+  $("#skills").innerHTML = SKILLS.map((s, i) => `<li class="rv" style="--i:${i % 2}"><small>${pad2(i + 1)}</small>${esc(L(s))}</li>`).join("");
+}
+function renderTestimonials() {
+  const real = TESTIMONIALS.filter(x => !x.placeholder);
+  const sec = $("#testimonials");
+  sec.hidden = CONFIG.hideTestimonialsWhenEmpty && !real.length;
+  $("#tst").innerHTML = TESTIMONIALS.map((x, i) => `
+    <figure class="tcard rv" style="--i:${i};margin:0">
+      ${x.placeholder ? `<span class="badge">${esc(t("phBadge"))}</span>` : ""}
+      <div class="q" aria-hidden="true">“</div>
+      <blockquote>${esc(L(x.quote))}</blockquote>
+      <figcaption class="who"><div class="av"><div class="media">${x.img ? media({ src: x.img }, "", x.name) : media({ tone: x.tone, portrait: true }, "")}</div></div>
+      <div><b>${esc(L(x.name))}</b><span>${esc(L(x.role))}</span></div></figcaption>
+    </figure>`).join("");
+}
+function renderPress() {
+  const sec = $("#press");
+  sec.hidden = CONFIG.hidePressWhenEmpty && !PRESS.length;
+  if (!PRESS.length) {
+    const s = t("prSlots");
+    $("#pressBox").innerHTML = `<div class="press-empty rv">
+      <div class="slot s1" data-k="01 — ${esc(s[0])}"><div class="press-msg"><h3>${esc(t("prEmptyT"))}</h3><p>${esc(t("prEmptyP"))}</p></div></div>
+      <div class="slot s2" data-k="02 — ${esc(s[1])}"></div><div class="slot s3" data-k="03 — ${esc(s[2])}"></div></div>`;
+    return;
+  }
+  $("#pressBox").innerHTML = `<div class="press-list">${PRESS.map((p, i) => `
+    <article class="press-card rv" style="--i:${i}">
+      <a href="${esc(p.url || "#")}" target="_blank" rel="noopener"><div class="media">${media(p, L(p.outlet), p.title)}</div>
+      <div class="post"><div class="pm"><span class="cat">${esc(L(p.outlet))}</span><span>${esc(p.date || "")}</span></div></div>
+      <h3>${esc(L(p.title))}</h3><p class="link-u">${esc(t("prRead"))} ${icon("upright", "flip")}</p></a>
+    </article>`).join("")}</div>`;
+}
+function postMeta(p) {
+  return `<span class="cat">${esc(L(p.cat))}</span><span>${esc(p.date || t("comingSoon"))}</span><span>${p.minutes} ${esc(t("minRead"))}</span>`;
+}
+function renderPosts() {
+  const card = (p, i, cls) => `<button type="button" class="post ${cls} rv" style="--i:${i}" data-post="${i}" aria-label="${esc(t("readArticle") + ": " + L(p.title))}">
+      <div class="media">${media(p, L(p.cat), p.title)}</div>
+      <div><div class="pm">${postMeta(p)}</div><h3>${esc(L(p.title))}</h3><p>${esc(L(p.excerpt))}</p></div></button>`;
+  const [f, ...rest] = POSTS;
+  $("#blog").innerHTML = (f ? card(f, 0, "feat") : "") + `<div class="blog-side">${rest.map((p, i) => card(p, i + 1, "side")).join("")}</div>`;
+}
+function channels() {
+  const c = CONFIG, out = [];
+  out.push({ k: "chWhatsApp", ic: "wa", val: c.whatsapp ? "+" + c.whatsapp : "", href: c.whatsapp ? `https://wa.me/${c.whatsapp.replace(/\D/g, "")}` : "" });
+  out.push({ k: "chEmail", ic: "mail", val: c.email, href: c.email ? `mailto:${c.email}` : "" });
+  out.push({ k: "chInstagram", ic: "ig", val: c.instagram ? c.instagram.replace(/^https?:\/\/(www\.)?/, "") : "", href: c.instagram });
+  out.push({ k: "chLinkedIn", ic: "li", val: c.linkedin ? c.linkedin.replace(/^https?:\/\/(www\.)?/, "") : "", href: c.linkedin });
+  if (c.behance) out.push({ k: "chBehance", ic: "be", val: c.behance.replace(/^https?:\/\/(www\.)?/, ""), href: c.behance });
+  return out;
+}
+function renderContact() {
+  $("#channels").innerHTML = channels().map(ch => ch.href
+    ? `<li><a href="${esc(ch.href)}" ${ch.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}><span class="ic">${icon(ch.ic)}</span><span><span class="lbl">${esc(t(ch.k))}</span><span class="val">${esc(ch.val)}</span></span><span class="arr">${icon("upright", "flip")}</span></a></li>`
+    : `<li><div class="na"><span class="ic">${icon(ch.ic)}</span><span><span class="lbl">${esc(t(ch.k))}</span><span class="val">${esc(t("notSet"))}</span></span></div></li>`).join("");
+  $("#fSocials").innerHTML = channels().map(ch => ch.href
+    ? `<a href="${esc(ch.href)}" aria-label="${esc(t(ch.k))}" ${ch.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>${icon(ch.ic)}</a>`
+    : `<span title="${esc(t(ch.k) + " — " + t("notSet"))}">${icon(ch.ic)}</span>`).join("");
+  const fc = [];
+  if (CONFIG.email) fc.push(`<li><a href="mailto:${esc(CONFIG.email)}" dir="ltr">${esc(CONFIG.email)}</a></li>`);
+  if (CONFIG.phone) fc.push(`<li><a href="tel:${esc(CONFIG.phone.replace(/[^\d+]/g, ""))}" dir="ltr">${esc(CONFIG.phone)}</a></li>`);
+  if (L(CONFIG.location)) fc.push(`<li>${esc(L(CONFIG.location))}</li>`);
+  $("#fContactList").innerHTML = fc.length ? fc.join("") : `<li class="muted">${esc(t("notSet"))}</li>`;
+}
+
+/* ---------- language ---------- */
+function splitWords(el, text) {
+  el.innerHTML = text.split(" ").map((w, i) => `<span class="w"><span style="--i:${i + (el.classList.contains("o") ? 2 : 0)}">${esc(w)}</span></span>`).join(" ");
+}
+function applyLang(first) {
+  const html = document.documentElement;
+  html.lang = lang; html.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = t("docTitle");
+  $$("[data-i18n]").forEach(el => { const v = t(el.dataset.i18n); if (typeof v === "string") el.textContent = v; });
+  $$("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  $$("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+  $$("[data-split]").forEach(el => splitWords(el, t(el.dataset.split)));
+  $$(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === lang));
+  renderNav(); renderSlots(); renderStrip(); renderServices(); renderFilters(); renderGallery(false);
+  renderExperience(); renderTestimonials(); renderPress(); renderPosts(); renderContact();
+  $$(".err").forEach(e => (e.textContent = ""));
+  $$("[aria-invalid]").forEach(e => e.removeAttribute("aria-invalid"));
+  observe(!first);
+  setActive(activeSec);
+  store.set("me-lang", lang);
+}
+
+/* ---------- reveal on scroll ---------- */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { rootMargin: "0px 0px -8% 0px", threshold: .08 }) : null;
+function observe(instantIfVisible) {
+  $$(".rv:not(.in), .rv-img:not(.in)").forEach(el => {
+    if (!io || reduced) return el.classList.add("in");
+    if (instantIfVisible) { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) return el.classList.add("in"); }
+    io.observe(el);
+  });
+}
+
+/* ---------- nav: sticky state, active section, mobile menu ---------- */
+let activeSec = "home";
+function setActive(id) { activeSec = id; $$("#navLinks a").forEach(a => a.classList.toggle("active", a.dataset.sec === id)); }
+if (io) {
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { const id = e.target.id; const map = { experience: "portfolio", testimonials: "portfolio", press: "insights" }; setActive(map[id] || id); }
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  ["home", "about", "services", "portfolio", "experience", "testimonials", "press", "insights", "contact"].forEach(id => so.observe(document.getElementById(id)));
+}
+function toggleMenu(open) {
+  document.body.classList.toggle("menu-open", open);
+  $(".burger").setAttribute("aria-expanded", open);
+  $("#mmenu").setAttribute("aria-hidden", !open);
+  document.body.style.overflow = open ? "hidden" : "";
+}
+$(".burger").addEventListener("click", () => toggleMenu(!document.body.classList.contains("menu-open")));
+$("#mmenu").addEventListener("click", e => { if (e.target.closest("a")) toggleMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && document.body.classList.contains("menu-open")) toggleMenu(false); });
+$$(".lang button").forEach(b => b.addEventListener("click", () => { if (b.dataset.l !== lang) { lang = b.dataset.l; applyLang(false); } }));
+
+/* scroll: nav background + hero parallax (rAF-throttled) */
+let ticking = false;
+function onScroll() {
+  const y = scrollY;
+  $("#nav").classList.toggle("scrolled", y > 40);
+  if (!reduced && y < innerHeight * 1.2) $("#heroBg").style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
+  ticking = false;
+}
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+
+/* hero timecode */
+(function timecode() {
+  const el = $("#tc"); if (reduced) return;
+  let f = 15 * 60 * 25;
+  setInterval(() => { f++; const fr = f % 25, s = Math.floor(f / 25) % 60, m = Math.floor(f / 1500) % 60, h = Math.floor(f / 90000); el.textContent = `${pad2(h)}:${pad2(m)}:${pad2(s)}:${pad2(fr)}`; }, 40);
+})();
+
+/* ---------- services interactions ---------- */
+$("#svcList").addEventListener("click", e => {
+  const b = e.target.closest(".svc-btn"); if (b) setService(+b.closest(".svc-item").dataset.i);
+  const a = e.target.closest("[data-svc]"); if (a) { $("#f-service").value = a.dataset.svc; }
+});
+$("#svcList").addEventListener("mouseover", e => {
+  if (!matchMedia("(hover:hover) and (min-width:1081px)").matches) return;
+  const li = e.target.closest(".svc-item"); if (li && !li.classList.contains("on")) setService(+li.dataset.i);
+});
+
+/* ---------- portfolio: filters + lightbox ---------- */
+$("#filters").addEventListener("click", e => {
+  const c = e.target.closest(".chip"); if (!c || c.dataset.f === currentFilter) return;
+  currentFilter = c.dataset.f;
+  $$(".chip").forEach(x => x.setAttribute("aria-pressed", x === c));
+  renderGallery(true);
+});
+const lb = $("#lightbox"); let lbList = [], lbIdx = 0;
+function buildLbList() {
+  lbList = [];
+  PROJECTS.forEach((p, pi) => { if (currentFilter === "all" || p.category === currentFilter) p.images.forEach((img, ii) => lbList.push({ p, pi, img, ii })); });
+}
+function showLb(dir) {
+  const it = lbList[lbIdx]; if (!it) return;
+  const fr = $("#lbFrame");
+  fr.classList.toggle("portrait", !!it.img.portrait);
+  $("#lbMedia").innerHTML = media(it.img, `${L(it.p.title)} · ${it.ii + 1}/${it.p.images.length}`, it.img.alt || it.p.title);
+  $("#lbTitle").textContent = L(it.p.title);
+  $("#lbDesc").textContent = L(it.p.desc);
+  $("#lbMeta").innerHTML = `<b>${esc(catName(it.p.category))}</b><br>${esc(it.p.date || "")}${it.p.client ? " · " + esc(t("client")) + ": " + esc(it.p.client) : ""}<br><span dir="ltr">${pad2(it.ii + 1)} / ${pad2(it.p.images.length)}</span>`;
+  $("#lbCount").textContent = `${pad2(lbIdx + 1)} / ${pad2(lbList.length)}`;
+  if (dir && !reduced) { fr.style.setProperty("--dir", dir * (lang === "ar" ? -1 : 1)); fr.classList.remove("swap"); void fr.offsetWidth; fr.classList.add("swap"); }
+  // preload neighbours
+  [lbIdx + 1, lbIdx - 1].forEach(j => { const n = lbList[(j + lbList.length) % lbList.length]; if (n && n.img.src) { const im = new Image(); im.src = n.img.src; } });
+}
+function stepLb(d) { lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLb(d); }
+$("#gallery").addEventListener("click", e => {
+  const it = e.target.closest(".g-item"); if (!it) return;
+  buildLbList(); lbIdx = Math.max(0, lbList.findIndex(x => x.pi === +it.dataset.p));
+  showLb(0); lb.showModal(); document.body.style.overflow = "hidden";
+});
+$("#lbPrev").addEventListener("click", () => stepLb(-1));
+$("#lbNext").addEventListener("click", () => stepLb(1));
+$("#lbClose").addEventListener("click", () => lb.close());
+lb.addEventListener("close", () => { document.body.style.overflow = ""; });
+lb.addEventListener("keydown", e => {
+  const rtl = lang === "ar";
+  if (e.key === "ArrowRight") stepLb(rtl ? -1 : 1);
+  if (e.key === "ArrowLeft") stepLb(rtl ? 1 : -1);
+});
+lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("lb-stage")) lb.close(); });
+let tx = null;
+lb.addEventListener("touchstart", e => { tx = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) stepLb((dx < 0 ? 1 : -1) * (lang === "ar" ? -1 : 1)); tx = null; });
+
+/* ---------- article reader ---------- */
+const art = $("#article");
+$("#blog").addEventListener("click", e => {
+  const b = e.target.closest("[data-post]"); if (!b) return;
+  const p = POSTS[+b.dataset.post];
+  $("#artMeta").innerHTML = postMeta(p);
+  $("#artTitle").textContent = L(p.title);
+  $("#artExcerpt").textContent = L(p.excerpt);
+  $("#artCover").innerHTML = media(p, L(p.cat), p.title);
+  const body = (p.body && p.body[lang] && p.body[lang].length) ? p.body[lang] : (p.body && p.body.en && p.body.en.length ? p.body.en : null);
+  $("#artBody").innerHTML = body ? body.map(x => `<p>${esc(x)}</p>`).join("") : `<p class="ph-note">${esc(t("artPlaceholder"))}</p>`;
+  $("#artScroll").scrollTop = 0; $("#artProg").style.width = "0";
+  art.showModal(); document.body.style.overflow = "hidden";
+});
+$("#artClose").addEventListener("click", () => art.close());
+art.addEventListener("close", () => { document.body.style.overflow = ""; });
+$("#artScroll").addEventListener("scroll", e => { const s = e.target; $("#artProg").style.width = (s.scrollTop / Math.max(1, s.scrollHeight - s.clientHeight) * 100) + "%"; }, { passive: true });
+
+/* ---------- contact form ---------- */
+const form = $("#cform"), started = Date.now();
+const rules = {
+  name: v => v.trim().length >= 2 || "eName",
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || "eEmail",
+  phone: v => !v.trim() || /^[+\d][\d\s().-]{6,}$/.test(v.trim()) || "ePhone",
+  service: v => !!v || "eService",
+  details: v => v.trim().length >= 15 || "eDetails"
+};
+function validateField(el) {
+  const r = rules[el.name]; if (!r) return true;
+  const res = r(el.value), err = $("#e-" + el.name);
+  const ok = res === true;
+  el.setAttribute("aria-invalid", !ok);
+  if (err) err.textContent = ok ? "" : t(res);
+  return ok;
+}
+Object.keys(rules).forEach(n => {
+  const el = form.elements[n];
+  el.addEventListener("blur", () => { if (el.value) validateField(el); });
+  el.addEventListener("input", () => { if (el.getAttribute("aria-invalid") === "true") validateField(el); });
+});
+function status(type, key) {
+  const s = $("#fStatus");
+  s.className = "status show " + type;
+  s.innerHTML = icon(type === "ok" ? "check" : "alert") + `<span>${esc(t(key))}</span>`;
+}
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const bad = Object.keys(rules).map(n => form.elements[n]).filter(el => !validateField(el));
+  if (bad.length) { bad[0].focus(); return; }
+  // spam protection: honeypot filled, or submitted unrealistically fast
+  if (form.elements.website.value || Date.now() - started < 3000) { status("bad", "sSpam"); return; }
+  if (!CONFIG.formEndpoint) { status("warn", "sNoBackend"); return; }
+  const btn = $("#fSubmit"); btn.disabled = true; btn.classList.add("busy");
+  const data = Object.fromEntries(new FormData(form)); delete data.website;
+  data.serviceLabel = form.elements.service.selectedOptions[0]?.textContent || data.service;
+  data.language = lang;
+  try {
+    const res = await fetch(CONFIG.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+    if (!res.ok) throw new Error(res.status);
+    form.reset(); status("ok", "sOk");
+  } catch (err) { status("bad", "sBad"); }
+  finally { btn.disabled = false; btn.classList.remove("busy"); }
+});
+
+/* ---------- boot ---------- */
+$("#yr").textContent = new Date().getFullYear();
+applyLang(true);
+onScroll();
+function done() { document.documentElement.classList.add("loaded"); setTimeout(() => { const l = $(".loader"); if (l) l.remove(); }, 1400); }
+if (reduced) done();
+else if (document.fonts && document.fonts.ready) Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1500))]).then(() => setTimeout(done, 350));
+else setTimeout(done, 600);
+</script>
+<!--
+  =====================================================================
+  QUICK EDITING GUIDE
+  - Contact details & form backend ........ CONFIG (top of the script)
+  - Hero / about photos .................... IMAGES  -> set src: "images/file.jpg"
+  - Services ............................... SERVICES
+  - Portfolio projects & filters ........... PROJECTS / CATEGORIES
+  - Skills ................................. SKILLS
+  - Testimonials (real ones only) .......... TESTIMONIALS -> placeholder:false
+  - Media & press (verified only) .......... PRESS
+  - Blog posts ............................. POSTS -> body: { en:[...], ar:[...] }
+  - All interface text (EN / AR) ........... T.en / T.ar
+  Put image files in an "images" folder next to index.html.
+  =====================================================================
+-->
+</body>
+</html>
