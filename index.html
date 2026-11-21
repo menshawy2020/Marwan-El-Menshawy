@@ -17,6 +17,14 @@
 <meta property="og:locale:alternate" content="ar_EG">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090909'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23D6FF3F' stroke-width='2.5'/%3E%3C/svg%3E">
+<!-- App (PWA) -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Marwan">
+<meta name="application-name" content="Marwan">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -174,7 +182,7 @@ html[lang="ar"] .ph-label{ letter-spacing:0; font-size:12px; }
 }
 .nav.scrolled{ background:rgba(9,9,9,.82); -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2); border-color:var(--line); --nav-h:64px; }
 .nav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
-.brand{ font-weight:700; font-size:15px; letter-spacing:.14em; display:flex; align-items:center; gap:10px; white-space:nowrap; }
+.brand{ font-weight:700; font-size:15px; letter-spacing:.14em; display:flex; min-width:0; align-items:center; gap:10px; white-space:nowrap; }
 html[lang="ar"] .brand{ letter-spacing:0; font-size:18px; }
 .brand .dot{ width:8px; height:8px; border-radius:50%; background:var(--acc); box-shadow:0 0 0 4px rgba(214,255,63,.12); }
 .nav-links{ display:flex; align-items:center; gap:clamp(16px, 2.2vw, 34px); list-style:none; margin:0; padding:0; }
@@ -572,6 +580,31 @@ html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
 .f-giant{ font-size:clamp(3rem, 15.5vw, 16rem); font-weight:700; letter-spacing:-.06em; line-height:.78; white-space:nowrap; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.12); text-align:center; margin-bottom:-.12em; user-select:none; font-family:var(--f-en); direction:ltr; }
 
 /* =========================================================
+   APP MODE (installed on a phone) + INSTALL PROMPT
+   ========================================================= */
+.nav{ padding-top:env(safe-area-inset-top); height:calc(var(--nav-h) + env(safe-area-inset-top)); }
+.mmenu{ padding-top:calc(var(--nav-h) + 30px + env(safe-area-inset-top)); padding-bottom:calc(40px + env(safe-area-inset-bottom)); }
+.f-bottom{ padding-bottom:calc(34px + env(safe-area-inset-bottom)); }
+.wrap{ padding-inline:max(var(--pad), env(safe-area-inset-left)) max(var(--pad), env(safe-area-inset-right)); }
+html.standalone body{ overscroll-behavior-y:none; -webkit-tap-highlight-color:transparent; }
+html.standalone .scroll-ind{ display:none; }
+.install{
+  position:fixed; z-index:150; inset-inline:12px; bottom:calc(12px + env(safe-area-inset-bottom));
+  max-width:460px; margin-inline:auto; display:flex; gap:14px; align-items:center;
+  padding:14px 14px 14px 16px; background:rgba(23,23,23,.96); border:1px solid var(--line2); border-radius:18px;
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); box-shadow:0 20px 60px rgba(0,0,0,.5);
+  transform:translateY(140%); transition:transform .7s var(--ease); 
+}
+.install.show{ transform:none; }
+.install img{ width:46px; height:46px; border-radius:12px; flex:none; }
+.install .txt{ flex:1; min-width:0; font-size:14px; line-height:1.4; }
+.install .txt b{ display:block; font-size:15px; font-weight:600; }
+.install .txt span{ color:var(--tx2); }
+.install .go{ height:40px; padding:0 16px; border-radius:999px; background:var(--acc); color:var(--acc-ink); font-weight:600; font-size:14px; flex:none; }
+.install .x{ width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:var(--tx2); flex:none; }
+.install .share{ display:inline-block; width:15px; height:15px; vertical-align:-2px; }
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width:1080px){
@@ -610,6 +643,13 @@ html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
 }
 @media (max-width:620px){
   body{ font-size:16px; }
+  .nav .wrap{ gap:12px; }
+  .brand{ font-size:12px; letter-spacing:.1em; min-width:0; white-space:normal; line-height:1.15; }
+  .brand > span:last-child{ max-width:7.5em; }
+  .brand .dot{ flex:none; }
+  html[lang="ar"] .brand{ font-size:16px; }
+  .nav-right{ flex:none; gap:8px; }
+  .burger{ width:40px; height:40px; }
   .hero h1{ font-size:clamp(2.7rem, 13.5vw, 5rem); }
   html[lang="ar"] .hero h1{ font-size:clamp(2.6rem, 13vw, 4.6rem); }
   .ctas .btn{ flex:1 1 auto; justify-content:center; }
@@ -658,7 +698,7 @@ html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
 <!-- ================= NAVIGATION ================= -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#home" class="brand" aria-label="Marwan El-Menshawy — home"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL-MENSHAWY</span></a>
+    <a href="#home" class="brand" aria-label="Marwan El-Menshawy — home"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL‑MENSHAWY</span></a>
     <nav aria-label="Primary" data-i18n-aria="navAria">
       <ul class="nav-links" id="navLinks"></ul>
     </nav>
@@ -865,7 +905,7 @@ html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
     <a href="#contact" class="f-cta rv"><span data-i18n="fCta">Every Moment Has a Story. Let's Capture Yours.</span> <svg class="ico flip" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
     <div class="f-grid">
       <div class="f-brand">
-        <div class="brand"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL-MENSHAWY</span></div>
+        <div class="brand"><span class="dot" aria-hidden="true"></span><span data-i18n="brand">MARWAN EL‑MENSHAWY</span></div>
         <p data-i18n="fTag"></p>
         <div class="socials" id="fSocials"></div>
       </div>
@@ -880,6 +920,14 @@ html[lang="ar"] .f-grid h4{ letter-spacing:0; font-size:14px; }
   </div>
   <div class="f-giant" aria-hidden="true">EL-MENSHAWY</div>
 </footer>
+
+<!-- ================= INSTALL APP PROMPT ================= -->
+<div class="install" id="install" role="dialog" aria-labelledby="installT" hidden>
+  <img src="icons/icon-192.png" alt="">
+  <div class="txt"><b id="installT" data-i18n="instT">Get the app</b><span id="installD"></span></div>
+  <button type="button" class="go" id="installGo" data-i18n="instGo">Install</button>
+  <button type="button" class="x" id="installX" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+</div>
 
 <!-- ================= LIGHTBOX ================= -->
 <dialog id="lightbox" aria-labelledby="lbTitle">
@@ -1069,7 +1117,7 @@ const POSTS = [
    ===================================================================== */
 const T = {
   en: {
-    skip: "Skip to content", brand: "MARWAN EL-MENSHAWY", navAria: "Primary", menu: "Menu",
+    skip: "Skip to content", brand: "MARWAN EL‑MENSHAWY", navAria: "Primary", menu: "Menu",
     nav: { home: "Home", about: "About", services: "Services", portfolio: "Portfolio", insights: "Insights", contact: "Contact" },
     tagline: "Capturing Moments. Creating Stories.",
     docTitle: "Marwan El-Menshawy — Media Coverage | Photography | Visual Storytelling",
@@ -1123,7 +1171,9 @@ const T = {
     fCta: "Every Moment Has a Story. Let's Capture Yours.",
     fTag: "Media Coverage | Photography | Visual Storytelling. Capturing Moments. Creating Stories.",
     fNav: "Navigate", fServices: "Services", fContact: "Contact", rights: "All rights reserved.", toTop: "Back to top",
-    close: "Close", prev: "Previous image", next: "Next image", phWord: "Placeholder"
+    close: "Close", prev: "Previous image", next: "Next image", phWord: "Placeholder",
+    instT: "Get the app", instGo: "Install", instD: "Add Marwan's portfolio to your home screen.",
+    instIos: "Tap SHARE then “Add to Home Screen”."
   },
   ar: {
     skip: "انتقل إلى المحتوى", brand: "مروان المنشاوي", navAria: "التنقل الرئيسي", menu: "القائمة",
@@ -1180,7 +1230,9 @@ const T = {
     fCta: "لكل لحظة قصة. دعنا نلتقط قصتك.",
     fTag: "تغطية إعلامية | تصوير | سرد بصري. ألتقط اللحظات. أصنع القصص.",
     fNav: "التنقل", fServices: "الخدمات", fContact: "التواصل", rights: "جميع الحقوق محفوظة.", toTop: "العودة للأعلى",
-    close: "إغلاق", prev: "الصورة السابقة", next: "الصورة التالية", phWord: "مؤقت"
+    close: "إغلاق", prev: "الصورة السابقة", next: "الصورة التالية", phWord: "مؤقت",
+    instT: "حمّل التطبيق", instGo: "تثبيت", instD: "أضف أعمال مروان إلى الشاشة الرئيسية.",
+    instIos: "اضغط SHARE ثم «إضافة إلى الشاشة الرئيسية»."
   }
 };
 
@@ -1553,6 +1605,43 @@ form.addEventListener("submit", async e => {
   } catch (err) { status("bad", "sBad"); }
   finally { btn.disabled = false; btn.classList.remove("busy"); }
 });
+
+/* ---------- app: offline support + install prompt ---------- */
+const isStandalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+if (isStandalone) document.documentElement.classList.add("standalone");
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+const inst = $("#install");
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isMobile = matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+let deferredPrompt = null;
+const SHARE_ICO = '<svg class="ico share" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
+function installText() {
+  const d = $("#installD");
+  if (isIOS && !deferredPrompt) { d.innerHTML = esc(t("instIos")).replace("SHARE", SHARE_ICO); $("#installGo").hidden = true; }
+  else { d.textContent = t("instD"); $("#installGo").hidden = false; }
+}
+function showInstall() {
+  if (isStandalone || !isMobile || store.get("me-install-dismissed")) return;
+  installText(); inst.hidden = false;
+  requestAnimationFrame(() => requestAnimationFrame(() => inst.classList.add("show")));
+}
+function hideInstall(remember) {
+  inst.classList.remove("show"); setTimeout(() => (inst.hidden = true), 700);
+  if (remember) store.set("me-install-dismissed", "1");
+}
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferredPrompt = e; setTimeout(showInstall, 6000); });
+addEventListener("appinstalled", () => hideInstall(true));
+if (isIOS) setTimeout(showInstall, 8000);
+$("#installGo").addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null; hideInstall(outcome === "accepted");
+});
+$("#installX").addEventListener("click", () => hideInstall(true));
+$$(".lang button").forEach(b => b.addEventListener("click", () => { if (!inst.hidden) installText(); }));
 
 /* ---------- boot ---------- */
 $("#yr").textContent = new Date().getFullYear();

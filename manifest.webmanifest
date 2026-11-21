@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Marwan El-Menshawy — Photography & Media Coverage",
+  "short_name": "Marwan",
+  "description": "Photographer and media coverage professional with 15 years behind the lens. Capturing Moments. Creating Stories.",
+  "lang": "en",
+  "dir": "auto",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "categories": ["photo", "business", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Portfolio", "short_name": "Work", "url": "./?source=app#portfolio", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Contact", "short_name": "Contact", "url": "./?source=app#contact", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
