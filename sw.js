@@ -1,6 +1,6 @@
 /* Service worker — makes the site installable and usable offline.
    When you change files, bump VERSION so phones pick up the update. */
-const VERSION = "v6";
+const VERSION = "v7";
 const SHELL = `shell-${VERSION}`;
 const RUNTIME = `runtime-${VERSION}`;
 const CORE = [

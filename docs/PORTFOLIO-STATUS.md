@@ -14,7 +14,7 @@ Preview mode shows projects in review, pending-file placeholders and "temporary"
 | Bridal Editorial (Makeup Artist: Nayera) | Beauty & Makeup | Published, **temporary media** | 10 | WhatsApp 2026-11-20 2.04.05 AM (2) |
 | Alexandria Stadium | Architecture & Heritage | Published | 3 (+5 pending) | DSC_0151 |
 | Landscape | Landscape | Published | 10 (+1 photo, +1 video pending) | 20260716_194813 |
-| Charles American Food | Food & Restaurants | Published | 2 retouched (approved) + 4 pending; AI pasta not approved | DSC_0031 retouch |
+| Charles American Food | Food & Restaurants | Published | 6 retouched; AI pasta not approved | DSC_0031 retouch |
 
 ## Image treatment
 
@@ -30,7 +30,6 @@ Version B (background composite) was rejected. Automatic subject masking left ou
 
 ## Pending assets (over Google Drive connector's 10 MB limit)
 
-- Charles American Food: DSC_0003, DSC_0032, DSC_0068, DSC_0070
 - Landscape: 20250614_192432(2).jpg, 20261021_145449_1.mp4 (video)
 
 Each is listed in `PROJECTS` with `pending: true`. It appears as a labelled placeholder in preview mode only.
