@@ -1,13 +1,13 @@
 /* Service worker — makes the site installable and usable offline.
    When you change files, bump VERSION so phones pick up the update. */
-const VERSION = "v3";
+const VERSION = "v4";
 const SHELL = `shell-${VERSION}`;
 const RUNTIME = `runtime-${VERSION}`;
 const CORE = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./images/marwan-portrait.jpg",
+  "./images/work/portrait/marwan-portrait-suit-800.webp",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png"

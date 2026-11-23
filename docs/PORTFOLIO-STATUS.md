@@ -1,6 +1,6 @@
 # Portfolio — media status & pending assets
 
-Branch: `portfolio-real-projects` · Not merged into `main`, so the live site is unchanged.
+Merged into `main` and live, approved by Marwan on 2026-11-23.
 
 Preview mode: add `?preview=1` to the address (e.g. `index.html?preview=1#work/charles-american-food`), or `#preview` on hosts that drop query strings (such as the private Claude preview page).
 Preview mode shows projects in review, pending-file placeholders and "temporary" labels. The public site hides all three.
@@ -14,7 +14,7 @@ Preview mode shows projects in review, pending-file placeholders and "temporary"
 | Bridal Editorial (Makeup Artist: Nayera) | Beauty & Makeup | Published, **temporary media** | 10 | WhatsApp 2026-11-20 2.04.05 AM (2) |
 | Alexandria Stadium | Architecture & Heritage | Published | 3 (+5 pending) | DSC_0151 |
 | Landscape | Landscape | Published | 10 (+1 photo, +1 video pending) | 20260716_194813 |
-| Charles American Food | Food & Restaurants | **Review — hidden from public** | 0 (2 retouched + 1 AI held for approval, 4 pending) | DSC_0031 retouch (held) |
+| Charles American Food | Food & Restaurants | Published | 2 retouched (approved) + 4 pending; AI pasta not approved | DSC_0031 retouch |
 
 ## Image treatment
 
@@ -44,3 +44,8 @@ Each is listed in `PROJECTS` with `pending: true`. It appears as a labelled plac
 - Insights: three drafts, hidden from the public site and menu until one is published.
 - GPS location data was found in all 10 landscape originals and removed from every web copy.
 - The Charles images (two Version A retouches and the AI pasta image) are prepared, but they're not committed. This repository is public, so they stay out until each is approved. In the data they're marked `held: true`.
+
+## Update 2026-11-23 (final)
+- Portraits from Drive folder 07-Portrait: hero = 20260911_174611 (suit), About = 20260606_175431 (outdoors), About small = 20260305_085505 (mirror). GPS removed.
+- Charles American Food is published with the two approved Version A retouches. The AI pasta image is not approved: it's not on the site and not in the repo.
+- 15 years of photography is confirmed by Marwan.
