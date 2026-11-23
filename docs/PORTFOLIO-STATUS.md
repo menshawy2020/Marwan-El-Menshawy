@@ -30,7 +30,6 @@ Version B (background composite) was rejected. Automatic subject masking left ou
 
 ## Pending assets (over Google Drive connector's 10 MB limit)
 
-- Alexandria Stadium: DSC_0060, DSC_0089, DSC_0083, DSC_0128, DSC_0147
 - Charles American Food: DSC_0003, DSC_0032, DSC_0068, DSC_0070
 - Landscape: 20250614_192432(2).jpg, 20261021_145449_1.mp4 (video)
 
