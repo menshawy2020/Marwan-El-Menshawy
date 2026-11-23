@@ -1387,7 +1387,8 @@ function setService(i) {
   $$(".svc-item").forEach(li => { const on = +li.dataset.i === i; li.classList.toggle("on", on); $(".svc-btn", li).setAttribute("aria-expanded", on); });
   $$("#svcStage .layer").forEach(l => l.classList.toggle("on", +l.dataset.i === i));
 }
-const PREVIEW = new URLSearchParams(location.search).has("preview");
+// Preview mode: ?preview=1 (any normal host) or #preview (hosts that drop query strings, e.g. the private preview page)
+const PREVIEW = new URLSearchParams(location.search).has("preview") || location.hash === "#preview";
 const visibleProjects = () => PROJECTS.filter(p => p.status === "published" || PREVIEW);
 const isShownMedia = m => !m.pending && !m.held && (m.approved !== false || PREVIEW);
 const realMedia = p => p.media.filter(isShownMedia);

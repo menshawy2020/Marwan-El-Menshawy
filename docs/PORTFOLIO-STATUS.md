@@ -2,7 +2,7 @@
 
 Branch: `portfolio-real-projects` · Not merged into `main`, so the live site is unchanged.
 
-Preview on a local copy or after merge with `?preview=1` (e.g. `index.html?preview=1#work/charles-american-food`).
+Preview mode: add `?preview=1` to the address (e.g. `index.html?preview=1#work/charles-american-food`), or `#preview` on hosts that drop query strings (such as the private Claude preview page).
 Preview mode shows projects in review, pending-file placeholders and "temporary" labels. The public site hides all three.
 
 ## Projects
