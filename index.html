@@ -392,6 +392,57 @@ html[lang="ar"] .g-btn .ov .cat{ letter-spacing:0; font-size:13px; }
 @keyframes pop{ from{ opacity:0; transform:translateY(24px) scale(.98); } }
 .gal-foot{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-top:44px; color:var(--tx3); font-size:13px; }
 
+/* portrait card shapes for real projects */
+.g-item.t{ grid-column:span 6; grid-row:span 9; }
+.g-item.p{ grid-column:span 4; grid-row:span 8; }
+.g-badge{ position:absolute; z-index:5; top:14px; inset-inline-start:14px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:6px 11px; border-radius:999px; background:rgba(9,9,9,.75); border:1px dashed var(--acc); color:var(--acc); }
+html[lang="ar"] .g-badge{ letter-spacing:0; font-size:12px; }
+/* media treatment labels */
+.tag{ display:inline-flex; align-items:center; gap:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border-radius:999px; line-height:1.2; }
+html[lang="ar"] .tag{ letter-spacing:0; font-size:12px; text-transform:none; }
+.tag-ai{ background:var(--acc); color:var(--acc-ink); font-weight:600; }
+.tag-ret{ background:rgba(9,9,9,.72); border:1px solid var(--line2); color:var(--tx); }
+.tag-tmp{ background:rgba(9,9,9,.72); border:1px dashed #ffb86b; color:#ffcf99; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.preview-ribbon{ position:fixed; z-index:160; inset-inline-start:12px; bottom:calc(12px + env(safe-area-inset-bottom)); max-width:min(420px, calc(100% - 24px)); padding:10px 14px; border-radius:12px; background:#2a1f00; border:1px dashed #ffb86b; color:#ffcf99; font-size:13px; }
+
+/* ---------- PROJECT PAGE ---------- */
+.pj{ height:100%; overflow-y:auto; background:var(--bg); overscroll-behavior:contain; }
+.pj-bar{ position:sticky; top:0; z-index:4; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:12px var(--pad); padding-top:calc(12px + env(safe-area-inset-top)); background:rgba(9,9,9,.86); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+.pj-back{ flex:none; display:inline-flex; white-space:nowrap; align-items:center; gap:10px; font-size:14px; color:var(--tx2); transition:color .3s; }
+.pj-back:hover{ color:var(--tx); }
+.pj-back .icon-btn{ width:40px; height:40px; }
+.pj-bar .t{ flex:1; min-width:0; text-align:center; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+html[lang="ar"] .pj-bar .t{ letter-spacing:0; font-size:15px; }
+.pj-hero{ max-width:var(--max); margin-inline:auto; padding:clamp(28px,5vw,64px) var(--pad) 0; display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(28px,5vw,80px); align-items:end; }
+.pj-cover{ position:relative; display:block; width:100%; }
+.pj-cover .media{ background:var(--card); }
+.pj-cover img{ width:100%; height:auto; max-height:86svh; object-fit:cover; }
+.pj-info h2{ margin:.25em 0 0; font-size:clamp(2.6rem, 6.4vw, 6rem); line-height:.95; letter-spacing:var(--track); font-weight:700; }
+html[lang="ar"] .pj-info h2{ line-height:1.3; }
+.pj-meta{ list-style:none; margin:28px 0 0; padding:0; border-top:1px solid var(--line); }
+.pj-meta li{ display:flex; justify-content:space-between; gap:20px; padding:14px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--tx2); }
+.pj-meta li b{ color:var(--tx); font-weight:500; text-align:end; }
+.pj-info .btn{ margin-top:30px; }
+.pj-gallery{ max-width:var(--max); margin-inline:auto; padding:clamp(56px,8vw,110px) var(--pad) 40px; columns:3 300px; column-gap:clamp(10px,1.4vw,18px); }
+.pj-tile{ display:block; width:100%; margin:0 0 clamp(10px,1.4vw,18px); break-inside:avoid; position:relative; overflow:hidden; text-align:start; }
+.pj-tile img{ width:100%; height:auto; transition:transform 1.1s var(--ease); }
+.pj-tile:hover img,.pj-tile:focus-visible img{ transform:scale(1.035); }
+.pj-tile .tags{ position:absolute; z-index:3; top:10px; inset-inline-start:10px; inset-inline-end:10px; }
+.pj-tile.pending{ aspect-ratio:4/5; cursor:default; }
+.pj-tile.pending .ph-label{ bottom:12px; }
+.pj-tile.is-video img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.pj-tile .play{ position:absolute; z-index:3; inset:0; margin:auto; width:64px; height:64px; border-radius:50%; background:var(--acc); color:var(--acc-ink); display:grid; place-items:center; }
+.pj-nav{ max-width:var(--max); margin-inline:auto; padding:30px var(--pad) calc(70px + env(safe-area-inset-bottom)); display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.pj-nav a{ display:block; padding:26px 0; border-top:1px solid var(--line2); transition:color .3s; }
+.pj-nav a:hover{ color:var(--acc); }
+.pj-nav a.nx{ text-align:end; }
+.pj-nav small{ display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx3); margin-bottom:8px; }
+html[lang="ar"] .pj-nav small{ letter-spacing:0; font-size:13px; }
+.pj-nav span{ font-size:clamp(1.3rem,2.6vw,2.2rem); font-weight:600; letter-spacing:var(--track); }
+.lb-frame video{ width:100%; height:100%; background:#050505; }
+.lb-cap .tags{ margin-top:10px; }
+
 /* ---------- LIGHTBOX & ARTICLE (dialogs) ---------- */
 dialog{ padding:0; border:0; background:transparent; color:var(--tx); max-width:none; max-height:none; width:100%; height:100%; }
 dialog::backdrop{ background:rgba(5,5,5,.94); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
@@ -635,6 +686,11 @@ html.standalone .scroll-ind{ display:none; }
   .g-item.a,.g-item.d{ grid-column:span 6; grid-row:span 5; }
   .g-item.b,.g-item.e{ grid-column:span 3; grid-row:span 5; }
   .g-item.c{ grid-column:span 3; grid-row:span 4; }
+  .g-item.t{ grid-column:span 6; grid-row:span 8; }
+  .g-item.p{ grid-column:span 3; grid-row:span 7; }
+  .pj-hero{ grid-template-columns:1fr; }
+  .pj-back > span:last-child{ display:none; }
+  .pj-gallery{ columns:2 150px; }
   .g-btn .ov .meta{ max-height:40px; opacity:1; }
   .g-btn .open{ transform:none; width:34px; height:34px; }
   .press-empty .slot.s1,.press-empty .slot.s2,.press-empty .slot.s3{ grid-column:1/-1; }
@@ -806,7 +862,7 @@ html.standalone .scroll-ind{ display:none; }
     </div>
     <div class="filters rv" id="filters" role="group" data-i18n-aria="filterAria"></div>
     <div class="gallery" id="gallery"></div>
-    <div class="gal-foot"><span data-i18n="pfNote"></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
+    <div class="gal-foot"><span></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
   </div>
 </section>
 
@@ -929,6 +985,18 @@ html.standalone .scroll-ind{ display:none; }
   <button type="button" class="x" id="installX" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
 </div>
 
+<!-- ================= PROJECT PAGE ================= -->
+<dialog id="project" aria-labelledby="pjTitle">
+  <div class="pj" id="pjScroll">
+    <div class="pj-bar">
+      <button type="button" class="pj-back" id="pjBack" data-i18n-aria="back" aria-label="All work"><span class="icon-btn"><svg class="ico flip" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></span><span data-i18n="back">All work</span></button>
+      <span class="t" id="pjBarTitle" dir="auto"></span>
+      <button class="icon-btn" type="button" id="pjClose" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div id="pjBody"></div>
+  </div>
+</dialog>
+
 <!-- ================= LIGHTBOX ================= -->
 <dialog id="lightbox" aria-labelledby="lbTitle">
   <div class="lb">
@@ -1016,54 +1084,32 @@ const SERVICES = [
 ];
 
 const CATEGORIES = [
-  { id: "all",       en: "All",                ar: "الكل" },
-  { id: "events",    en: "Events",             ar: "فعاليات" },
-  { id: "corporate", en: "Corporate",          ar: "شركات" },
-  { id: "portraits", en: "Portraits",          ar: "بورتريه" },
-  { id: "lifestyle", en: "Lifestyle",          ar: "لايف ستايل" },
-  { id: "bts",       en: "Behind the Scenes",  ar: "الكواليس" },
-  { id: "media",     en: "Media Coverage",     ar: "تغطية إعلامية" }
+  { id: "all",          en: "All",                     ar: "الكل" },
+  { id: "fashion",      en: "Fashion & Editorial",     ar: "أزياء وتحرير" },
+  { id: "beauty",       en: "Beauty & Makeup",         ar: "تجميل ومكياج" },
+  { id: "food",         en: "Food & Restaurants",      ar: "طعام ومطاعم" },
+  { id: "landscape",    en: "Landscape",               ar: "مناظر طبيعية" },
+  { id: "architecture", en: "Architecture & Heritage", ar: "عمارة وتراث" }
 ];
 
-/* Portfolio projects. size: a (large) · b (tall) · c (small) · d (wide) · e (medium-tall)
-   Add a project by copying one block. Each project can have any number of images. */
+/* Portfolio projects — one object per project.
+   size:      t (large portrait) · p (portrait) · a b c d e (other card shapes)
+   status:    "published" (public) or "review" (only visible with ?preview=1)
+   cover:     index in media of the cover photograph · focus: CSS object-position for the cover crop
+   media:     images exported by the optimiser ({set, widths, w, h}); treatment: original | retouched | ai-elements
+              temporary:true = provisional file to replace · pending:true = file not received yet (shown only in preview)
+   date / client / desc: leave out unless confirmed — empty fields are hidden. */
 const PROJECTS = [
-  { category: "events", size: "a", date: "YYYY", client: "",
-    title: { en: "Project title — Event 01", ar: "عنوان المشروع — فعالية 01" },
-    desc:  { en: "Placeholder description. Replace with the story behind this event.", ar: "وصف مؤقت. استبدله بالقصة خلف هذه الفعالية." },
-    images: [ { src: "", tone: 1 }, { src: "", tone: 5 }, { src: "", tone: 4 } ] },
-  { category: "portraits", size: "b", date: "YYYY", client: "",
-    title: { en: "Project title — Portrait Series", ar: "عنوان المشروع — سلسلة بورتريه" },
-    desc:  { en: "Placeholder description for a portrait series.", ar: "وصف مؤقت لسلسلة صور شخصية." },
-    images: [ { src: "", tone: 6, portrait: true }, { src: "", tone: 4, portrait: true } ] },
-  { category: "corporate", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Corporate 01", ar: "عنوان المشروع — شركات 01" },
-    desc:  { en: "Placeholder description for a corporate shoot.", ar: "وصف مؤقت لجلسة تصوير لشركة." },
-    images: [ { src: "", tone: 2 }, { src: "", tone: 6 } ] },
-  { category: "media", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Media Coverage 01", ar: "عنوان المشروع — تغطية إعلامية 01" },
-    desc:  { en: "Placeholder description for a media coverage project.", ar: "وصف مؤقت لمشروع تغطية إعلامية." },
-    images: [ { src: "", tone: 4 }, { src: "", tone: 2 } ] },
-  { category: "bts", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Behind the Scenes", ar: "عنوان المشروع — خلف الكواليس" },
-    desc:  { en: "Placeholder description for behind-the-scenes coverage.", ar: "وصف مؤقت لتغطية الكواليس." },
-    images: [ { src: "", tone: 5 } ] },
-  { category: "lifestyle", size: "d", date: "YYYY", client: "",
-    title: { en: "Project title — Lifestyle 01", ar: "عنوان المشروع — لايف ستايل 01" },
-    desc:  { en: "Placeholder description for a lifestyle story.", ar: "وصف مؤقت لقصة لايف ستايل." },
-    images: [ { src: "", tone: 3 }, { src: "", tone: 1 } ] },
-  { category: "events", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Event 02", ar: "عنوان المشروع — فعالية 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 5, portrait: true } ] },
-  { category: "corporate", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Corporate 02", ar: "عنوان المشروع — شركات 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 6, portrait: true } ] },
-  { category: "media", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Media Coverage 02", ar: "عنوان المشروع — تغطية إعلامية 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 2, portrait: true } ] }
+  {"id": "emerald-elegance", "category": "fashion", "size": "t", "status": "published", "cover": 0, "focus": "62% 38%", "title": {"en": "Emerald Elegance", "ar": "أناقة زمردية"}, "media": [{"set": "images/work/emerald-elegance/dsc-0078", "widths": [800, 1600, 2400], "w": 3349, "h": 5954, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 1 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 1 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0068", "widths": [800, 1600, 2400], "w": 3218, "h": 5721, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 2 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 2 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0069", "widths": [800, 1600, 2400], "w": 3259, "h": 5794, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 3 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 3 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0079", "widths": [800, 1600, 2400], "w": 3375, "h": 6000, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 4 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 4 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0067", "widths": [800, 1600, 2400], "w": 3293, "h": 5854, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 5 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 5 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0070", "widths": [800, 1600, 2400], "w": 3245, "h": 5769, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 6 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 6 من 6"}, "treatment": "original"}]},
+  {"id": "champagne-glow", "category": "fashion", "size": "t", "status": "published", "cover": 0, "focus": "50% 30%", "title": {"en": "Champagne Glow", "ar": "توهّج الشمبانيا"}, "media": [{"set": "images/work/champagne-glow/dsc-0056", "widths": [800, 1600, 2400], "w": 3373, "h": 5996, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 1 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 1 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0060", "widths": [800, 1600, 2400], "w": 2958, "h": 5258, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 2 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 2 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0020", "widths": [800, 1600, 2400], "w": 3375, "h": 6000, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 3 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 3 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0028", "widths": [800, 1600, 2400], "w": 3362, "h": 5976, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 4 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 4 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0034", "widths": [800, 1600, 2400], "w": 3248, "h": 5774, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 5 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 5 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0041", "widths": [800, 1600, 2400], "w": 3353, "h": 5961, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 6 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 6 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0042", "widths": [800, 1600, 2400], "w": 3368, "h": 5987, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 7 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 7 من 7"}, "treatment": "original"}]},
+  // TEMPORARY MEDIA: WhatsApp-compressed copies — replace with the original camera files.
+  {"id": "bridal-editorial", "category": "beauty", "size": "p", "status": "published", "cover": 0, "focus": "45% 38%", "title": {"en": "Bridal Editorial", "ar": "جلسة عرائس"}, "credits": [{"role": {"en": "Makeup Artist", "ar": "خبيرة المكياج"}, "name": "Nayera"}], "media": [{"set": "images/work/bridal-editorial/bridal-01", "widths": [800, 1145], "w": 1145, "h": 1374, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 1 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 1 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-02", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 2 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 2 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-03", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 3 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 3 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-04", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 4 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 4 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-05", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 5 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 5 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-06", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 6 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 6 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-07", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 7 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 7 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-08", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 8 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 8 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-09", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 9 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 9 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-10", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 10 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 10 من 10"}, "treatment": "original", "temporary": true}]},
+  {"id": "alexandria-stadium", "category": "architecture", "size": "p", "status": "published", "cover": 0, "focus": "50% 72%", "title": {"en": "Alexandria Stadium", "ar": "استاد الإسكندرية"}, "media": [{"set": "images/work/alexandria-stadium/dsc-0151", "widths": [800, 1600, 2400], "w": 3191, "h": 5673, "alt": {"en": "Alexandria Stadium: the historic façade and stands", "ar": "استاد الإسكندرية: الواجهة التاريخية والمدرجات"}, "treatment": "original"}, {"set": "images/work/alexandria-stadium/dsc-0131", "widths": [800, 1600, 2400], "w": 2702, "h": 4803, "alt": {"en": "Alexandria Stadium: an ornate gilded interior hall", "ar": "استاد الإسكندرية: قاعة داخلية مزخرفة بالذهب"}, "treatment": "original"}, {"set": "images/work/alexandria-stadium/dsc-0143", "widths": [800, 1600, 2400], "w": 4606, "h": 2591, "alt": {"en": "Alexandria Stadium: a commemorative inscription plaque", "ar": "استاد الإسكندرية: لوحة تذكارية مكتوبة"}, "treatment": "original"}, {"pending": true, "file": "DSC_0060.jpg"}, {"pending": true, "file": "DSC_0089.jpg"}, {"pending": true, "file": "DSC_0083.jpg"}, {"pending": true, "file": "DSC_0128.jpg"}, {"pending": true, "file": "DSC_0147.jpg"}]},
+  {"id": "landscape", "category": "landscape", "size": "p", "status": "published", "cover": 0, "focus": "35% 55%", "title": {"en": "Landscape", "ar": "مناظر طبيعية"}, "media": [{"set": "images/work/landscape/20260716-194813", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: sunset rays over the sea with a fishing boat", "ar": "مناظر طبيعية: أشعة الغروب فوق البحر مع قارب صيد"}, "treatment": "original"}, {"set": "images/work/landscape/20261019-072218", "widths": [800, 1600, 2250], "w": 2250, "h": 4000, "alt": {"en": "Landscape: storm clouds over the sea, a ship on the horizon", "ar": "مناظر طبيعية: سحب كثيفة فوق البحر وسفينة في الأفق"}, "treatment": "original"}, {"set": "images/work/landscape/20260824-071121", "widths": [800, 1600, 2400], "w": 2414, "h": 3378, "alt": {"en": "Landscape: a fishing boat at sea in early light", "ar": "مناظر طبيعية: قارب صيد في البحر مع أول الضوء"}, "treatment": "original"}, {"set": "images/work/landscape/20260715-165823", "widths": [800, 1600, 2400], "w": 2958, "h": 3934, "alt": {"en": "Landscape: a harbour under storm clouds, a cyclist on the seafront", "ar": "مناظر طبيعية: ميناء تحت سحب داكنة وعامل بدراجة على الواجهة البحرية"}, "treatment": "original"}, {"set": "images/work/landscape/20251014-071515", "widths": [800, 1600, 2400], "w": 4000, "h": 3000, "alt": {"en": "Landscape: a bird silhouetted against a golden sky", "ar": "مناظر طبيعية: طائر في ظلّ سماء ذهبية"}, "treatment": "original"}, {"set": "images/work/landscape/20251210-164437", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: street lamps silhouetted at sunset", "ar": "مناظر طبيعية: أعمدة إنارة في ظلّ الغروب"}, "treatment": "original"}, {"set": "images/work/landscape/20260402-071358", "widths": [800, 1600, 2400], "w": 2982, "h": 3906, "alt": {"en": "Landscape: an empty city road in fog", "ar": "مناظر طبيعية: طريق خالٍ في المدينة وسط الضباب"}, "treatment": "original"}, {"set": "images/work/landscape/20251014-071817", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: golden clouds at sunset", "ar": "مناظر طبيعية: سحب ذهبية عند الغروب"}, "treatment": "original"}, {"set": "images/work/landscape/20251013-073535", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: a cruise ship behind palm trees at golden hour", "ar": "مناظر طبيعية: سفينة سياحية خلف أشجار النخيل في الساعة الذهبية"}, "treatment": "original"}, {"set": "images/work/landscape/20251216-011817", "widths": [800, 1600, 2400], "w": 4000, "h": 3000, "alt": {"en": "Landscape: a resort lit up at night", "ar": "مناظر طبيعية: منتجع مضاء ليلًا"}, "treatment": "original"}, {"pending": true, "file": "20250614_192432(2).jpg"}, {"pending": true, "type": "video", "file": "20261021_145449_1.mp4"}]},
+  // REVIEW: hidden from the public site until each photograph is approved individually.
+  // DSC_0030/DSC_0031 were byte-identical duplicates in Drive; each is used once. Version A = conventional retouch.
+  // held:true = file prepared but kept out of the public repo until approved; add it to images/work/charles-american-food/ and remove held.
+  {"id": "charles-american-food", "category": "food", "size": "p", "status": "review", "cover": 2, "focus": "40% 50%", "title": {"en": "Charles American Food", "ar": "Charles American Food"}, "media": [{"pending": true, "file": "DSC_0003.jpg"}, {"pending": true, "file": "DSC_0032.jpg"}, {"held": true, "set": "images/work/charles-american-food/dsc-0031-retouch", "widths": [800, 1600, 2239], "w": 2239, "h": 3981, "alt": {"en": "Charles American Food: pizza baking in the oven", "ar": "Charles American Food: بيتزا تُخبز داخل الفرن"}, "treatment": "retouched", "source": "DSC_0031.jpg"}, {"held": true, "set": "images/work/charles-american-food/dsc-0030-retouch", "widths": [800, 1600, 2400], "w": 2445, "h": 4346, "alt": {"en": "Charles American Food: a gloved hand turning a pizza pan in the oven", "ar": "Charles American Food: يد بقفاز تدير صينية البيتزا داخل الفرن"}, "treatment": "retouched", "source": "DSC_0030.jpg"}, {"pending": true, "file": "DSC_0068.jpg"}, {"pending": true, "file": "DSC_0070.jpg"}, {"held": true, "set": "images/work/charles-american-food/ai-golden-baked-pasta", "widths": [800], "w": 941, "h": 1672, "alt": {"en": "AI-generated image: baked pasta with melted cheese", "ar": "صورة مولّدة بالذكاء الاصطناعي: مكرونة بالفرن مع جبن ذائب"}, "treatment": "ai-elements", "approved": false, "source": "Golden Baked Pasta with Bubbly Cheese.png"}]},
 ];
 
 const SKILLS = [
@@ -1173,7 +1219,12 @@ const T = {
     fNav: "Navigate", fServices: "Services", fContact: "Contact", rights: "All rights reserved.", toTop: "Back to top",
     close: "Close", prev: "Previous image", next: "Next image", phWord: "Placeholder",
     instT: "Get the app", instGo: "Install", instD: "Add Marwan's portfolio to your home screen.",
-    instIos: "Tap SHARE then “Add to Home Screen”."
+    instIos: "Tap SHARE then “Add to Home Screen”.",
+    back: "All work", prevP: "Previous project", nextP: "Next project", viewGallery: "View the gallery",
+    category: "Category", photosLbl: "Photographs", reviewBadge: "Pending approval",
+    tagAI: "Contains AI-generated elements", tagRet: "Retouched · colour & light", tagTmp: "Temporary file",
+    pendingAsset: "Pending asset", heldAsset: "Held for approval", video: "Video", openPhoto: "Open photo",
+    previewOn: "Preview mode — includes unpublished projects and pending files. Not visible on the public site."
   },
   ar: {
     skip: "انتقل إلى المحتوى", brand: "مروان المنشاوي", navAria: "التنقل الرئيسي", menu: "القائمة",
@@ -1232,7 +1283,12 @@ const T = {
     fNav: "التنقل", fServices: "الخدمات", fContact: "التواصل", rights: "جميع الحقوق محفوظة.", toTop: "العودة للأعلى",
     close: "إغلاق", prev: "الصورة السابقة", next: "الصورة التالية", phWord: "مؤقت",
     instT: "حمّل التطبيق", instGo: "تثبيت", instD: "أضف أعمال مروان إلى الشاشة الرئيسية.",
-    instIos: "اضغط SHARE ثم «إضافة إلى الشاشة الرئيسية»."
+    instIos: "اضغط SHARE ثم «إضافة إلى الشاشة الرئيسية».",
+    back: "كل الأعمال", prevP: "المشروع السابق", nextP: "المشروع التالي", viewGallery: "عرض المعرض",
+    category: "الفئة", photosLbl: "الصور", reviewBadge: "بانتظار الاعتماد",
+    tagAI: "تحتوي على عناصر مولّدة بالذكاء الاصطناعي", tagRet: "معدّلة · لون وإضاءة", tagTmp: "ملف مؤقت",
+    pendingAsset: "ملف قيد الانتظار", heldAsset: "بانتظار الاعتماد", video: "فيديو", openPhoto: "فتح الصورة",
+    previewOn: "وضع المعاينة — يتضمن مشاريع غير منشورة وملفات قيد الانتظار. لا يظهر على الموقع العام."
   }
 };
 
@@ -1274,7 +1330,11 @@ const icon = (n, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-
 const SIL = '<svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="32" r="20"/><path d="M8 110c2-28 20-46 42-46s40 18 42 46z"/></svg>';
 
 /* Media renderer: real <img> when src is set, labelled placeholder frame otherwise */
-function media(o = {}, label, alt, eager) {
+function media(o = {}, label, alt, eager, sizes) {
+  if (o.set && !o.held) {
+    const ws = o.widths, srcset = ws.map(w => `${o.set}-${w}.webp ${w}w`).join(", ");
+    return `<img src="${esc(o.set)}-${ws[0]}.webp" srcset="${esc(srcset)}" sizes="${esc(sizes || "100vw")}" width="${o.w}" height="${o.h}" alt="${esc(L(o.alt || alt))}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"${o.focus ? ` style="object-position:${esc(o.focus)}"` : ""}>`;
+  }
   if (o.src) return `<img src="${esc(o.src)}" alt="${esc(L(alt || o.alt))}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
   const lbl = label != null ? label : L(o.label);
   return `<div class="ph" data-tone="${o.tone || 4}" role="img" aria-label="${esc(t("phWord") + (lbl ? " — " + lbl : ""))}">
@@ -1327,24 +1387,39 @@ function setService(i) {
   $$(".svc-item").forEach(li => { const on = +li.dataset.i === i; li.classList.toggle("on", on); $(".svc-btn", li).setAttribute("aria-expanded", on); });
   $$("#svcStage .layer").forEach(l => l.classList.toggle("on", +l.dataset.i === i));
 }
+const PREVIEW = new URLSearchParams(location.search).has("preview");
+const visibleProjects = () => PROJECTS.filter(p => p.status === "published" || PREVIEW);
+const isShownMedia = m => !m.pending && !m.held && (m.approved !== false || PREVIEW);
+const realMedia = p => p.media.filter(isShownMedia);
+const tileMedia = p => p.media.filter(m => isShownMedia(m) || ((m.pending || m.held) && PREVIEW));
+const countTxt = n => `${pad2(n)} ${n === 1 ? t("photo") : t("photos")}`;
+function tagsFor(m) {
+  const out = [];
+  if (m.treatment === "ai-elements") out.push(`<span class="tag tag-ai">${esc(t("tagAI"))}</span>`);
+  if (m.treatment === "retouched") out.push(`<span class="tag tag-ret">${esc(t("tagRet"))}</span>`);
+  if (m.temporary && PREVIEW) out.push(`<span class="tag tag-tmp">${esc(t("tagTmp"))}</span>`);
+  return out.length ? `<span class="tags">${out.join("")}</span>` : "";
+}
 function renderFilters() {
+  const list = visibleProjects();
   $("#filters").innerHTML = CATEGORIES.map(c => {
-    const n = c.id === "all" ? PROJECTS.length : PROJECTS.filter(p => p.category === c.id).length;
+    const n = c.id === "all" ? list.length : list.filter(p => p.category === c.id).length;
     if (!n) return "";
     return `<button type="button" class="chip" data-f="${c.id}" aria-pressed="${c.id === currentFilter}">${esc(L(c))}<sup>${pad2(n)}</sup></button>`;
   }).join("");
 }
 function renderGallery(animate) {
-  $("#gallery").innerHTML = PROJECTS.map((p, i) => {
+  $("#gallery").innerHTML = visibleProjects().map((p, i) => {
     const show = currentFilter === "all" || p.category === currentFilter;
-    const n = p.images.length;
-    return `<div class="g-item ${p.size || "c"}${show ? "" : " hide"}${animate && show ? " pop" : " rv"}" style="--i:${i % 6}" data-p="${i}">
-      <button type="button" class="g-btn" aria-label="${esc(t("view") + ": " + L(p.title))}">
-        <div class="media">${media(p.images[0], catName(p.category), p.title)}</div>
-        <span class="open">${icon("plus")}</span>
+    const cov = Object.assign({}, p.media[p.cover || 0], { focus: p.focus });
+    return `<div class="g-item ${p.size || "c"}${show ? "" : " hide"}${animate && show ? " pop" : " rv"}" style="--i:${i % 6}" data-id="${p.id}">
+      <a href="#work/${p.id}" class="g-btn" aria-label="${esc(t("view") + ": " + L(p.title))}">
+        <div class="media">${media(cov, catName(p.category), null, false, p.size === "t" ? "(max-width:860px) 100vw, 50vw" : "(max-width:860px) 50vw, 34vw")}</div>
+        ${p.status !== "published" ? `<span class="g-badge">${esc(t("reviewBadge"))}</span>` : ""}
+        <span class="open">${icon("arrow", "flip")}</span>
         <span class="ov"><span class="cat">${esc(catName(p.category))}</span><span class="tt">${esc(L(p.title))}</span>
-        <span class="meta"><span>${esc(p.date || "")}</span><span>${pad2(n)} ${esc(n === 1 ? t("photo") : t("photos"))}</span></span></span>
-      </button></div>`;
+        <span class="meta"><span>${countTxt(realMedia(p).length)}</span>${p.date ? `<span>${esc(p.date)}</span>` : ""}</span></span>
+      </a></div>`;
   }).join("");
   observe();
 }
@@ -1434,6 +1509,7 @@ function applyLang(first) {
   $$(".err").forEach(e => (e.textContent = ""));
   $$("[aria-invalid]").forEach(e => e.removeAttribute("aria-invalid"));
   observe(!first);
+  if (typeof pjCurrent !== "undefined" && pjCurrent) renderProject(pjCurrent);
   setActive(activeSec);
   store.set("me-lang", lang);
 }
@@ -1463,7 +1539,7 @@ function toggleMenu(open) {
   document.body.classList.toggle("menu-open", open);
   $(".burger").setAttribute("aria-expanded", open);
   $("#mmenu").setAttribute("aria-hidden", !open);
-  document.body.style.overflow = open ? "hidden" : "";
+  syncLock();
 }
 $(".burger").addEventListener("click", () => toggleMenu(!document.body.classList.contains("menu-open")));
 $("#mmenu").addEventListener("click", e => { if (e.target.closest("a")) toggleMenu(false); });
@@ -1505,33 +1581,103 @@ $("#filters").addEventListener("click", e => {
   renderGallery(true);
 });
 const lb = $("#lightbox"); let lbList = [], lbIdx = 0;
-function buildLbList() {
-  lbList = [];
-  PROJECTS.forEach((p, pi) => { if (currentFilter === "all" || p.category === currentFilter) p.images.forEach((img, ii) => lbList.push({ p, pi, img, ii })); });
-}
+function syncLock() { document.body.style.overflow = (lb.open || $("#article").open || $("#project").open || document.body.classList.contains("menu-open")) ? "hidden" : ""; }
+function buildLbList(p) { const all = realMedia(p); lbList = all.map((m, ii) => ({ p, m, ii, n: all.length })); }
 function showLb(dir) {
   const it = lbList[lbIdx]; if (!it) return;
-  const fr = $("#lbFrame");
-  fr.classList.toggle("portrait", !!it.img.portrait);
-  $("#lbMedia").innerHTML = media(it.img, `${L(it.p.title)} · ${it.ii + 1}/${it.p.images.length}`, it.img.alt || it.p.title);
+  const fr = $("#lbFrame"), m = it.m;
+  const ratio = m.w && m.h ? m.w / m.h : 1.5;
+  fr.classList.remove("portrait");
+  fr.style.aspectRatio = `${ratio}`;
+  fr.style.width = `min(100%, calc((100svh - 240px) * ${ratio.toFixed(4)}))`;
+  $("#lbMedia").innerHTML = m.type === "video"
+    ? `<video controls muted playsinline preload="none"${m.poster ? ` poster="${esc(m.poster)}"` : ""} aria-label="${esc(L(m.alt) || t("video"))}"><source src="${esc(m.src)}" type="video/mp4"></video>`
+    : media(m, L(it.p.title), m.alt, true, "100vw");
   $("#lbTitle").textContent = L(it.p.title);
   $("#lbDesc").textContent = L(it.p.desc);
-  $("#lbMeta").innerHTML = `<b>${esc(catName(it.p.category))}</b><br>${esc(it.p.date || "")}${it.p.client ? " · " + esc(t("client")) + ": " + esc(it.p.client) : ""}<br><span dir="ltr">${pad2(it.ii + 1)} / ${pad2(it.p.images.length)}</span>`;
+  $("#lbDesc").hidden = !L(it.p.desc);
+  const credits = (it.p.credits || []).map(c => `${esc(L(c.role))}: ${esc(c.name)}`).join("<br>");
+  $("#lbMeta").innerHTML = `<b>${esc(catName(it.p.category))}</b>${credits ? "<br>" + credits : ""}${it.p.date ? "<br>" + esc(it.p.date) : ""}<br><span dir="ltr">${pad2(it.ii + 1)} / ${pad2(it.n)}</span>`;
+  const tg = tagsFor(m); const cap = $("#lbTitle").parentNode;
+  cap.querySelector(".tags")?.remove(); if (tg) cap.insertAdjacentHTML("beforeend", tg);
   $("#lbCount").textContent = `${pad2(lbIdx + 1)} / ${pad2(lbList.length)}`;
   if (dir && !reduced) { fr.style.setProperty("--dir", dir * (lang === "ar" ? -1 : 1)); fr.classList.remove("swap"); void fr.offsetWidth; fr.classList.add("swap"); }
-  // preload neighbours
-  [lbIdx + 1, lbIdx - 1].forEach(j => { const n = lbList[(j + lbList.length) % lbList.length]; if (n && n.img.src) { const im = new Image(); im.src = n.img.src; } });
+  [lbIdx + 1, lbIdx - 1].forEach(j => { const nb = lbList[(j + lbList.length) % lbList.length]; if (nb && nb.m.set) { const im = new Image(); im.sizes = "100vw"; im.srcset = nb.m.widths.map(w => `${nb.m.set}-${w}.webp ${w}w`).join(", "); } });
 }
-function stepLb(d) { lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLb(d); }
-$("#gallery").addEventListener("click", e => {
-  const it = e.target.closest(".g-item"); if (!it) return;
-  buildLbList(); lbIdx = Math.max(0, lbList.findIndex(x => x.pi === +it.dataset.p));
-  showLb(0); lb.showModal(); document.body.style.overflow = "hidden";
+function stepLb(d) { if (lbList.length < 2) return; lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLb(d); }
+function openLb(p, k) { buildLbList(p); lbIdx = Math.max(0, Math.min(k, lbList.length - 1)); showLb(0); lb.showModal(); syncLock(); }
+
+/* ---------- project pages (#work/<id>) ---------- */
+const pj = $("#project"); let pjCurrent = null, pjFromNav = false;
+function projectById(id) { return visibleProjects().find(p => p.id === id); }
+function renderProject(p) {
+  pjCurrent = p;
+  const list = visibleProjects(), i = list.indexOf(p);
+  const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+  const cov = Object.assign({}, p.media[p.cover || 0], { focus: p.focus });
+  const real = realMedia(p);
+  const rows = [[t("category"), catName(p.category)], ...(p.credits || []).map(c => [L(c.role), c.name])];
+  if (p.client) rows.push([t("client"), p.client]);
+  if (p.date) rows.push(["", p.date]);
+  rows.push([t("photosLbl"), pad2(real.length)]);
+  const tiles = tileMedia(p).map(m => {
+    if (m.pending || m.held) { const lbl = m.held ? t("heldAsset") : t("pendingAsset"), f = m.file || m.source || ""; return `<div class="pj-tile pending" role="img" aria-label="${esc(lbl + " — " + f)}"><div class="ph" data-tone="4"><div class="ph-mark"><i></i><i></i><i></i><i></i></div><span class="ph-label"><b>●</b>${esc(lbl)} · ${esc(m.type === "video" ? t("video") + " · " : "")}${esc(f)}</span></div>${tagsFor(m)}</div>`; }
+    const k = real.indexOf(m);
+    const inner = m.type === "video" ? `${m.poster ? `<img src="${esc(m.poster)}" alt="" loading="lazy">` : ""}<span class="play">${icon("arrow", "flip")}</span>` : media(m, null, m.alt, false, "(max-width:860px) 50vw, 33vw");
+    const vstyle = m.type === "video" ? ` style="aspect-ratio:${m.w || 16}/${m.h || 9};background:var(--card)"` : "";
+    return `<button type="button" class="pj-tile${m.type === "video" ? " is-video" : ""}" data-k="${k}"${vstyle} aria-label="${esc((m.type === "video" ? t("video") : t("openPhoto")) + ": " + L(m.alt))}">${inner}${tagsFor(m)}</button>`;
+  }).join("");
+  $("#pjBarTitle").textContent = L(p.title);
+  $("#pjBody").innerHTML = `
+    <div class="pj-hero">
+      <button type="button" class="pj-cover" data-k="${real.indexOf(p.media[p.cover || 0])}" aria-label="${esc(t("openPhoto") + ": " + L(cov.alt))}"><div class="media">${media(cov, null, cov.alt, true, "(max-width:860px) 100vw, 58vw")}</div>${tagsFor(cov) ? `<span style="position:absolute;top:12px;inset-inline-start:12px">${tagsFor(cov)}</span>` : ""}</button>
+      <div class="pj-info">
+        <span class="eyebrow"><span class="n">${pad2(i + 1)}</span><span>${esc(catName(p.category))}</span></span>
+        ${p.status !== "published" ? `<p><span class="g-badge" style="position:static;display:inline-block;margin-top:16px">${esc(t("reviewBadge"))}</span></p>` : ""}
+        <h2 id="pjTitle">${esc(L(p.title))}</h2>
+        ${L(p.desc) ? `<p class="lead" style="margin-top:20px">${esc(L(p.desc))}</p>` : ""}
+        <ul class="pj-meta">${rows.map(([k, v]) => `<li><span>${esc(k)}</span><b>${esc(v)}</b></li>`).join("")}</ul>
+        <a href="#pjGallery" class="btn" id="pjToGallery"><span>${esc(t("viewGallery"))}</span>${icon("arrow", "")}</a>
+      </div>
+    </div>
+    <div class="pj-gallery" id="pjGallery">${tiles}</div>
+    <nav class="pj-nav" aria-label="${esc(t("prevP") + " / " + t("nextP"))}">
+      <a href="#work/${prev.id}" class="pv"><small>${esc(t("prevP"))}</small><span>${esc(L(prev.title))}</span></a>
+      <a href="#work/${next.id}" class="nx"><small>${esc(t("nextP"))}</small><span>${esc(L(next.title))}</span></a>
+    </nav>`;
+}
+function openProject(id, fromNav) {
+  const p = projectById(id); if (!p) return false;
+  renderProject(p);
+  $("#pjScroll").scrollTop = 0;
+  if (!pj.open) { pj.showModal(); pjFromNav = !!fromNav; }
+  syncLock();
+  return true;
+}
+function closeProject() {
+  if (!pj.open) return;
+  if (pjFromNav) { history.back(); return; }          // hashchange below closes the dialog
+  history.replaceState(null, "", location.pathname + location.search + "#portfolio");
+  pj.close();
+}
+addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#work\/([\w-]+)$/);
+  if (m) { if (!openProject(m[1], !pj.open || pjFromNav)) history.replaceState(null, "", location.pathname + location.search + "#portfolio"); }
+  else if (pj.open) pj.close();
+});
+pj.addEventListener("cancel", e => { e.preventDefault(); closeProject(); });
+pj.addEventListener("close", () => { pjCurrent = null; syncLock(); });
+$("#pjBack").addEventListener("click", closeProject);
+$("#pjClose").addEventListener("click", closeProject);
+$("#pjBody").addEventListener("click", e => {
+  const g = e.target.closest("#pjToGallery");
+  if (g) { e.preventDefault(); $("#pjGallery").scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); return; }
+  const b = e.target.closest("[data-k]"); if (b && pjCurrent && +b.dataset.k >= 0) openLb(pjCurrent, +b.dataset.k);
 });
 $("#lbPrev").addEventListener("click", () => stepLb(-1));
 $("#lbNext").addEventListener("click", () => stepLb(1));
 $("#lbClose").addEventListener("click", () => lb.close());
-lb.addEventListener("close", () => { document.body.style.overflow = ""; });
+lb.addEventListener("close", () => { $("#lbMedia").innerHTML = ""; syncLock(); });
 lb.addEventListener("keydown", e => {
   const rtl = lang === "ar";
   if (e.key === "ArrowRight") stepLb(rtl ? -1 : 1);
@@ -1554,10 +1700,10 @@ $("#blog").addEventListener("click", e => {
   const body = (p.body && p.body[lang] && p.body[lang].length) ? p.body[lang] : (p.body && p.body.en && p.body.en.length ? p.body.en : null);
   $("#artBody").innerHTML = body ? body.map(x => `<p>${esc(x)}</p>`).join("") : `<p class="ph-note">${esc(t("artPlaceholder"))}</p>`;
   $("#artScroll").scrollTop = 0; $("#artProg").style.width = "0";
-  art.showModal(); document.body.style.overflow = "hidden";
+  art.showModal(); syncLock();
 });
 $("#artClose").addEventListener("click", () => art.close());
-art.addEventListener("close", () => { document.body.style.overflow = ""; });
+art.addEventListener("close", syncLock);
 $("#artScroll").addEventListener("scroll", e => { const s = e.target; $("#artProg").style.width = (s.scrollTop / Math.max(1, s.scrollHeight - s.clientHeight) * 100) + "%"; }, { passive: true });
 
 /* ---------- contact form ---------- */
@@ -1647,6 +1793,8 @@ $$(".lang button").forEach(b => b.addEventListener("click", () => { if (!inst.hi
 $("#yr").textContent = new Date().getFullYear();
 applyLang(true);
 onScroll();
+if (PREVIEW) { const r = document.createElement("div"); r.className = "preview-ribbon"; r.setAttribute("role", "note"); r.dataset.i18n = "previewOn"; r.textContent = t("previewOn"); document.body.appendChild(r); }
+{ const m = location.hash.match(/^#work\/([\w-]+)$/); if (m && !openProject(m[1], false)) history.replaceState(null, "", location.pathname + location.search + "#portfolio"); }
 function done() { document.documentElement.classList.add("loaded"); setTimeout(() => { const l = $(".loader"); if (l) l.remove(); }, 1400); }
 if (reduced) done();
 else if (document.fonts && document.fonts.ready) Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1500))]).then(() => setTimeout(done, 350));
