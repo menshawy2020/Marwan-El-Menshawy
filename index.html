@@ -1068,7 +1068,7 @@ const CONFIG = {
   location: { en: "", ar: "" }, // e.g. { en:"Cairo, Egypt", ar:"القاهرة، مصر" }
   // Contact form backend: a Formspree / Getform / Basin endpoint, or your own API.
   // Receives a JSON POST. Leave empty and the form will honestly say it is not connected.
-  formEndpoint: "",
+  formEndpoint: "https://formspree.io/f/xwlowwdw",   // Formspree form (messages go to marwan.menshawy2026@gmail.com)
   hidePressWhenEmpty: false,       // true = hide the Media & Press section until you add items
   hideTestimonialsWhenEmpty: false // true = hide testimonials while only placeholders exist
 };
@@ -1079,7 +1079,7 @@ const CONFIG = {
       "tone" only styles the placeholder frame until a src is set.
    ===================================================================== */
 const IMAGES = {
-  heroBg:       { src: "", tone: 1, label: { en: "Hero background · wide cinematic frame", ar: "خلفية رئيسية · لقطة سينمائية عريضة" }, alt: { en: "Cinematic photograph by Marwan El-Menshawy", ar: "صورة سينمائية بعدسة مروان المنشاوي" } },
+  heroBg: {"set": "images/work/landscape/20251014-071515", "widths": [800, 1600, 2400], "w": 4000, "h": 3000, "focus": "50% 60%", "sizes": "100vw", "alt": {"en": "A bird silhouetted against a golden sunset sky — photograph by Marwan El-Menshawy", "ar": "طائر في ظلّ سماء غروب ذهبية — بعدسة مروان المنشاوي"}},
   // Authentic portraits supplied by Marwan (Drive folder 07-Portrait); GPS removed
   heroPortrait: {"set": "images/work/portrait/marwan-portrait-suit", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "focus": "50% 30%", "sizes": "(max-width:860px) 30vw, 20vw", "alt": {"en": "Portrait of Marwan El-Menshawy", "ar": "صورة شخصية لمروان المنشاوي"}},
   aboutPortrait: {"set": "images/work/portrait/marwan-portrait-outdoor", "widths": [800, 1600, 2400], "w": 2666, "h": 3904, "focus": "50% 34%", "sizes": "(max-width:860px) 90vw, 40vw", "alt": {"en": "Marwan El-Menshawy outdoors on a sunny day", "ar": "مروان المنشاوي في الهواء الطلق في يوم مشمس"}},
@@ -1801,6 +1801,7 @@ form.addEventListener("submit", async e => {
   const data = Object.fromEntries(new FormData(form)); delete data.website;
   data.serviceLabel = form.elements.service.selectedOptions[0]?.textContent || data.service;
   data.language = lang;
+  data._subject = `New website inquiry: ${data.serviceLabel} — ${data.name}`;
   try {
     const res = await fetch(CONFIG.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
     if (!res.ok) throw new Error(res.status);
