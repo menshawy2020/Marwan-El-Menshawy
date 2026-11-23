@@ -39,7 +39,8 @@ Each is listed in `PROJECTS` with `pending: true`. It appears as a labelled plac
 ## Other notes
 
 - DSC_0030 and DSC_0031 in the Charles folder were byte-identical duplicates (same checksum), so each is used once. Drive originals are untouched.
-- Services with an authentic photo: Content Creation (bridal-06) and Behind-the-Scenes (bridal-07), both temporary. Event, Media Coverage, Corporate and Brand are pending a suitable photograph.
+- Service photos: Event (bridal-08, temporary), Media Coverage (Stadium DSC_0151), Corporate (Stadium DSC_0131), Brand (Charles DSC_0031 retouch), Content Creation (bridal-06, temporary), Behind-the-Scenes (bridal-07, temporary).
+- Contact: WhatsApp +20 111 848 4442, marwan.menshawy2026@gmail.com, instagram.com/maro_mensho. LinkedIn removed.
 - About portrait: pending an authentic photo of Marwan. The 15-year figure is pending final confirmation.
 - Insights: three drafts, hidden from the public site and menu until one is published.
 - GPS location data was found in all 10 landscape originals and removed from every web copy.

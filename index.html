@@ -38,6 +38,8 @@
   "name": "Marwan El-Menshawy",
   "alternateName": "مروان المنشاوي",
   "jobTitle": "Photographer & Media Coverage Professional",
+  "email": "mailto:marwan.menshawy2026@gmail.com",
+  "sameAs": ["https://www.instagram.com/maro_mensho/"],
   "description": "Photographer and media coverage professional with 15 years of photography experience.",
   "url": "https://menshawy2020.github.io/Marwan-El-Menshawy/",
   "knowsAbout": ["Photography", "Media Coverage", "Event Photography", "Corporate Photography", "Brand Photography", "Visual Storytelling"]
@@ -1057,11 +1059,11 @@ html.standalone .scroll-ind{ display:none; }
       (never a fake link). See the notes at the end of this file.
    ===================================================================== */
 const CONFIG = {
-  email: "",          // e.g. "hello@yourdomain.com"
-  phone: "",          // e.g. "+20 100 000 0000" (display only)
-  whatsapp: "",       // digits only with country code, e.g. "201000000000"
-  instagram: "",      // full URL, e.g. "https://instagram.com/yourhandle"
-  linkedin: "",       // full URL
+  email: "marwan.menshawy2026@gmail.com",
+  phone: "+20 111 848 4442",
+  whatsapp: "201118484442",   // +20 111 848 4442 (digits only, with country code)
+  instagram: "https://www.instagram.com/maro_mensho/",
+  linkedin: "",       // not used (removed from the site)
   behance: "",        // optional full URL
   location: { en: "", ar: "" }, // e.g. { en:"Cairo, Egypt", ar:"القاهرة، مصر" }
   // Contact form backend: a Formspree / Getform / Basin endpoint, or your own API.
@@ -1088,15 +1090,19 @@ const IMAGES = {
    the preview area shows a typographic panel instead of a placeholder photo. */
 const SERVICES = [
   { id: "event", icon: "camera", tone: 1,
+    img: {"set": "images/work/bridal-editorial/bridal-08", "widths": [800, 1122], "w": 1122, "h": 1402, "focus": "50% 35%", "temporary": true, "alt": {"en": "Bride smiling in a pearl-beaded veil — Bridal Editorial", "ar": "عروس مبتسمة بطرحة مطرزة باللؤلؤ — جلسة العرائس"}},
     title: { en: "Event Photography", ar: "تصوير الفعاليات" },
     desc:  { en: "Capturing important moments, atmosphere, people, and details.", ar: "توثيق اللحظات المهمة، والأجواء، والناس، والتفاصيل." } },
   { id: "media", icon: "megaphone", tone: 2,
+    img: {"set": "images/work/alexandria-stadium/dsc-0151", "widths": [800, 1600, 2400], "w": 3191, "h": 5673, "focus": "50% 70%", "alt": {"en": "Visitors at the historic gate of Alexandria Stadium", "ar": "زوار عند البوابة التاريخية لاستاد الإسكندرية"}},
     title: { en: "Media Coverage", ar: "التغطية الإعلامية" },
     desc:  { en: "Professional visual documentation of events and activities.", ar: "توثيق بصري احترافي للفعاليات والأنشطة." } },
   { id: "corporate", icon: "briefcase", tone: 6,
+    img: {"set": "images/work/alexandria-stadium/dsc-0131", "widths": [800, 1600, 2400], "w": 2702, "h": 4803, "focus": "50% 45%", "alt": {"en": "An ornate formal reception hall at Alexandria Stadium", "ar": "قاعة استقبال رسمية مزخرفة في استاد الإسكندرية"}},
     title: { en: "Corporate Photography", ar: "تصوير الشركات" },
     desc:  { en: "Visual content for businesses, organizations, and professional environments.", ar: "محتوى بصري للشركات والمؤسسات وبيئات العمل الاحترافية." } },
   { id: "brand", icon: "gem", tone: 5,
+    img: {"set": "images/work/charles-american-food/dsc-0031-retouch", "widths": [800, 1600, 2239], "w": 2239, "h": 3981, "focus": "40% 50%", "alt": {"en": "Pizza baking in the oven at Charles American Food", "ar": "بيتزا تُخبز في الفرن في Charles American Food"}},
     title: { en: "Brand Photography", ar: "تصوير العلامات التجارية" },
     desc:  { en: "Creating photographs that communicate a brand's identity.", ar: "صور تعبّر عن هوية العلامة التجارية وتنقل روحها." } },
   { id: "content", icon: "phone", tone: 3,
@@ -1521,10 +1527,9 @@ function renderPosts() {
 }
 function channels() {
   const c = CONFIG, out = [];
-  out.push({ k: "chWhatsApp", ic: "wa", val: c.whatsapp ? "+" + c.whatsapp : "", href: c.whatsapp ? `https://wa.me/${c.whatsapp.replace(/\D/g, "")}` : "" });
+  out.push({ k: "chWhatsApp", ic: "wa", val: c.whatsapp ? "+" + c.whatsapp.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})$/, "$1 $2 $3 $4") : "", href: c.whatsapp ? `https://wa.me/${c.whatsapp.replace(/\D/g, "")}` : "" });
   out.push({ k: "chEmail", ic: "mail", val: c.email, href: c.email ? `mailto:${c.email}` : "" });
-  out.push({ k: "chInstagram", ic: "ig", val: c.instagram ? c.instagram.replace(/^https?:\/\/(www\.)?/, "") : "", href: c.instagram });
-  out.push({ k: "chLinkedIn", ic: "li", val: c.linkedin ? c.linkedin.replace(/^https?:\/\/(www\.)?/, "") : "", href: c.linkedin });
+  out.push({ k: "chInstagram", ic: "ig", val: c.instagram ? "@" + c.instagram.replace(/\/+$/, "").split("/").pop() : "", href: c.instagram });
   if (c.behance) out.push({ k: "chBehance", ic: "be", val: c.behance.replace(/^https?:\/\/(www\.)?/, ""), href: c.behance });
   return out;
 }
