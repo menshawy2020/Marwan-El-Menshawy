@@ -20,4 +20,12 @@ The installed app opens full-screen with its own icon, and pages already visited
 | `images/` | Photos |
 
 ## Editing content
-All text, services, portfolio projects, testimonials, blog posts and contact details are in clearly labelled blocks at the top of the script in `index.html` (`CONFIG`, `IMAGES`, `SERVICES`, `PROJECTS`, `POSTS`, `T`). To use a real photo, add it to `images/` and set that item's `src`.
+All text, services, testimonials, blog posts and contact details are in clearly labelled blocks at the top of the script in `index.html` (`CONFIG`, `IMAGES`, `SERVICES`, `PROJECTS`, `POSTS`, `T`).
+
+## Portfolio projects
+- Each project in `PROJECTS` has its own page at `#work/<id>`, with its own gallery and full-screen viewer.
+- Photos are served as responsive WebP from `images/work/<project>/<name>-<width>.webp` (about 800/1600/2400 px, never upscaled, metadata removed).
+- `status: "review"` keeps a project off the public site. Add `?preview=1` to the address to review it.
+- Per image: `treatment` (`original`, `retouched`, `ai-elements`), `temporary: true` for provisional files, `pending: true` for files not received yet.
+- Empty `date`, `client` and `desc` fields are hidden automatically.
+- Current media status and pending files: see `docs/PORTFOLIO-STATUS.md`.

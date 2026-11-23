@@ -25,6 +25,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Marwan">
 <meta name="application-name" content="Marwan">
+<!-- Set language/direction before first paint and keep content hidden (behind the loader) until it is built: avoids layout shift -->
+<script>(function(){var d=document.documentElement;d.classList.add("js-pending");try{if(localStorage.getItem("me-lang")==="ar"){d.lang="ar";d.dir="rtl";}}catch(e){}setTimeout(function(){d.classList.remove("js-pending");},3000);})();</script>
+<style>html.js-pending #main,html.js-pending .nav,html.js-pending footer{visibility:hidden}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -355,9 +358,18 @@ html[lang="ar"] .pull{ line-height:1.6; }
 .svc-stage .layer{ position:absolute; inset:0; opacity:0; transform:scale(1.04); transition:opacity .8s var(--ease), transform 1.2s var(--ease); }
 .svc-stage .layer.on{ opacity:1; transform:none; }
 .svc-stage .layer .media{ position:absolute; inset:0; }
+.svc-stage .layer .cap{ text-shadow:0 1px 12px rgba(0,0,0,.6); }
 .svc-stage .cap{ position:absolute; z-index:3; inset-inline:20px; top:20px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx2); }
 html[lang="ar"] .svc-stage .cap{ letter-spacing:0; font-size:13px; }
 .svc-stage .cap b{ color:var(--tx); font-weight:500; }
+.svc-empty{ position:absolute; inset:0; overflow:hidden; background:radial-gradient(90% 70% at 30% 20%, #1f1f1f 0%, #121212 55%, #0d0d0d 100%); border:1px solid var(--line); }
+.svc-empty .big{ position:absolute; inset-inline-end:-.04em; bottom:-.16em; pointer-events:none; font-family:var(--f-en); font-weight:700; font-size:clamp(9rem, 20vw, 17rem); line-height:1; letter-spacing:-.06em; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.13); }
+.svc-empty .eic{ position:absolute; bottom:22px; inset-inline-start:22px; width:62px; height:62px; border-radius:50%; border:1px solid var(--acc); color:var(--acc); display:grid; place-items:center; }
+.svc-empty .eic .ico{ width:26px; height:26px; }
+.svc-tags{ position:absolute; z-index:4; bottom:16px; inset-inline-end:16px; }
+.svc-stage .layer::after{ content:""; position:absolute; z-index:2; inset:0 0 auto 0; height:90px; background:linear-gradient(180deg, rgba(0,0,0,.55), transparent); pointer-events:none; }
+.svc-stage .layer.on .media img{ animation:svcKen 9s var(--ease) both; }
+@keyframes svcKen{ from{ transform:scale(1.07); } to{ transform:scale(1); } }
 .svc-note{ margin-top:28px; font-size:13px; color:var(--tx3); }
 
 /* ---------- PORTFOLIO ---------- */
@@ -391,6 +403,57 @@ html[lang="ar"] .g-btn .ov .cat{ letter-spacing:0; font-size:13px; }
 .g-item.pop{ animation:pop .8s var(--ease) both; animation-delay:calc(var(--i,0) * 60ms); }
 @keyframes pop{ from{ opacity:0; transform:translateY(24px) scale(.98); } }
 .gal-foot{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-top:44px; color:var(--tx3); font-size:13px; }
+
+/* portrait card shapes for real projects */
+.g-item.t{ grid-column:span 6; grid-row:span 9; }
+.g-item.p{ grid-column:span 4; grid-row:span 8; }
+.g-badge{ position:absolute; z-index:5; top:14px; inset-inline-start:14px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:6px 11px; border-radius:999px; background:rgba(9,9,9,.75); border:1px dashed var(--acc); color:var(--acc); }
+html[lang="ar"] .g-badge{ letter-spacing:0; font-size:12px; }
+/* media treatment labels */
+.tag{ display:inline-flex; align-items:center; gap:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border-radius:999px; line-height:1.2; }
+html[lang="ar"] .tag{ letter-spacing:0; font-size:12px; text-transform:none; }
+.tag-ai{ background:var(--acc); color:var(--acc-ink); font-weight:600; }
+.tag-ret{ background:rgba(9,9,9,.72); border:1px solid var(--line2); color:var(--tx); }
+.tag-tmp{ background:rgba(9,9,9,.72); border:1px dashed #ffb86b; color:#ffcf99; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.preview-ribbon{ position:fixed; z-index:160; inset-inline-start:12px; bottom:calc(12px + env(safe-area-inset-bottom)); max-width:min(420px, calc(100% - 24px)); padding:10px 14px; border-radius:12px; background:#2a1f00; border:1px dashed #ffb86b; color:#ffcf99; font-size:13px; }
+
+/* ---------- PROJECT PAGE ---------- */
+.pj{ height:100%; overflow-y:auto; background:var(--bg); overscroll-behavior:contain; }
+.pj-bar{ position:sticky; top:0; z-index:4; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:12px var(--pad); padding-top:calc(12px + env(safe-area-inset-top)); background:rgba(9,9,9,.86); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+.pj-back{ flex:none; display:inline-flex; white-space:nowrap; align-items:center; gap:10px; font-size:14px; color:var(--tx2); transition:color .3s; }
+.pj-back:hover{ color:var(--tx); }
+.pj-back .icon-btn{ width:40px; height:40px; }
+.pj-bar .t{ flex:1; min-width:0; text-align:center; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+html[lang="ar"] .pj-bar .t{ letter-spacing:0; font-size:15px; }
+.pj-hero{ max-width:var(--max); margin-inline:auto; padding:clamp(28px,5vw,64px) var(--pad) 0; display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(28px,5vw,80px); align-items:end; }
+.pj-cover{ position:relative; display:block; width:100%; }
+.pj-cover .media{ background:var(--card); }
+.pj-cover img{ width:100%; height:auto; max-height:86svh; object-fit:cover; }
+.pj-info h2{ margin:.25em 0 0; font-size:clamp(2.6rem, 6.4vw, 6rem); line-height:.95; letter-spacing:var(--track); font-weight:700; }
+html[lang="ar"] .pj-info h2{ line-height:1.3; }
+.pj-meta{ list-style:none; margin:28px 0 0; padding:0; border-top:1px solid var(--line); }
+.pj-meta li{ display:flex; justify-content:space-between; gap:20px; padding:14px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--tx2); }
+.pj-meta li b{ color:var(--tx); font-weight:500; text-align:end; }
+.pj-info .btn{ margin-top:30px; }
+.pj-gallery{ max-width:var(--max); margin-inline:auto; padding:clamp(56px,8vw,110px) var(--pad) 40px; columns:3 300px; column-gap:clamp(10px,1.4vw,18px); }
+.pj-tile{ display:block; width:100%; margin:0 0 clamp(10px,1.4vw,18px); break-inside:avoid; position:relative; overflow:hidden; text-align:start; }
+.pj-tile img{ width:100%; height:auto; transition:transform 1.1s var(--ease); }
+.pj-tile:hover img,.pj-tile:focus-visible img{ transform:scale(1.035); }
+.pj-tile .tags{ position:absolute; z-index:3; top:10px; inset-inline-start:10px; inset-inline-end:10px; }
+.pj-tile.pending{ aspect-ratio:4/5; cursor:default; }
+.pj-tile.pending .ph-label{ bottom:12px; }
+.pj-tile.is-video img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.pj-tile .play{ position:absolute; z-index:3; inset:0; margin:auto; width:64px; height:64px; border-radius:50%; background:var(--acc); color:var(--acc-ink); display:grid; place-items:center; }
+.pj-nav{ max-width:var(--max); margin-inline:auto; padding:30px var(--pad) calc(70px + env(safe-area-inset-bottom)); display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.pj-nav a{ display:block; padding:26px 0; border-top:1px solid var(--line2); transition:color .3s; }
+.pj-nav a:hover{ color:var(--acc); }
+.pj-nav a.nx{ text-align:end; }
+.pj-nav small{ display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tx3); margin-bottom:8px; }
+html[lang="ar"] .pj-nav small{ letter-spacing:0; font-size:13px; }
+.pj-nav span{ font-size:clamp(1.3rem,2.6vw,2.2rem); font-weight:600; letter-spacing:var(--track); }
+.lb-frame video{ width:100%; height:100%; background:#050505; }
+.lb-cap .tags{ margin-top:10px; }
 
 /* ---------- LIGHTBOX & ARTICLE (dialogs) ---------- */
 dialog{ padding:0; border:0; background:transparent; color:var(--tx); max-width:none; max-height:none; width:100%; height:100%; }
@@ -439,6 +502,17 @@ html[lang="ar"] .art-head h2{ line-height:1.35; }
 [dir="rtl"] .exp-num small{ transform:translateX(-100%); }
 .exp-hl{ display:inline-flex; align-items:center; gap:12px; margin-top:24px; padding:10px 18px; border:1px solid var(--acc); color:var(--acc); border-radius:999px; font-size:13px; letter-spacing:.14em; font-weight:500; text-transform:uppercase; }
 html[lang="ar"] .exp-hl{ letter-spacing:0; font-size:15px; }
+.frames{ margin-top:clamp(60px,8vw,110px); }
+.frames .cs-head a{ color:var(--tx2); }
+.film{ position:relative; display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; padding:26px 8px; background:#050505; border-radius:4px; scrollbar-width:thin; }
+.film::before,.film::after{ content:""; position:sticky; flex:none; }
+.film{ background-image:radial-gradient(circle at 50% 50%, #1d1d1d 3px, transparent 3.6px), radial-gradient(circle at 50% 50%, #1d1d1d 3px, transparent 3.6px); background-size:22px 13px, 22px 13px; background-repeat:repeat-x; background-position:0 6px, 0 calc(100% - 6px); }
+.film-frame{ position:relative; flex:0 0 clamp(150px, 17vw, 240px); aspect-ratio:2/3; overflow:hidden; scroll-snap-align:start; background:var(--card); }
+.film-frame img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.55) brightness(.82); transition:filter .7s var(--ease), transform 1.1s var(--ease); }
+.film-frame:hover img,.film-frame:focus-visible img{ filter:none; transform:scale(1.04); }
+.film-frame .ff-cap{ position:absolute; inset-inline:0; bottom:0; padding:28px 12px 10px; font-size:12px; letter-spacing:.06em; color:var(--tx); background:linear-gradient(0deg, rgba(0,0,0,.75), transparent); }
+html[lang="ar"] .film-frame .ff-cap{ letter-spacing:0; font-size:13px; }
+.frames.in .film-frame{ animation:pop .8s var(--ease) both; animation-delay:calc(var(--i) * 60ms); }
 .contact-sheet{ margin-top:clamp(60px,8vw,110px); }
 .cs-head{ display:flex; justify-content:space-between; gap:20px; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tx2); margin-bottom:14px; }
 html[lang="ar"] .cs-head{ letter-spacing:0; font-size:14px; }
@@ -502,6 +576,8 @@ html[lang="ar"] .press-empty .slot::after{ letter-spacing:0; font-size:13px; }
 html[lang="ar"] .post .pm{ letter-spacing:0; font-size:13px; }
 .post.side .pm{ margin-top:0; }
 .post .pm .cat{ color:var(--acc); }
+.post.no-cover{ padding:clamp(22px,3vw,34px); border:1px dashed var(--line2); }
+.post.side.no-cover{ display:block; }
 .post h3{ margin:10px 0 8px; font-size:clamp(1.25rem,2vw,1.7rem); line-height:1.15; letter-spacing:var(--track); font-weight:600; transition:color .3s; }
 html[lang="ar"] .post h3{ line-height:1.45; }
 .post.feat h3{ font-size:clamp(1.6rem,3vw,2.6rem); }
@@ -635,6 +711,11 @@ html.standalone .scroll-ind{ display:none; }
   .g-item.a,.g-item.d{ grid-column:span 6; grid-row:span 5; }
   .g-item.b,.g-item.e{ grid-column:span 3; grid-row:span 5; }
   .g-item.c{ grid-column:span 3; grid-row:span 4; }
+  .g-item.t{ grid-column:span 6; grid-row:span 8; }
+  .g-item.p{ grid-column:span 3; grid-row:span 7; }
+  .pj-hero{ grid-template-columns:1fr; }
+  .pj-back > span:last-child{ display:none; }
+  .pj-gallery{ columns:2 150px; }
   .g-btn .ov .meta{ max-height:40px; opacity:1; }
   .g-btn .open{ transform:none; width:34px; height:34px; }
   .press-empty .slot.s1,.press-empty .slot.s2,.press-empty .slot.s3{ grid-column:1/-1; }
@@ -731,11 +812,11 @@ html.standalone .scroll-ind{ display:none; }
     <div>
       <div class="hero-label fade-in" style="--d:.4s"><span class="eyebrow" data-i18n="heroLabel">Photography / Media Coverage / Visual Storytelling</span></div>
       <h1 id="heroTitle">
-        <span class="ln" data-split="heroL1">Capturing Moments.</span>
-        <span class="ln o" data-split="heroL2">Creating Stories.</span>
+        <span class="ln" data-split="heroL1"><span class="w"><span style="--i:0">Capturing</span></span> <span class="w"><span style="--i:1">Moments.</span></span></span>
+        <span class="ln o" data-split="heroL2"><span class="w"><span style="--i:2">Creating</span></span> <span class="w"><span style="--i:3">Stories.</span></span></span>
       </h1>
       <div class="hero-sub">
-        <p class="fade-in" style="--d:1.1s" data-i18n-html="heroText"></p>
+        <p class="fade-in" style="--d:1.1s" data-i18n-html="heroText">I'm <strong>Marwan El-Menshawy</strong>, a photographer and media coverage professional with 15 years of experience turning moments into meaningful visual stories.</p>
         <div class="ctas fade-in" style="--d:1.25s">
           <a href="#portfolio" class="btn btn-acc"><span data-i18n="ctaWork">Explore My Work</span><svg class="ico flip" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           <a href="#contact" class="btn"><span data-i18n="ctaTalk">Let's Work Together</span></a>
@@ -767,11 +848,7 @@ html.standalone .scroll-ind{ display:none; }
       <p class="first rv" data-i18n="aboutP1" style="margin-top:34px"></p>
       <p class="rv" data-i18n="aboutP2"></p>
       <div class="pull rv" data-i18n-html="aboutPull"></div>
-      <div class="facts rv">
-        <div><b>15<sup>+</sup></b><span data-i18n="fact1">Years of photography</span></div>
-        <div><b>06</b><span data-i18n="fact2">Core services</span></div>
-        <div><b>02</b><span data-i18n="fact3">Languages · EN / AR</span></div>
-      </div>
+      <div class="facts rv" id="facts"></div>
       <a href="#portfolio" class="btn rv"><span data-i18n="aboutCta">Explore the Portfolio</span><svg class="ico flip" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
   </div>
@@ -806,7 +883,7 @@ html.standalone .scroll-ind{ display:none; }
     </div>
     <div class="filters rv" id="filters" role="group" data-i18n-aria="filterAria"></div>
     <div class="gallery" id="gallery"></div>
-    <div class="gal-foot"><span data-i18n="pfNote"></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
+    <div class="gal-foot"><span></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
   </div>
 </section>
 
@@ -822,9 +899,9 @@ html.standalone .scroll-ind{ display:none; }
         <div class="exp-hl rv"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="expHl">15 Years of Photography Experience</span></div>
       </div>
     </div>
-    <div class="contact-sheet rv" id="sheet">
-      <div class="cs-head"><span data-i18n="csL">Contact sheet · one frame per year</span><span>2011 → 2026</span></div>
-      <div class="cs-row" id="csRow"></div>
+    <div class="frames rv" id="frames">
+      <div class="cs-head"><span data-i18n="framesL">Selected frames from the portfolio</span><a href="#portfolio" class="link-u" data-i18n="framesCta">View all work</a></div>
+      <div class="film" id="film" role="list"></div>
     </div>
     <ul class="skills" id="skills"></ul>
   </div>
@@ -929,6 +1006,18 @@ html.standalone .scroll-ind{ display:none; }
   <button type="button" class="x" id="installX" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
 </div>
 
+<!-- ================= PROJECT PAGE ================= -->
+<dialog id="project" aria-labelledby="pjTitle">
+  <div class="pj" id="pjScroll">
+    <div class="pj-bar">
+      <button type="button" class="pj-back" id="pjBack" data-i18n-aria="back" aria-label="All work"><span class="icon-btn"><svg class="ico flip" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></span><span data-i18n="back">All work</span></button>
+      <span class="t" id="pjBarTitle" dir="auto"></span>
+      <button class="icon-btn" type="button" id="pjClose" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div id="pjBody"></div>
+  </div>
+</dialog>
+
 <!-- ================= LIGHTBOX ================= -->
 <dialog id="lightbox" aria-labelledby="lbTitle">
   <div class="lb">
@@ -989,11 +1078,14 @@ const CONFIG = {
    ===================================================================== */
 const IMAGES = {
   heroBg:       { src: "", tone: 1, label: { en: "Hero background · wide cinematic frame", ar: "خلفية رئيسية · لقطة سينمائية عريضة" }, alt: { en: "Cinematic photograph by Marwan El-Menshawy", ar: "صورة سينمائية بعدسة مروان المنشاوي" } },
-  heroPortrait: { src: "images/marwan-portrait.jpg", tone: 4, portrait: true, label: { en: "Your portrait", ar: "صورتك الشخصية" }, alt: { en: "Portrait of Marwan El-Menshawy", ar: "صورة شخصية لمروان المنشاوي" } },
-  aboutPortrait:{ src: "", tone: 6, portrait: true, label: { en: "About portrait · behind the camera", ar: "صورة النبذة · خلف الكاميرا" }, alt: { en: "Marwan El-Menshawy with his camera", ar: "مروان المنشاوي مع الكاميرا" } },
-  aboutDetail:  { src: "", tone: 5, label: { en: "Detail shot", ar: "لقطة تفصيلية" }, alt: { en: "Camera detail", ar: "تفصيلة من الكاميرا" } }
+  // Authentic portraits supplied by Marwan (Drive folder 07-Portrait); GPS removed
+  heroPortrait: {"set": "images/work/portrait/marwan-portrait-suit", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "focus": "50% 30%", "sizes": "(max-width:860px) 30vw, 20vw", "alt": {"en": "Portrait of Marwan El-Menshawy", "ar": "صورة شخصية لمروان المنشاوي"}},
+  aboutPortrait: {"set": "images/work/portrait/marwan-portrait-outdoor", "widths": [800, 1600, 2400], "w": 2666, "h": 3904, "focus": "50% 34%", "sizes": "(max-width:860px) 90vw, 40vw", "alt": {"en": "Marwan El-Menshawy outdoors on a sunny day", "ar": "مروان المنشاوي في الهواء الطلق في يوم مشمس"}},
+  aboutDetail: {"set": "images/work/portrait/marwan-portrait-mirror", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "focus": "45% 38%", "sizes": "(max-width:860px) 40vw, 18vw", "alt": {"en": "Marwan El-Menshawy photographing himself in a mirror with his phone", "ar": "مروان المنشاوي يلتقط صورة لنفسه في المرآة بهاتفه"}}
 };
 
+/* Services. img = an authentic photograph from the portfolio (optimised set). No img = photograph pending:
+   the preview area shows a typographic panel instead of a placeholder photo. */
 const SERVICES = [
   { id: "event", icon: "camera", tone: 1,
     title: { en: "Event Photography", ar: "تصوير الفعاليات" },
@@ -1008,62 +1100,44 @@ const SERVICES = [
     title: { en: "Brand Photography", ar: "تصوير العلامات التجارية" },
     desc:  { en: "Creating photographs that communicate a brand's identity.", ar: "صور تعبّر عن هوية العلامة التجارية وتنقل روحها." } },
   { id: "content", icon: "phone", tone: 3,
+    img: { set: "images/work/bridal-editorial/bridal-06", widths: [800], w: 900, h: 1600, focus: "50% 45%", temporary: true, from: "Bridal Editorial",
+           alt: { en: "A phone recording a styled bride for social content — from the Bridal Editorial shoot", ar: "هاتف يصوّر عروسًا بإطلالتها لمحتوى التواصل الاجتماعي — من جلسة العرائس" } },
     title: { en: "Content Creation", ar: "صناعة المحتوى" },
     desc:  { en: "Developing visual content for digital platforms and social media.", ar: "تطوير محتوى بصري للمنصات الرقمية ووسائل التواصل الاجتماعي." } },
   { id: "bts", icon: "clapper", tone: 4,
+    img: { set: "images/work/bridal-editorial/bridal-07", widths: [800], w: 900, h: 1600, focus: "50% 50%", temporary: true, from: "Bridal Editorial",
+           alt: { en: "Behind the scenes: the set, the phone and the bride during the Bridal Editorial shoot", ar: "خلف الكواليس: موقع التصوير والهاتف والعروس أثناء جلسة العرائس" } },
     title: { en: "Behind-the-Scenes Coverage", ar: "تغطية الكواليس" },
     desc:  { en: "Documenting the people, processes, and stories behind experiences.", ar: "توثيق الأشخاص والعمليات والقصص التي تقف خلف كل تجربة." } }
 ];
 
 const CATEGORIES = [
-  { id: "all",       en: "All",                ar: "الكل" },
-  { id: "events",    en: "Events",             ar: "فعاليات" },
-  { id: "corporate", en: "Corporate",          ar: "شركات" },
-  { id: "portraits", en: "Portraits",          ar: "بورتريه" },
-  { id: "lifestyle", en: "Lifestyle",          ar: "لايف ستايل" },
-  { id: "bts",       en: "Behind the Scenes",  ar: "الكواليس" },
-  { id: "media",     en: "Media Coverage",     ar: "تغطية إعلامية" }
+  { id: "all",          en: "All",                     ar: "الكل" },
+  { id: "fashion",      en: "Fashion & Editorial",     ar: "أزياء وتحرير" },
+  { id: "beauty",       en: "Beauty & Makeup",         ar: "تجميل ومكياج" },
+  { id: "food",         en: "Food & Restaurants",      ar: "طعام ومطاعم" },
+  { id: "landscape",    en: "Landscape",               ar: "مناظر طبيعية" },
+  { id: "architecture", en: "Architecture & Heritage", ar: "عمارة وتراث" }
 ];
 
-/* Portfolio projects. size: a (large) · b (tall) · c (small) · d (wide) · e (medium-tall)
-   Add a project by copying one block. Each project can have any number of images. */
+/* Portfolio projects — one object per project.
+   size:      t (large portrait) · p (portrait) · a b c d e (other card shapes)
+   status:    "published" (public) or "review" (only visible with ?preview=1)
+   cover:     index in media of the cover photograph · focus: CSS object-position for the cover crop
+   media:     images exported by the optimiser ({set, widths, w, h}); treatment: original | retouched | ai-elements
+              temporary:true = provisional file to replace · pending:true = file not received yet (shown only in preview)
+   date / client / desc: leave out unless confirmed — empty fields are hidden. */
 const PROJECTS = [
-  { category: "events", size: "a", date: "YYYY", client: "",
-    title: { en: "Project title — Event 01", ar: "عنوان المشروع — فعالية 01" },
-    desc:  { en: "Placeholder description. Replace with the story behind this event.", ar: "وصف مؤقت. استبدله بالقصة خلف هذه الفعالية." },
-    images: [ { src: "", tone: 1 }, { src: "", tone: 5 }, { src: "", tone: 4 } ] },
-  { category: "portraits", size: "b", date: "YYYY", client: "",
-    title: { en: "Project title — Portrait Series", ar: "عنوان المشروع — سلسلة بورتريه" },
-    desc:  { en: "Placeholder description for a portrait series.", ar: "وصف مؤقت لسلسلة صور شخصية." },
-    images: [ { src: "", tone: 6, portrait: true }, { src: "", tone: 4, portrait: true } ] },
-  { category: "corporate", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Corporate 01", ar: "عنوان المشروع — شركات 01" },
-    desc:  { en: "Placeholder description for a corporate shoot.", ar: "وصف مؤقت لجلسة تصوير لشركة." },
-    images: [ { src: "", tone: 2 }, { src: "", tone: 6 } ] },
-  { category: "media", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Media Coverage 01", ar: "عنوان المشروع — تغطية إعلامية 01" },
-    desc:  { en: "Placeholder description for a media coverage project.", ar: "وصف مؤقت لمشروع تغطية إعلامية." },
-    images: [ { src: "", tone: 4 }, { src: "", tone: 2 } ] },
-  { category: "bts", size: "c", date: "YYYY", client: "",
-    title: { en: "Project title — Behind the Scenes", ar: "عنوان المشروع — خلف الكواليس" },
-    desc:  { en: "Placeholder description for behind-the-scenes coverage.", ar: "وصف مؤقت لتغطية الكواليس." },
-    images: [ { src: "", tone: 5 } ] },
-  { category: "lifestyle", size: "d", date: "YYYY", client: "",
-    title: { en: "Project title — Lifestyle 01", ar: "عنوان المشروع — لايف ستايل 01" },
-    desc:  { en: "Placeholder description for a lifestyle story.", ar: "وصف مؤقت لقصة لايف ستايل." },
-    images: [ { src: "", tone: 3 }, { src: "", tone: 1 } ] },
-  { category: "events", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Event 02", ar: "عنوان المشروع — فعالية 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 5, portrait: true } ] },
-  { category: "corporate", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Corporate 02", ar: "عنوان المشروع — شركات 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 6, portrait: true } ] },
-  { category: "media", size: "e", date: "YYYY", client: "",
-    title: { en: "Project title — Media Coverage 02", ar: "عنوان المشروع — تغطية إعلامية 02" },
-    desc:  { en: "Placeholder description.", ar: "وصف مؤقت." },
-    images: [ { src: "", tone: 2, portrait: true } ] }
+  {"id": "emerald-elegance", "category": "fashion", "size": "t", "status": "published", "cover": 0, "focus": "62% 38%", "title": {"en": "Emerald Elegance", "ar": "أناقة زمردية"}, "media": [{"set": "images/work/emerald-elegance/dsc-0078", "widths": [800, 1600, 2400], "w": 3349, "h": 5954, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 1 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 1 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0068", "widths": [800, 1600, 2400], "w": 3218, "h": 5721, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 2 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 2 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0069", "widths": [800, 1600, 2400], "w": 3259, "h": 5794, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 3 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 3 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0079", "widths": [800, 1600, 2400], "w": 3375, "h": 6000, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 4 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 4 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0067", "widths": [800, 1600, 2400], "w": 3293, "h": 5854, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 5 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 5 من 6"}, "treatment": "original"}, {"set": "images/work/emerald-elegance/dsc-0070", "widths": [800, 1600, 2400], "w": 3245, "h": 5769, "alt": {"en": "Emerald Elegance: model in an emerald draped gown — photo 6 of 6", "ar": "أناقة زمردية: عارضة بفستان زمردي منسدل — صورة 6 من 6"}, "treatment": "original"}]},
+  {"id": "champagne-glow", "category": "fashion", "size": "t", "status": "published", "cover": 0, "focus": "50% 30%", "title": {"en": "Champagne Glow", "ar": "توهّج الشمبانيا"}, "media": [{"set": "images/work/champagne-glow/dsc-0056", "widths": [800, 1600, 2400], "w": 3373, "h": 5996, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 1 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 1 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0060", "widths": [800, 1600, 2400], "w": 2958, "h": 5258, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 2 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 2 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0020", "widths": [800, 1600, 2400], "w": 3375, "h": 6000, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 3 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 3 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0028", "widths": [800, 1600, 2400], "w": 3362, "h": 5976, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 4 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 4 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0034", "widths": [800, 1600, 2400], "w": 3248, "h": 5774, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 5 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 5 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0041", "widths": [800, 1600, 2400], "w": 3353, "h": 5961, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 6 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 6 من 7"}, "treatment": "original"}, {"set": "images/work/champagne-glow/dsc-0042", "widths": [800, 1600, 2400], "w": 3368, "h": 5987, "alt": {"en": "Champagne Glow: model in a beaded champagne gown — photo 7 of 7", "ar": "توهّج الشمبانيا: عارضة بفستان بلون الشمبانيا مطرّز بالخرز — صورة 7 من 7"}, "treatment": "original"}]},
+  // TEMPORARY MEDIA: WhatsApp-compressed copies — replace with the original camera files.
+  {"id": "bridal-editorial", "category": "beauty", "size": "p", "status": "published", "cover": 0, "focus": "45% 38%", "title": {"en": "Bridal Editorial", "ar": "جلسة عرائس"}, "credits": [{"role": {"en": "Makeup Artist", "ar": "خبيرة المكياج"}, "name": "Nayera"}], "media": [{"set": "images/work/bridal-editorial/bridal-01", "widths": [800, 1145], "w": 1145, "h": 1374, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 1 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 1 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-02", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 2 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 2 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-03", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 3 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 3 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-04", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 4 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 4 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-05", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 5 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 5 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-06", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 6 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 6 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-07", "widths": [800], "w": 900, "h": 1600, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 7 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 7 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-08", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 8 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 8 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-09", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 9 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 9 من 10"}, "treatment": "original", "temporary": true}, {"set": "images/work/bridal-editorial/bridal-10", "widths": [800, 1122], "w": 1122, "h": 1402, "alt": {"en": "Bridal Editorial: bridal makeup portrait — photo 10 of 10", "ar": "جلسة عرائس: بورتريه لمكياج عروس — صورة 10 من 10"}, "treatment": "original", "temporary": true}]},
+  {"id": "alexandria-stadium", "category": "architecture", "size": "p", "status": "published", "cover": 0, "focus": "50% 72%", "title": {"en": "Alexandria Stadium", "ar": "استاد الإسكندرية"}, "media": [{"set": "images/work/alexandria-stadium/dsc-0151", "widths": [800, 1600, 2400], "w": 3191, "h": 5673, "alt": {"en": "Alexandria Stadium: the historic façade and stands", "ar": "استاد الإسكندرية: الواجهة التاريخية والمدرجات"}, "treatment": "original"}, {"set": "images/work/alexandria-stadium/dsc-0131", "widths": [800, 1600, 2400], "w": 2702, "h": 4803, "alt": {"en": "Alexandria Stadium: an ornate gilded interior hall", "ar": "استاد الإسكندرية: قاعة داخلية مزخرفة بالذهب"}, "treatment": "original"}, {"set": "images/work/alexandria-stadium/dsc-0143", "widths": [800, 1600, 2400], "w": 4606, "h": 2591, "alt": {"en": "Alexandria Stadium: a commemorative inscription plaque", "ar": "استاد الإسكندرية: لوحة تذكارية مكتوبة"}, "treatment": "original"}, {"pending": true, "file": "DSC_0060.jpg"}, {"pending": true, "file": "DSC_0089.jpg"}, {"pending": true, "file": "DSC_0083.jpg"}, {"pending": true, "file": "DSC_0128.jpg"}, {"pending": true, "file": "DSC_0147.jpg"}]},
+  {"id": "landscape", "category": "landscape", "size": "p", "status": "published", "cover": 0, "focus": "35% 55%", "title": {"en": "Landscape", "ar": "مناظر طبيعية"}, "media": [{"set": "images/work/landscape/20260716-194813", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: sunset rays over the sea with a fishing boat", "ar": "مناظر طبيعية: أشعة الغروب فوق البحر مع قارب صيد"}, "treatment": "original"}, {"set": "images/work/landscape/20261019-072218", "widths": [800, 1600, 2250], "w": 2250, "h": 4000, "alt": {"en": "Landscape: storm clouds over the sea, a ship on the horizon", "ar": "مناظر طبيعية: سحب كثيفة فوق البحر وسفينة في الأفق"}, "treatment": "original"}, {"set": "images/work/landscape/20260824-071121", "widths": [800, 1600, 2400], "w": 2414, "h": 3378, "alt": {"en": "Landscape: a fishing boat at sea in early light", "ar": "مناظر طبيعية: قارب صيد في البحر مع أول الضوء"}, "treatment": "original"}, {"set": "images/work/landscape/20260715-165823", "widths": [800, 1600, 2400], "w": 2958, "h": 3934, "alt": {"en": "Landscape: a harbour under storm clouds, a cyclist on the seafront", "ar": "مناظر طبيعية: ميناء تحت سحب داكنة وعامل بدراجة على الواجهة البحرية"}, "treatment": "original"}, {"set": "images/work/landscape/20251014-071515", "widths": [800, 1600, 2400], "w": 4000, "h": 3000, "alt": {"en": "Landscape: a bird silhouetted against a golden sky", "ar": "مناظر طبيعية: طائر في ظلّ سماء ذهبية"}, "treatment": "original"}, {"set": "images/work/landscape/20251210-164437", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: street lamps silhouetted at sunset", "ar": "مناظر طبيعية: أعمدة إنارة في ظلّ الغروب"}, "treatment": "original"}, {"set": "images/work/landscape/20260402-071358", "widths": [800, 1600, 2400], "w": 2982, "h": 3906, "alt": {"en": "Landscape: an empty city road in fog", "ar": "مناظر طبيعية: طريق خالٍ في المدينة وسط الضباب"}, "treatment": "original"}, {"set": "images/work/landscape/20251014-071817", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: golden clouds at sunset", "ar": "مناظر طبيعية: سحب ذهبية عند الغروب"}, "treatment": "original"}, {"set": "images/work/landscape/20251013-073535", "widths": [800, 1600, 2400], "w": 3000, "h": 4000, "alt": {"en": "Landscape: a cruise ship behind palm trees at golden hour", "ar": "مناظر طبيعية: سفينة سياحية خلف أشجار النخيل في الساعة الذهبية"}, "treatment": "original"}, {"set": "images/work/landscape/20251216-011817", "widths": [800, 1600, 2400], "w": 4000, "h": 3000, "alt": {"en": "Landscape: a resort lit up at night", "ar": "مناظر طبيعية: منتجع مضاء ليلًا"}, "treatment": "original"}, {"pending": true, "file": "20250614_192432(2).jpg"}, {"pending": true, "type": "video", "file": "20261021_145449_1.mp4"}]},
+  // Approved by Marwan: the two Version A retouches (DSC_0030, DSC_0031). Pending files stay hidden until supplied.
+  // DSC_0030/DSC_0031 were byte-identical duplicates in Drive; each is used once. Version A = conventional retouch.
+  // The AI pasta image is NOT approved: held:true keeps it off the site and out of the repo.
+  {"id": "charles-american-food", "category": "food", "size": "p", "status": "published", "cover": 2, "focus": "40% 50%", "title": {"en": "Charles American Food", "ar": "Charles American Food"}, "media": [{"pending": true, "file": "DSC_0003.jpg"}, {"pending": true, "file": "DSC_0032.jpg"}, {"set": "images/work/charles-american-food/dsc-0031-retouch", "widths": [800, 1600, 2239], "w": 2239, "h": 3981, "alt": {"en": "Charles American Food: pizza baking in the oven", "ar": "Charles American Food: بيتزا تُخبز داخل الفرن"}, "treatment": "retouched", "source": "DSC_0031.jpg"}, {"set": "images/work/charles-american-food/dsc-0030-retouch", "widths": [800, 1600, 2400], "w": 2445, "h": 4346, "alt": {"en": "Charles American Food: a gloved hand turning a pizza pan in the oven", "ar": "Charles American Food: يد بقفاز تدير صينية البيتزا داخل الفرن"}, "treatment": "retouched", "source": "DSC_0030.jpg"}, {"pending": true, "file": "DSC_0068.jpg"}, {"pending": true, "file": "DSC_0070.jpg"}, {"held": true, "set": "images/work/charles-american-food/ai-golden-baked-pasta", "widths": [800], "w": 941, "h": 1672, "alt": {"en": "AI-generated image: baked pasta with melted cheese", "ar": "صورة مولّدة بالذكاء الاصطناعي: مكرونة بالفرن مع جبن ذائب"}, "treatment": "ai-elements", "approved": false, "source": "Golden Baked Pasta with Bubbly Cheese.png"}]},
 ];
 
 const SKILLS = [
@@ -1093,19 +1167,20 @@ const TESTIMONIALS = [
    { src:"images/press1.jpg", tone:1, outlet:{en:"Outlet",ar:"..."}, title:{en:"...",ar:"..."}, date:"2026", url:"https://..." } */
 const PRESS = [];
 
-/* Blog posts — placeholders. body is an array of paragraphs per language. */
+/* Blog posts. status: "published" shows publicly; "draft" only in preview mode (no cover, no reading time).
+   Add minutes only for a finished article. The Insights section and its menu link stay hidden until one is published. */
 const POSTS = [
-  { src: "", tone: 1, date: "", minutes: 6,
+  { src: "", tone: 1, date: "", status: "draft",
     cat:   { en: "Experience", ar: "تجربة" },
     title: { en: "Lessons From 15 Years of Photography", ar: "دروس من 15 عامًا في التصوير" },
     excerpt: { en: "Draft topic — what a decade and a half behind the lens teaches you about people, light and timing.", ar: "موضوع مقترح — ما الذي تعلّمك إياه خمسة عشر عامًا خلف العدسة عن الناس والضوء والتوقيت." },
     body: { en: [], ar: [] } },
-  { src: "", tone: 2, date: "", minutes: 4,
+  { src: "", tone: 2, date: "", status: "draft",
     cat:   { en: "Media Coverage", ar: "تغطية إعلامية" },
     title: { en: "What Great Event Coverage Really Requires", ar: "ما الذي تتطلبه التغطية الجيدة للفعاليات؟" },
     excerpt: { en: "Draft topic — preparation, positioning and the moments most people miss.", ar: "موضوع مقترح — التحضير، واختيار المكان، واللحظات التي يفوتها الكثيرون." },
     body: { en: [], ar: [] } },
-  { src: "", tone: 5, date: "", minutes: 5,
+  { src: "", tone: 5, date: "", status: "draft",
     cat:   { en: "Behind the Scenes", ar: "الكواليس" },
     title: { en: "The Story Behind the Frame", ar: "القصة خلف الإطار" },
     excerpt: { en: "Draft topic — a behind-the-scenes look at one shoot, from brief to final edit.", ar: "موضوع مقترح — نظرة من الكواليس على جلسة تصوير واحدة، من الفكرة إلى التعديل النهائي." },
@@ -1128,10 +1203,10 @@ const T = {
     yrs: "YEARS", yrsLong: "YEARS", portraitCap: "Marwan El-Menshawy", scroll: "Scroll to About", scrollTxt: "SCROLL",
     strip: ["15 Years Behind the Lens", "Event Photography", "Media Coverage", "Corporate", "Brand Stories", "Visual Content"],
     aboutEyebrow: "About", aboutTitle: "Behind Every Frame, There's a Story.",
-    aboutP1: "Photography has been part of my journey for 15 years. What started as a passion became a way of seeing the world differently, understanding moments, and capturing stories through images.",
-    aboutP2: "Today, I'm taking that experience further by building a professional business around photography, media coverage, and visual content creation.",
+    aboutP1: "I've been photographing for 15 years. What began as a passion became the way I see the world: noticing the moment, and telling its story through an image.",
+    aboutP2: "Now I'm turning that experience into a professional practice — photography, media coverage and visual content for people and businesses with a story to tell.",
     aboutPull: "My goal is simple: create visuals that <mark>communicate, connect,</mark> and leave an impression.",
-    fact1: "Years of photography", fact2: "Core services", fact3: "Languages · EN / AR",
+    fact1: "Years of photography", fact2: "Services", fact3: "Published projects",
     aboutCta: "Explore the Portfolio",
     svcEyebrow: "Services", svcTitle: "What I Do",
     svcLead: "From a single event to ongoing brand content — visual work built to communicate, document and last.",
@@ -1143,7 +1218,7 @@ const T = {
     view: "View project", photos: "photos", photo: "photo", client: "Client",
     expEyebrow: "Experience", expTitle: "15 Years of Seeing Things Differently.",
     expLead: "Fifteen years of practice has shaped an instinct for light, timing and people — the foundation for a professional media coverage practice built on real experience.",
-    expHl: "15 Years of Photography Experience", csL: "Contact sheet · one frame per year",
+    expHl: "15 Years of Photography Experience", csL: "Contact sheet · one frame per year", framesL: "Selected frames from the portfolio", framesCta: "View all work",
     tEyebrow: "Testimonials", tTitle: "Words From People I've Worked With.", phBadge: "Placeholder",
     prEyebrow: "Media & Press", prTitle: "Stories Beyond the Frame.",
     prLead: "Featured coverage, published work, collaborations and press mentions.",
@@ -1152,7 +1227,7 @@ const T = {
     prSlots: ["Feature story", "Published work", "Collaboration"], prRead: "Read",
     bEyebrow: "Insights", bTitle: "Notes From Behind the Lens.",
     bLead: "Experiences, behind-the-scenes stories and lessons from 15 years of photography.",
-    comingSoon: "Coming soon", minRead: "min read", readArticle: "Read article",
+    comingSoon: "Coming soon", minRead: "min read", draft: "Draft", svcPending: "Photograph pending", readArticle: "Read article",
     artPlaceholder: "This article hasn't been written yet. Add paragraphs to the post's “body” in the content file and they will appear here.",
     cEyebrow: "Contact", cTitle: "Have a Story Worth Capturing?",
     cLead: "Whether you're planning an event, building a brand, or looking for professional media coverage, let's create something meaningful.",
@@ -1173,7 +1248,12 @@ const T = {
     fNav: "Navigate", fServices: "Services", fContact: "Contact", rights: "All rights reserved.", toTop: "Back to top",
     close: "Close", prev: "Previous image", next: "Next image", phWord: "Placeholder",
     instT: "Get the app", instGo: "Install", instD: "Add Marwan's portfolio to your home screen.",
-    instIos: "Tap SHARE then “Add to Home Screen”."
+    instIos: "Tap SHARE then “Add to Home Screen”.",
+    back: "All work", prevP: "Previous project", nextP: "Next project", viewGallery: "View the gallery",
+    category: "Category", photosLbl: "Photographs", reviewBadge: "Pending approval",
+    tagAI: "Contains AI-generated elements", tagRet: "Retouched · colour & light", tagTmp: "Temporary file",
+    pendingAsset: "Pending asset", heldAsset: "Held for approval", video: "Video", openPhoto: "Open photo",
+    previewOn: "Preview mode — includes unpublished projects and pending files. Not visible on the public site."
   },
   ar: {
     skip: "انتقل إلى المحتوى", brand: "مروان المنشاوي", navAria: "التنقل الرئيسي", menu: "القائمة",
@@ -1187,10 +1267,10 @@ const T = {
     yrs: "عامًا", yrsLong: "عامًا", portraitCap: "مروان المنشاوي", scroll: "انتقل إلى النبذة", scrollTxt: "مرّر",
     strip: ["15 عامًا خلف العدسة", "تصوير الفعاليات", "تغطية إعلامية", "تصوير الشركات", "قصص العلامات التجارية", "محتوى بصري"],
     aboutEyebrow: "نبذة", aboutTitle: "خلف كل صورة، قصة.",
-    aboutP1: "رافقني التصوير في رحلتي على مدار 15 عامًا. ما بدأ شغفًا أصبح طريقة مختلفة لرؤية العالم، وفهم اللحظات، ورواية القصص من خلال الصور.",
-    aboutP2: "واليوم، أنقل هذه الخبرة إلى مرحلة جديدة ببناء عمل احترافي في التصوير والتغطية الإعلامية وصناعة المحتوى البصري.",
+    aboutP1: "أمارس التصوير منذ 15 عامًا. ما بدأ شغفًا أصبح طريقتي في رؤية العالم: أن ألتقط اللحظة، وأروي قصتها من خلال صورة.",
+    aboutP2: "واليوم أحوّل هذه الخبرة إلى عمل احترافي في التصوير والتغطية الإعلامية وصناعة المحتوى البصري، لكل من لديه قصة تستحق أن تُروى.",
     aboutPull: "هدفي بسيط: صور <mark>تتحدث، وتقرّب،</mark> وتترك أثرًا.",
-    fact1: "عامًا في التصوير", fact2: "خدمات أساسية", fact3: "لغتان · العربية / الإنجليزية",
+    fact1: "عامًا في التصوير", fact2: "خدمات", fact3: "مشاريع منشورة",
     aboutCta: "استكشف الأعمال",
     svcEyebrow: "الخدمات", svcTitle: "ماذا أقدّم",
     svcLead: "من فعالية واحدة إلى محتوى مستمر لعلامتك التجارية — عمل بصري يتواصل ويوثّق ويبقى.",
@@ -1202,7 +1282,7 @@ const T = {
     view: "عرض المشروع", photos: "صور", photo: "صورة", client: "العميل",
     expEyebrow: "الخبرة", expTitle: "15 عامًا من رؤية الأشياء بشكل مختلف.",
     expLead: "خمسة عشر عامًا من الممارسة صقلت حسًّا بالضوء والتوقيت والناس — وهي الأساس لعمل احترافي في التغطية الإعلامية قائم على خبرة حقيقية.",
-    expHl: "15 عامًا من الخبرة في التصوير", csL: "شريط التحميض · إطار لكل عام",
+    expHl: "15 عامًا من الخبرة في التصوير", csL: "شريط التحميض · إطار لكل عام", framesL: "لقطات مختارة من الأعمال", framesCta: "شاهد كل الأعمال",
     tEyebrow: "آراء العملاء", tTitle: "كلمات ممن عملت معهم.", phBadge: "مؤقت",
     prEyebrow: "الإعلام والصحافة", prTitle: "قصص أبعد من الإطار.",
     prLead: "تغطيات مميزة، وأعمال منشورة، وتعاونات، وإشارات إعلامية.",
@@ -1211,7 +1291,7 @@ const T = {
     prSlots: ["قصة مميزة", "عمل منشور", "تعاون"], prRead: "اقرأ",
     bEyebrow: "مقالات", bTitle: "ملاحظات من خلف العدسة.",
     bLead: "تجارب، وقصص من الكواليس، ودروس من 15 عامًا في التصوير.",
-    comingSoon: "قريبًا", minRead: "دقائق قراءة", readArticle: "اقرأ المقال",
+    comingSoon: "قريبًا", minRead: "دقائق قراءة", draft: "مسودة", svcPending: "الصورة قيد الانتظار", readArticle: "اقرأ المقال",
     artPlaceholder: "لم تُكتب هذه المقالة بعد. أضف الفقرات إلى حقل «body» الخاص بالمقال في ملف المحتوى وستظهر هنا.",
     cEyebrow: "تواصل", cTitle: "لديك قصة تستحق أن تُلتقط؟",
     cLead: "سواء كنت تخطط لفعالية، أو تبني علامة تجارية، أو تبحث عن تغطية إعلامية احترافية، لنصنع معًا شيئًا له معنى.",
@@ -1232,7 +1312,12 @@ const T = {
     fNav: "التنقل", fServices: "الخدمات", fContact: "التواصل", rights: "جميع الحقوق محفوظة.", toTop: "العودة للأعلى",
     close: "إغلاق", prev: "الصورة السابقة", next: "الصورة التالية", phWord: "مؤقت",
     instT: "حمّل التطبيق", instGo: "تثبيت", instD: "أضف أعمال مروان إلى الشاشة الرئيسية.",
-    instIos: "اضغط SHARE ثم «إضافة إلى الشاشة الرئيسية»."
+    instIos: "اضغط SHARE ثم «إضافة إلى الشاشة الرئيسية».",
+    back: "كل الأعمال", prevP: "المشروع السابق", nextP: "المشروع التالي", viewGallery: "عرض المعرض",
+    category: "الفئة", photosLbl: "الصور", reviewBadge: "بانتظار الاعتماد",
+    tagAI: "تحتوي على عناصر مولّدة بالذكاء الاصطناعي", tagRet: "معدّلة · لون وإضاءة", tagTmp: "ملف مؤقت",
+    pendingAsset: "ملف قيد الانتظار", heldAsset: "بانتظار الاعتماد", video: "فيديو", openPhoto: "فتح الصورة",
+    previewOn: "وضع المعاينة — يتضمن مشاريع غير منشورة وملفات قيد الانتظار. لا يظهر على الموقع العام."
   }
 };
 
@@ -1274,7 +1359,11 @@ const icon = (n, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-
 const SIL = '<svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="50" cy="32" r="20"/><path d="M8 110c2-28 20-46 42-46s40 18 42 46z"/></svg>';
 
 /* Media renderer: real <img> when src is set, labelled placeholder frame otherwise */
-function media(o = {}, label, alt, eager) {
+function media(o = {}, label, alt, eager, sizes) {
+  if (o.set && !o.held) {
+    const ws = o.widths, srcset = ws.map(w => `${o.set}-${w}.webp ${w}w`).join(", ");
+    return `<img src="${esc(o.set)}-${ws[0]}.webp" srcset="${esc(srcset)}" sizes="${esc(sizes || "100vw")}" width="${o.w}" height="${o.h}" alt="${esc(L(o.alt || alt))}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"${o.focus ? ` style="object-position:${esc(o.focus)}"` : ""}>`;
+  }
   if (o.src) return `<img src="${esc(o.src)}" alt="${esc(L(alt || o.alt))}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
   const lbl = label != null ? label : L(o.label);
   return `<div class="ph" data-tone="${o.tone || 4}" role="img" aria-label="${esc(t("phWord") + (lbl ? " — " + lbl : ""))}">
@@ -1283,21 +1372,27 @@ function media(o = {}, label, alt, eager) {
     <span class="ph-label"><b>●</b>${esc(t("phWord"))}${lbl ? " · " + esc(lbl) : ""}</span></div>`;
 }
 
-const NAV = ["home", "about", "services", "portfolio", "insights", "contact"];
+const NAV_ALL = ["home", "about", "services", "portfolio", "insights", "contact"];
+const navKeys = () => NAV_ALL.filter(k => k !== "insights" || POSTS.some(p => p.status === "published") || PREVIEW);
 const catName = id => L(CATEGORIES.find(c => c.id === id) || {});
 
 /* ---------- renderers ---------- */
 function renderNav() {
+  const NAV = navKeys();
   $("#navLinks").innerHTML = NAV.map(k => `<li><a href="#${k}" data-sec="${k}">${esc(t("nav")[k])}</a></li>`).join("");
   $("#mLinks").innerHTML = NAV.map(k => `<li><a href="#${k}">${esc(t("nav")[k])}</a></li>`).join("");
   $("#fNavList").innerHTML = NAV.map(k => `<li><a href="#${k}">${esc(t("nav")[k])}</a></li>`).join("");
 }
 function renderSlots() {
-  $$("[data-slot]").forEach(el => { const k = el.dataset.slot; el.innerHTML = media(IMAGES[k], null, null, k === "heroBg" || k === "heroPortrait"); });
+  $$("[data-slot]").forEach(el => { const k = el.dataset.slot; el.innerHTML = media(IMAGES[k], null, null, k === "heroBg" || k === "heroPortrait", IMAGES[k].sizes); });
 }
 function renderStrip() {
   const items = t("strip").map(s => `<span>${esc(s)}<i></i></span>`).join("");
   $("#strip").innerHTML = items + items;
+}
+function svcVisual(s, i, sizes) {
+  if (s.img) return `<div class="media">${media(s.img, null, s.img.alt, false, sizes)}</div>${PREVIEW && s.img.temporary ? `<span class="tags svc-tags"><span class="tag tag-tmp">${esc(t("tagTmp"))}</span></span>` : ""}`;
+  return `<div class="svc-empty" role="img" aria-label="${esc(L(s.title))}"><span class="big" aria-hidden="true">${pad2(i + 1)}</span><span class="eic">${icon(s.icon)}</span>${PREVIEW ? `<span class="tags svc-tags"><span class="tag tag-tmp">${esc(t("svcPending"))}</span></span>` : ""}</div>`;
 }
 function renderServices() {
   $("#svcList").innerHTML = SERVICES.map((s, i) => `
@@ -1308,14 +1403,14 @@ function renderServices() {
         <span class="ic">${icon(s.icon)}</span>
       </button>
       <div class="desc" id="svc-d-${i}" role="region" aria-labelledby="svc-b-${i}"><div>
-        <div class="mob-vis"><div class="media">${media({ tone: s.tone }, L(s.title))}</div></div>
+        <div class="mob-vis">${svcVisual(s, i, "(max-width:620px) 80vw, 60vw")}</div>
         <p>${esc(L(s.desc))}</p>
         <div class="row"><a href="#contact" class="link-u" data-svc="${s.id}">${esc(t("inquire"))} ${icon("arrow", "flip")}</a></div>
       </div></div>
     </li>`).join("");
   $("#svcStage").innerHTML = SERVICES.map((s, i) => `
     <div class="layer${i === 0 ? " on" : ""}" data-i="${i}">
-      <div class="media">${media(s.img ? { src: s.img } : { tone: s.tone }, L(s.title), s.title)}</div>
+      ${svcVisual(s, i, "(max-width:1080px) 1px, 34vw")}
       <div class="cap"><span>${esc(t("svcLabel"))} ${pad2(i + 1)}/${pad2(SERVICES.length)}</span><b>${esc(L(s.title))}</b></div>
     </div>`).join("");
   $("#fSvcList").innerHTML = SERVICES.map(s => `<li><a href="#services">${esc(L(s.title))}</a></li>`).join("");
@@ -1327,29 +1422,57 @@ function setService(i) {
   $$(".svc-item").forEach(li => { const on = +li.dataset.i === i; li.classList.toggle("on", on); $(".svc-btn", li).setAttribute("aria-expanded", on); });
   $$("#svcStage .layer").forEach(l => l.classList.toggle("on", +l.dataset.i === i));
 }
+// Preview mode: ?preview=1 (any normal host) or #preview (hosts that drop query strings, e.g. the private preview page)
+const PREVIEW = new URLSearchParams(location.search).has("preview") || location.hash === "#preview";
+const visibleProjects = () => PROJECTS.filter(p => p.status === "published" || PREVIEW);
+const isShownMedia = m => !m.pending && !m.held && (m.approved !== false || PREVIEW);
+const realMedia = p => p.media.filter(isShownMedia);
+const tileMedia = p => p.media.filter(m => isShownMedia(m) || ((m.pending || m.held) && PREVIEW));
+const countTxt = n => `${pad2(n)} ${n === 1 ? t("photo") : t("photos")}`;
+function tagsFor(m) {
+  const out = [];
+  if (m.treatment === "ai-elements") out.push(`<span class="tag tag-ai">${esc(t("tagAI"))}</span>`);
+  if (m.treatment === "retouched") out.push(`<span class="tag tag-ret">${esc(t("tagRet"))}</span>`);
+  if (m.temporary && PREVIEW) out.push(`<span class="tag tag-tmp">${esc(t("tagTmp"))}</span>`);
+  return out.length ? `<span class="tags">${out.join("")}</span>` : "";
+}
 function renderFilters() {
+  const list = visibleProjects();
   $("#filters").innerHTML = CATEGORIES.map(c => {
-    const n = c.id === "all" ? PROJECTS.length : PROJECTS.filter(p => p.category === c.id).length;
+    const n = c.id === "all" ? list.length : list.filter(p => p.category === c.id).length;
     if (!n) return "";
     return `<button type="button" class="chip" data-f="${c.id}" aria-pressed="${c.id === currentFilter}">${esc(L(c))}<sup>${pad2(n)}</sup></button>`;
   }).join("");
 }
 function renderGallery(animate) {
-  $("#gallery").innerHTML = PROJECTS.map((p, i) => {
+  $("#gallery").innerHTML = visibleProjects().map((p, i) => {
     const show = currentFilter === "all" || p.category === currentFilter;
-    const n = p.images.length;
-    return `<div class="g-item ${p.size || "c"}${show ? "" : " hide"}${animate && show ? " pop" : " rv"}" style="--i:${i % 6}" data-p="${i}">
-      <button type="button" class="g-btn" aria-label="${esc(t("view") + ": " + L(p.title))}">
-        <div class="media">${media(p.images[0], catName(p.category), p.title)}</div>
-        <span class="open">${icon("plus")}</span>
+    const cov = Object.assign({}, p.media[p.cover || 0], { focus: p.focus });
+    return `<div class="g-item ${p.size || "c"}${show ? "" : " hide"}${animate && show ? " pop" : " rv"}" style="--i:${i % 6}" data-id="${p.id}">
+      <a href="#work/${p.id}" class="g-btn" aria-label="${esc(t("view") + ": " + L(p.title))}">
+        <div class="media">${media(cov, catName(p.category), null, false, p.size === "t" ? "(max-width:860px) 100vw, 50vw" : "(max-width:860px) 50vw, 34vw")}</div>
+        ${p.status !== "published" ? `<span class="g-badge">${esc(t("reviewBadge"))}</span>` : ""}
+        <span class="open">${icon("arrow", "flip")}</span>
         <span class="ov"><span class="cat">${esc(catName(p.category))}</span><span class="tt">${esc(L(p.title))}</span>
-        <span class="meta"><span>${esc(p.date || "")}</span><span>${pad2(n)} ${esc(n === 1 ? t("photo") : t("photos"))}</span></span></span>
-      </button></div>`;
+        <span class="meta"><span>${countTxt(realMedia(p).length)}</span>${p.date ? `<span>${esc(p.date)}</span>` : ""}</span></span>
+      </a></div>`;
   }).join("");
   observe();
 }
+function renderFacts() {
+  // 15 = years of photography (confirmed by Marwan); other figures come from the content data
+  const n = PROJECTS.filter(p => p.status === "published").length;
+  $("#facts").innerHTML = `<div><b>15</b><span>${esc(t("fact1"))}</span></div><div><b>${pad2(SERVICES.length)}</b><span>${esc(t("fact2"))}</span></div><div><b>${pad2(n)}</b><span>${esc(t("fact3"))}</span></div>`;
+}
 function renderExperience() {
-  $("#csRow").innerHTML = Array.from({ length: 15 }, (_, i) => `<div style="--i:${i}"><span>${pad2(i + 1)}</span></div>`).join("");
+  // Real frames from published projects only (no years assigned): cover + one more per project
+  const frames = PROJECTS.filter(p => p.status === "published").flatMap(p => {
+    const real = p.media.filter(m => m.set && !m.pending && !m.held && (m.w < m.h));
+    const cov = p.media[p.cover || 0];
+    return [cov, ...real.filter(m => m !== cov).slice(0, 1)].filter(Boolean).map(m => ({ p, m }));
+  });
+  $("#film").innerHTML = frames.map(({ p, m }, i) => `<a href="#work/${p.id}" class="film-frame" role="listitem" style="--i:${i}" aria-label="${esc(t("view") + ": " + L(p.title))}">
+      ${media(m, null, m.alt, false, "(max-width:620px) 44vw, 240px")}<span class="ff-cap">${esc(L(p.title))}</span></a>`).join("");
   $("#skills").innerHTML = SKILLS.map((s, i) => `<li class="rv" style="--i:${i % 2}"><small>${pad2(i + 1)}</small>${esc(L(s))}</li>`).join("");
 }
 function renderTestimonials() {
@@ -1383,13 +1506,17 @@ function renderPress() {
     </article>`).join("")}</div>`;
 }
 function postMeta(p) {
-  return `<span class="cat">${esc(L(p.cat))}</span><span>${esc(p.date || t("comingSoon"))}</span><span>${p.minutes} ${esc(t("minRead"))}</span>`;
+  const draft = p.status !== "published";
+  return `<span class="cat">${esc(L(p.cat))}</span>${draft ? `<span class="tag tag-tmp">${esc(t("draft"))}</span>` : ""}${p.date ? `<span>${esc(p.date)}</span>` : ""}${p.minutes ? `<span>${p.minutes} ${esc(t("minRead"))}</span>` : ""}`;
 }
+const visiblePosts = () => POSTS.filter(p => p.status === "published" || PREVIEW);
 function renderPosts() {
-  const card = (p, i, cls) => `<button type="button" class="post ${cls} rv" style="--i:${i}" data-post="${i}" aria-label="${esc(t("readArticle") + ": " + L(p.title))}">
-      <div class="media">${media(p, L(p.cat), p.title)}</div>
+  const list = visiblePosts();
+  $("#insights").hidden = !list.length;
+  const card = (p, i, cls) => `<button type="button" class="post ${cls}${p.src ? "" : " no-cover"} rv" style="--i:${i}" data-post="${POSTS.indexOf(p)}" aria-label="${esc(t("readArticle") + ": " + L(p.title))}">
+      ${p.src ? `<div class="media">${media(p, L(p.cat), p.title)}</div>` : ""}
       <div><div class="pm">${postMeta(p)}</div><h3>${esc(L(p.title))}</h3><p>${esc(L(p.excerpt))}</p></div></button>`;
-  const [f, ...rest] = POSTS;
+  const [f, ...rest] = list;
   $("#blog").innerHTML = (f ? card(f, 0, "feat") : "") + `<div class="blog-side">${rest.map((p, i) => card(p, i + 1, "side")).join("")}</div>`;
 }
 function channels() {
@@ -1430,10 +1557,11 @@ function applyLang(first) {
   $$("[data-split]").forEach(el => splitWords(el, t(el.dataset.split)));
   $$(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === lang));
   renderNav(); renderSlots(); renderStrip(); renderServices(); renderFilters(); renderGallery(false);
-  renderExperience(); renderTestimonials(); renderPress(); renderPosts(); renderContact();
+  renderFacts(); renderExperience(); renderTestimonials(); renderPress(); renderPosts(); renderContact();
   $$(".err").forEach(e => (e.textContent = ""));
   $$("[aria-invalid]").forEach(e => e.removeAttribute("aria-invalid"));
   observe(!first);
+  if (typeof pjCurrent !== "undefined" && pjCurrent) renderProject(pjCurrent);
   setActive(activeSec);
   store.set("me-lang", lang);
 }
@@ -1463,7 +1591,7 @@ function toggleMenu(open) {
   document.body.classList.toggle("menu-open", open);
   $(".burger").setAttribute("aria-expanded", open);
   $("#mmenu").setAttribute("aria-hidden", !open);
-  document.body.style.overflow = open ? "hidden" : "";
+  syncLock();
 }
 $(".burger").addEventListener("click", () => toggleMenu(!document.body.classList.contains("menu-open")));
 $("#mmenu").addEventListener("click", e => { if (e.target.closest("a")) toggleMenu(false); });
@@ -1505,33 +1633,103 @@ $("#filters").addEventListener("click", e => {
   renderGallery(true);
 });
 const lb = $("#lightbox"); let lbList = [], lbIdx = 0;
-function buildLbList() {
-  lbList = [];
-  PROJECTS.forEach((p, pi) => { if (currentFilter === "all" || p.category === currentFilter) p.images.forEach((img, ii) => lbList.push({ p, pi, img, ii })); });
-}
+function syncLock() { document.body.style.overflow = (lb.open || $("#article").open || $("#project").open || document.body.classList.contains("menu-open")) ? "hidden" : ""; }
+function buildLbList(p) { const all = realMedia(p); lbList = all.map((m, ii) => ({ p, m, ii, n: all.length })); }
 function showLb(dir) {
   const it = lbList[lbIdx]; if (!it) return;
-  const fr = $("#lbFrame");
-  fr.classList.toggle("portrait", !!it.img.portrait);
-  $("#lbMedia").innerHTML = media(it.img, `${L(it.p.title)} · ${it.ii + 1}/${it.p.images.length}`, it.img.alt || it.p.title);
+  const fr = $("#lbFrame"), m = it.m;
+  const ratio = m.w && m.h ? m.w / m.h : 1.5;
+  fr.classList.remove("portrait");
+  fr.style.aspectRatio = `${ratio}`;
+  fr.style.width = `min(100%, calc((100svh - 240px) * ${ratio.toFixed(4)}))`;
+  $("#lbMedia").innerHTML = m.type === "video"
+    ? `<video controls muted playsinline preload="none"${m.poster ? ` poster="${esc(m.poster)}"` : ""} aria-label="${esc(L(m.alt) || t("video"))}"><source src="${esc(m.src)}" type="video/mp4"></video>`
+    : media(m, L(it.p.title), m.alt, true, "100vw");
   $("#lbTitle").textContent = L(it.p.title);
   $("#lbDesc").textContent = L(it.p.desc);
-  $("#lbMeta").innerHTML = `<b>${esc(catName(it.p.category))}</b><br>${esc(it.p.date || "")}${it.p.client ? " · " + esc(t("client")) + ": " + esc(it.p.client) : ""}<br><span dir="ltr">${pad2(it.ii + 1)} / ${pad2(it.p.images.length)}</span>`;
+  $("#lbDesc").hidden = !L(it.p.desc);
+  const credits = (it.p.credits || []).map(c => `${esc(L(c.role))}: ${esc(c.name)}`).join("<br>");
+  $("#lbMeta").innerHTML = `<b>${esc(catName(it.p.category))}</b>${credits ? "<br>" + credits : ""}${it.p.date ? "<br>" + esc(it.p.date) : ""}<br><span dir="ltr">${pad2(it.ii + 1)} / ${pad2(it.n)}</span>`;
+  const tg = tagsFor(m); const cap = $("#lbTitle").parentNode;
+  cap.querySelector(".tags")?.remove(); if (tg) cap.insertAdjacentHTML("beforeend", tg);
   $("#lbCount").textContent = `${pad2(lbIdx + 1)} / ${pad2(lbList.length)}`;
   if (dir && !reduced) { fr.style.setProperty("--dir", dir * (lang === "ar" ? -1 : 1)); fr.classList.remove("swap"); void fr.offsetWidth; fr.classList.add("swap"); }
-  // preload neighbours
-  [lbIdx + 1, lbIdx - 1].forEach(j => { const n = lbList[(j + lbList.length) % lbList.length]; if (n && n.img.src) { const im = new Image(); im.src = n.img.src; } });
+  [lbIdx + 1, lbIdx - 1].forEach(j => { const nb = lbList[(j + lbList.length) % lbList.length]; if (nb && nb.m.set) { const im = new Image(); im.sizes = "100vw"; im.srcset = nb.m.widths.map(w => `${nb.m.set}-${w}.webp ${w}w`).join(", "); } });
 }
-function stepLb(d) { lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLb(d); }
-$("#gallery").addEventListener("click", e => {
-  const it = e.target.closest(".g-item"); if (!it) return;
-  buildLbList(); lbIdx = Math.max(0, lbList.findIndex(x => x.pi === +it.dataset.p));
-  showLb(0); lb.showModal(); document.body.style.overflow = "hidden";
+function stepLb(d) { if (lbList.length < 2) return; lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLb(d); }
+function openLb(p, k) { buildLbList(p); lbIdx = Math.max(0, Math.min(k, lbList.length - 1)); showLb(0); lb.showModal(); syncLock(); }
+
+/* ---------- project pages (#work/<id>) ---------- */
+const pj = $("#project"); let pjCurrent = null, pjFromNav = false;
+function projectById(id) { return visibleProjects().find(p => p.id === id); }
+function renderProject(p) {
+  pjCurrent = p;
+  const list = visibleProjects(), i = list.indexOf(p);
+  const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+  const cov = Object.assign({}, p.media[p.cover || 0], { focus: p.focus });
+  const real = realMedia(p);
+  const rows = [[t("category"), catName(p.category)], ...(p.credits || []).map(c => [L(c.role), c.name])];
+  if (p.client) rows.push([t("client"), p.client]);
+  if (p.date) rows.push(["", p.date]);
+  rows.push([t("photosLbl"), pad2(real.length)]);
+  const tiles = tileMedia(p).map(m => {
+    if (m.pending || m.held) { const lbl = m.held ? t("heldAsset") : t("pendingAsset"), f = m.file || m.source || ""; return `<div class="pj-tile pending" role="img" aria-label="${esc(lbl + " — " + f)}"><div class="ph" data-tone="4"><div class="ph-mark"><i></i><i></i><i></i><i></i></div><span class="ph-label"><b>●</b>${esc(lbl)} · ${esc(m.type === "video" ? t("video") + " · " : "")}${esc(f)}</span></div>${tagsFor(m)}</div>`; }
+    const k = real.indexOf(m);
+    const inner = m.type === "video" ? `${m.poster ? `<img src="${esc(m.poster)}" alt="" loading="lazy">` : ""}<span class="play">${icon("arrow", "flip")}</span>` : media(m, null, m.alt, false, "(max-width:860px) 50vw, 33vw");
+    const vstyle = m.type === "video" ? ` style="aspect-ratio:${m.w || 16}/${m.h || 9};background:var(--card)"` : "";
+    return `<button type="button" class="pj-tile${m.type === "video" ? " is-video" : ""}" data-k="${k}"${vstyle} aria-label="${esc((m.type === "video" ? t("video") : t("openPhoto")) + ": " + L(m.alt))}">${inner}${tagsFor(m)}</button>`;
+  }).join("");
+  $("#pjBarTitle").textContent = L(p.title);
+  $("#pjBody").innerHTML = `
+    <div class="pj-hero">
+      <button type="button" class="pj-cover" data-k="${real.indexOf(p.media[p.cover || 0])}" aria-label="${esc(t("openPhoto") + ": " + L(cov.alt))}"><div class="media">${media(cov, null, cov.alt, true, "(max-width:860px) 100vw, 58vw")}</div>${tagsFor(cov) ? `<span style="position:absolute;top:12px;inset-inline-start:12px">${tagsFor(cov)}</span>` : ""}</button>
+      <div class="pj-info">
+        <span class="eyebrow"><span class="n">${pad2(i + 1)}</span><span>${esc(catName(p.category))}</span></span>
+        ${p.status !== "published" ? `<p><span class="g-badge" style="position:static;display:inline-block;margin-top:16px">${esc(t("reviewBadge"))}</span></p>` : ""}
+        <h2 id="pjTitle">${esc(L(p.title))}</h2>
+        ${L(p.desc) ? `<p class="lead" style="margin-top:20px">${esc(L(p.desc))}</p>` : ""}
+        <ul class="pj-meta">${rows.map(([k, v]) => `<li><span>${esc(k)}</span><b>${esc(v)}</b></li>`).join("")}</ul>
+        <a href="#pjGallery" class="btn" id="pjToGallery"><span>${esc(t("viewGallery"))}</span>${icon("arrow", "")}</a>
+      </div>
+    </div>
+    <div class="pj-gallery" id="pjGallery">${tiles}</div>
+    <nav class="pj-nav" aria-label="${esc(t("prevP") + " / " + t("nextP"))}">
+      <a href="#work/${prev.id}" class="pv"><small>${esc(t("prevP"))}</small><span>${esc(L(prev.title))}</span></a>
+      <a href="#work/${next.id}" class="nx"><small>${esc(t("nextP"))}</small><span>${esc(L(next.title))}</span></a>
+    </nav>`;
+}
+function openProject(id, fromNav) {
+  const p = projectById(id); if (!p) return false;
+  renderProject(p);
+  $("#pjScroll").scrollTop = 0;
+  if (!pj.open) { pj.showModal(); pjFromNav = !!fromNav; }
+  syncLock();
+  return true;
+}
+function closeProject() {
+  if (!pj.open) return;
+  if (pjFromNav) { history.back(); return; }          // hashchange below closes the dialog
+  history.replaceState(null, "", location.pathname + location.search + "#portfolio");
+  pj.close();
+}
+addEventListener("hashchange", () => {
+  const m = location.hash.match(/^#work\/([\w-]+)$/);
+  if (m) { if (!openProject(m[1], !pj.open || pjFromNav)) history.replaceState(null, "", location.pathname + location.search + "#portfolio"); }
+  else if (pj.open) pj.close();
+});
+pj.addEventListener("cancel", e => { e.preventDefault(); closeProject(); });
+pj.addEventListener("close", () => { pjCurrent = null; syncLock(); });
+$("#pjBack").addEventListener("click", closeProject);
+$("#pjClose").addEventListener("click", closeProject);
+$("#pjBody").addEventListener("click", e => {
+  const g = e.target.closest("#pjToGallery");
+  if (g) { e.preventDefault(); $("#pjGallery").scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); return; }
+  const b = e.target.closest("[data-k]"); if (b && pjCurrent && +b.dataset.k >= 0) openLb(pjCurrent, +b.dataset.k);
 });
 $("#lbPrev").addEventListener("click", () => stepLb(-1));
 $("#lbNext").addEventListener("click", () => stepLb(1));
 $("#lbClose").addEventListener("click", () => lb.close());
-lb.addEventListener("close", () => { document.body.style.overflow = ""; });
+lb.addEventListener("close", () => { $("#lbMedia").innerHTML = ""; syncLock(); });
 lb.addEventListener("keydown", e => {
   const rtl = lang === "ar";
   if (e.key === "ArrowRight") stepLb(rtl ? -1 : 1);
@@ -1554,10 +1752,10 @@ $("#blog").addEventListener("click", e => {
   const body = (p.body && p.body[lang] && p.body[lang].length) ? p.body[lang] : (p.body && p.body.en && p.body.en.length ? p.body.en : null);
   $("#artBody").innerHTML = body ? body.map(x => `<p>${esc(x)}</p>`).join("") : `<p class="ph-note">${esc(t("artPlaceholder"))}</p>`;
   $("#artScroll").scrollTop = 0; $("#artProg").style.width = "0";
-  art.showModal(); document.body.style.overflow = "hidden";
+  art.showModal(); syncLock();
 });
 $("#artClose").addEventListener("click", () => art.close());
-art.addEventListener("close", () => { document.body.style.overflow = ""; });
+art.addEventListener("close", syncLock);
 $("#artScroll").addEventListener("scroll", e => { const s = e.target; $("#artProg").style.width = (s.scrollTop / Math.max(1, s.scrollHeight - s.clientHeight) * 100) + "%"; }, { passive: true });
 
 /* ---------- contact form ---------- */
@@ -1646,7 +1844,10 @@ $$(".lang button").forEach(b => b.addEventListener("click", () => { if (!inst.hi
 /* ---------- boot ---------- */
 $("#yr").textContent = new Date().getFullYear();
 applyLang(true);
+document.documentElement.classList.remove("js-pending");
 onScroll();
+if (PREVIEW) { const r = document.createElement("div"); r.className = "preview-ribbon"; r.setAttribute("role", "note"); r.dataset.i18n = "previewOn"; r.textContent = t("previewOn"); document.body.appendChild(r); }
+{ const m = location.hash.match(/^#work\/([\w-]+)$/); if (m && !openProject(m[1], false)) history.replaceState(null, "", location.pathname + location.search + "#portfolio"); }
 function done() { document.documentElement.classList.add("loaded"); setTimeout(() => { const l = $(".loader"); if (l) l.remove(); }, 1400); }
 if (reduced) done();
 else if (document.fonts && document.fonts.ready) Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1500))]).then(() => setTimeout(done, 350));

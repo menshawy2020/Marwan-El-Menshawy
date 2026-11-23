@@ -1,13 +1,13 @@
 /* Service worker — makes the site installable and usable offline.
    When you change files, bump VERSION so phones pick up the update. */
-const VERSION = "v2";
+const VERSION = "v4";
 const SHELL = `shell-${VERSION}`;
 const RUNTIME = `runtime-${VERSION}`;
 const CORE = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./images/marwan-portrait.jpg",
+  "./images/work/portrait/marwan-portrait-suit-800.webp",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png"
@@ -28,6 +28,7 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return; // never cache form submissions
+  if (/\.(mp4|webm)$/i.test(new URL(req.url).pathname)) return; // video: stream from network (range requests)
   const url = new URL(req.url);
 
   // Pages: network first (always fresh when online), cached copy when offline
