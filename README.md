@@ -29,3 +29,7 @@ All text, services, testimonials, blog posts and contact details are in clearly 
 - Per image: `treatment` (`original`, `retouched`, `ai-elements`), `temporary: true` for provisional files, `pending: true` for files not received yet.
 - Empty `date`, `client` and `desc` fields are hidden automatically.
 - Current media status and pending files: see `docs/PORTFOLIO-STATUS.md`.
+
+## SEO
+- Keyword research (English and Arabic): `docs/seo/KEYWORD-RESEARCH.md`, with a spreadsheet copy in `docs/seo/keyword-research.csv`.
+- `sitemap.xml` lists the site's pages. Add each new page there; it is submitted in Google Search Console.
