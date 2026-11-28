@@ -48,3 +48,14 @@ Each is listed in `PROJECTS` with `pending: true`. It appears as a labelled plac
 - Portraits from Drive folder 07-Portrait: hero = 20260911_174611 (suit), About = 20260606_175431 (outdoors), About small = 20260305_085505 (mirror). GPS removed.
 - Charles American Food is published with the two approved Version A retouches. The AI pasta image is not approved: it's not on the site and not in the repo.
 - 15 years of photography is confirmed by Marwan.
+
+## Update 2026-11-28 — Featured film: The Art of Beauty
+- Vertical bridal beauty film (9:16, 25 s, soft sound design, no music, no dialogue), shown as the featured piece at the top of Portfolio, with a full-screen viewer.
+- Text and credits are in `FILM` in `index.html` (approved wording; keep spelling): Makeup Artist Naiara El Khatib · Bridal Veil Styling Malak Vel Designer · Photography & Videography Marwan El Menshawy. No client name.
+- Media files (add these to the repo; the site points at them):
+  - `video/bride-b-modern-beauty-reel.mp4` (1080x1920, larger screens)
+  - `video/bride-b-modern-beauty-reel-720.mp4` (720x1280, screens 768 px and below)
+  - `images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster.jpg` (poster)
+  - `images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster-alt.jpg` (used as the Photo & Video Editing service image)
+- New service: Photo & Video Editing (7 services in total). VideoObject structured data added in `<head>`.
+- Open question: the Bridal Editorial credit says "Nayera"; the film credit says "Naiara El Khatib". Check whether this is the same artist and align the spelling.

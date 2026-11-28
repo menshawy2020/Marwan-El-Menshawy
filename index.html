@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Marwan El-Menshawy — Media Coverage | Photography | Visual Storytelling</title>
-<meta name="description" content="Marwan El-Menshawy is a photographer and media coverage professional with 15 years of experience turning moments into meaningful visual stories. Event, corporate and brand photography.">
+<meta name="description" content="Marwan El-Menshawy is a photographer and media coverage professional with 15 years of experience turning moments into meaningful visual stories. Event, corporate and brand photography, plus professional photo and video editing.">
 <meta name="theme-color" content="#090909">
 <!-- Live URL: GitHub Pages -->
 <link rel="canonical" href="https://menshawy2020.github.io/Marwan-El-Menshawy/">
@@ -42,7 +42,22 @@
   "sameAs": ["https://www.instagram.com/maro_mensho/"],
   "description": "Photographer and media coverage professional with 15 years of photography experience.",
   "url": "https://menshawy2020.github.io/Marwan-El-Menshawy/",
-  "knowsAbout": ["Photography", "Media Coverage", "Event Photography", "Corporate Photography", "Brand Photography", "Visual Storytelling"]
+  "knowsAbout": ["Photography", "Media Coverage", "Event Photography", "Corporate Photography", "Brand Photography", "Visual Storytelling", "Videography", "Photo Editing", "Video Editing"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "The Art of Beauty",
+  "description": "A bridal makeup story in detail, from the first brushstroke to the final veil reveal.",
+  "thumbnailUrl": "https://menshawy2020.github.io/Marwan-El-Menshawy/images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster.jpg",
+  "contentUrl": "https://menshawy2020.github.io/Marwan-El-Menshawy/video/bride-b-modern-beauty-reel.mp4",
+  "duration": "PT25S",
+  "uploadDate": "2026-11-28",
+  "width": 1080,
+  "height": 1920,
+  "creator": { "@type": "Person", "name": "Marwan El-Menshawy", "url": "https://menshawy2020.github.io/Marwan-El-Menshawy/" }
 }
 </script>
 <style>
@@ -456,6 +471,61 @@ html[lang="ar"] .pj-nav small{ letter-spacing:0; font-size:13px; }
 .pj-nav span{ font-size:clamp(1.3rem,2.6vw,2.2rem); font-weight:600; letter-spacing:var(--track); }
 .lb-frame video{ width:100%; height:100%; background:#050505; }
 .lb-cap .tags{ margin-top:10px; }
+
+/* ---------- FEATURED FILM: The Art of Beauty (vertical 9:16) ---------- */
+.film-feature{ display:grid; grid-template-columns:min(calc(80svh * 9 / 16), 46%) minmax(0,1fr); gap:clamp(28px,5vw,88px); align-items:center; margin-bottom:clamp(56px,8vw,110px); padding-bottom:clamp(56px,8vw,110px); border-bottom:1px solid var(--line); }
+.ff-frame{ position:relative; width:100%; max-height:80svh; aspect-ratio:9 / 16; background:var(--card); border:1px solid var(--line2); overflow:hidden; box-shadow:0 30px 80px -40px rgba(0,0,0,.9); }
+.ff-frame video,.ff-frame .ff-poster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#050505; }
+.ff-frame .ff-poster{ z-index:1; transition:opacity .6s var(--ease); }
+.ff-frame.playing .ff-poster{ opacity:0; pointer-events:none; }
+.ff-open{ position:absolute; z-index:2; inset:0; width:100%; height:100%; cursor:zoom-in; }
+.ff-frame::after{ content:""; position:absolute; z-index:2; inset:auto 0 0 0; height:120px; background:linear-gradient(0deg, rgba(0,0,0,.55), transparent); pointer-events:none; }
+.ff-big{ position:absolute; z-index:3; inset:0; margin:auto; width:72px; height:72px; border-radius:50%; background:var(--acc); color:var(--acc-ink); display:grid; place-items:center; opacity:0; transform:scale(.85); pointer-events:none; transition:opacity .4s var(--ease), transform .4s var(--ease); }
+.ff-big .ico{ width:24px; height:24px; fill:currentColor; stroke:none; }
+.ff-frame.paused .ff-big{ opacity:1; transform:none; pointer-events:auto; }
+.ff-ctrl{ position:absolute; z-index:4; inset-inline:14px; bottom:14px; display:flex; justify-content:space-between; gap:10px; opacity:0; transform:translateY(6px); transition:opacity .35s var(--ease), transform .35s var(--ease); }
+.ff-frame:hover .ff-ctrl,.ff-frame:focus-within .ff-ctrl,.ff-frame.paused .ff-ctrl{ opacity:1; transform:none; }
+@media (hover:none){ .ff-ctrl{ opacity:1; transform:none; } }
+.ff-ctrl .icon-btn{ width:42px; height:42px; background:rgba(9,9,9,.62); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); color:var(--tx); }
+.ff-ctrl .icon-btn:hover{ background:var(--tx); color:var(--bg); }
+.ff-ctrl .ico{ width:18px; height:18px; }
+.ff-ctrl [data-show]{ display:none; }
+.ff-frame.paused .ff-pp [data-show="play"],.ff-frame:not(.paused) .ff-pp [data-show="pause"]{ display:block; }
+.ff-frame.muted .ff-snd [data-show="off"],.ff-frame:not(.muted) .ff-snd [data-show="on"]{ display:block; }
+.ff-label{ position:absolute; z-index:3; top:14px; inset-inline-start:14px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; padding:6px 11px; border-radius:999px; background:rgba(9,9,9,.68); border:1px solid var(--line2); color:var(--tx); pointer-events:none; }
+html[lang="ar"] .ff-label{ letter-spacing:0; font-size:12px; }
+.ff-info{ max-width:560px; }
+.ff-info h3{ margin:.3em 0 0; font-size:clamp(2.4rem, 5.6vw, 5rem); font-weight:600; letter-spacing:var(--track); line-height:.98; }
+.ff-sub{ margin:.55em 0 0; font-size:clamp(1.05rem,1.6vw,1.35rem); color:var(--tx2); }
+.ff-desc{ margin:22px 0 0; color:var(--tx2); max-width:46ch; }
+.ff-specs{ display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
+.ff-specs li{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--tx2); padding:6px 12px; border:1px solid var(--line2); border-radius:999px; }
+html[lang="ar"] .ff-specs li{ letter-spacing:0; font-size:13px; }
+.ff-credits{ margin:30px 0 0; padding:0; border-top:1px solid var(--line); }
+.ff-credits div{ display:flex; justify-content:space-between; gap:20px; padding:13px 0; border-bottom:1px solid var(--line); }
+.ff-credits dt{ font-size:11px; letter-spacing:var(--track-wide); text-transform:uppercase; color:var(--tx3); }
+html[lang="ar"] .ff-credits dt{ font-size:13px; }
+.ff-credits dd{ margin:0; font-size:14px; letter-spacing:.06em; color:var(--tx); text-align:end; }
+.ff-info .btn{ margin-top:30px; }
+/* film modal */
+.fm{ display:grid; grid-template-columns:auto minmax(0,320px); justify-content:center; align-items:center; gap:clamp(20px,4vw,56px); height:100%; padding:18px var(--pad) 22px; position:relative; }
+.fm-close{ position:absolute; z-index:5; top:calc(18px + env(safe-area-inset-top)); inset-inline-end:var(--pad); background:rgba(9,9,9,.6); }
+.fm-frame{ position:relative; height:min(88svh, calc((100vw - 2 * var(--pad)) * 16 / 9)); aspect-ratio:9 / 16; background:#050505; border:1px solid var(--line2); }
+.fm-frame video{ width:100%; height:100%; object-fit:contain; background:#050505; }
+.fm-cap h3{ margin:0; font-size:clamp(1.5rem,2.4vw,2.2rem); font-weight:600; letter-spacing:var(--track); line-height:1.05; }
+.fm-cap p{ margin:.4em 0 0; color:var(--tx2); }
+.fm-cap .ff-credits{ margin-top:22px; }
+.fm-cap .ff-credits div{ flex-direction:column; gap:4px; }
+.fm-cap .ff-credits dd{ text-align:start; }
+@media (max-width:860px){
+  .film-feature{ grid-template-columns:1fr; }
+  .ff-frame{ width:min(100%, calc(86svh * 9 / 16)); margin-inline:auto; }
+  .ff-info{ max-width:none; }
+  .fm{ grid-template-columns:1fr; align-content:center; justify-items:center; overflow-y:auto; }
+  .fm-frame{ height:auto; width:min(100%, calc(78svh * 9 / 16)); }
+  .fm-cap{ width:min(100%, 420px); }
+}
+@media (prefers-reduced-motion: reduce){ .ff-frame .ff-poster,.ff-ctrl,.ff-big{ transition:none; } }
 
 /* ---------- LIGHTBOX & ARTICLE (dialogs) ---------- */
 dialog{ padding:0; border:0; background:transparent; color:var(--tx); max-width:none; max-height:none; width:100%; height:100%; }
@@ -883,6 +953,39 @@ html.standalone .scroll-ind{ display:none; }
       </div>
       <p class="lead rv" data-i18n="pfLead"></p>
     </div>
+    <!-- Featured film: The Art of Beauty (vertical 9:16). Text comes from FILM in the script; the video stays in place on language change. -->
+    <article class="film-feature rv" id="featured-film" aria-labelledby="ffTitle">
+      <div class="ff-frame paused muted" id="ffFrame">
+        <img class="ff-poster" id="ffPoster" src="images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster.jpg" width="1080" height="1920" alt="Bride in a lace veil with soft pink glam makeup" loading="lazy" decoding="async">
+        <video id="ffVideo" muted loop playsinline preload="none" disablepictureinpicture
+          poster="images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster.jpg"
+          data-src-sm="video/bride-b-modern-beauty-reel-720.mp4"
+          data-src-lg="video/bride-b-modern-beauty-reel.mp4"
+          aria-label="The Art of Beauty, a 25-second bridal makeup film"></video>
+        <button type="button" class="ff-open" id="ffOpen" aria-label="Open the film: The Art of Beauty"></button>
+        <span class="ff-label" id="ffLabel">Modern Bridal Beauty</span>
+        <button type="button" class="ff-big" id="ffBig" aria-hidden="true" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+        <div class="ff-ctrl">
+          <button type="button" class="icon-btn ff-pp" id="ffPlay" aria-label="Play film">
+            <svg class="ico" data-show="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            <svg class="ico" data-show="pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+          </button>
+          <button type="button" class="icon-btn ff-snd" id="ffSound" aria-label="Turn sound on">
+            <svg class="ico" data-show="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
+            <svg class="ico" data-show="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ff-info">
+        <span class="eyebrow"><span class="n">●</span><span id="ffEyebrow">Featured Film</span></span>
+        <h3 id="ffTitle">The Art of Beauty</h3>
+        <p class="ff-sub" id="ffSub">A Bridal Beauty Film</p>
+        <p class="ff-desc" id="ffDesc"></p>
+        <ul class="ff-specs" id="ffSpecs"></ul>
+        <dl class="ff-credits" id="ffCredits"></dl>
+        <button type="button" class="btn" id="ffWatch"><span id="ffWatchTxt">Watch the film</span><svg class="ico flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+    </article>
     <div class="filters rv" id="filters" role="group" data-i18n-aria="filterAria"></div>
     <div class="gallery" id="gallery"></div>
     <div class="gal-foot"><span></span><a href="#contact" class="link-u" data-i18n="pfCta">Commission a project</a></div>
@@ -1020,6 +1123,19 @@ html.standalone .scroll-ind{ display:none; }
   </div>
 </dialog>
 
+<!-- ================= FILM VIEWER (The Art of Beauty) ================= -->
+<dialog id="filmModal" aria-labelledby="fmTitle">
+  <div class="fm" id="fmStage">
+    <button class="icon-btn fm-close" type="button" id="fmClose" data-i18n-aria="close" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <div class="fm-frame"><video id="fmVideo" controls loop playsinline preload="none" disablepictureinpicture controlslist="nodownload noplaybackrate" poster="images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster.jpg" aria-label="The Art of Beauty, a 25-second bridal makeup film"></video></div>
+    <div class="fm-cap">
+      <h3 id="fmTitle">The Art of Beauty</h3>
+      <p id="fmSub">A Bridal Beauty Film</p>
+      <dl class="ff-credits" id="fmCredits"></dl>
+    </div>
+  </div>
+</dialog>
+
 <!-- ================= LIGHTBOX ================= -->
 <dialog id="lightbox" aria-labelledby="lbTitle">
   <div class="lb">
@@ -1114,7 +1230,12 @@ const SERVICES = [
     img: { set: "images/work/bridal-editorial/bridal-07", widths: [800], w: 900, h: 1600, focus: "50% 50%", temporary: true, from: "Bridal Editorial",
            alt: { en: "Behind the scenes: the set, the phone and the bride during the Bridal Editorial shoot", ar: "خلف الكواليس: موقع التصوير والهاتف والعروس أثناء جلسة العرائس" } },
     title: { en: "Behind-the-Scenes Coverage", ar: "تغطية الكواليس" },
-    desc:  { en: "Documenting the people, processes, and stories behind experiences.", ar: "توثيق الأشخاص والعمليات والقصص التي تقف خلف كل تجربة." } }
+    desc:  { en: "Documenting the people, processes, and stories behind experiences.", ar: "توثيق الأشخاص والعمليات والقصص التي تقف خلف كل تجربة." } },
+  { id: "editing", icon: "sliders", tone: 2,
+    img: { src: "images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster-alt.jpg", from: "The Art of Beauty",
+           alt: { en: "Eye makeup close-up from the bridal beauty film The Art of Beauty", ar: "لقطة قريبة لمكياج العين من فيلم The Art of Beauty" } },
+    title: { en: "Photo & Video Editing", ar: "تعديل الصور والفيديو" },
+    desc:  { en: "Professional photo and video editing: colour grading, retouching and polished final cuts, ready for the web and social media.", ar: "تعديل احترافي للصور والفيديو: تصحيح الألوان، والريتوش، ومونتاج نهائي متقن جاهز للويب ووسائل التواصل الاجتماعي." } }
 ];
 
 const CATEGORIES = [
@@ -1146,6 +1267,33 @@ const PROJECTS = [
   {"id": "charles-american-food", "category": "food", "size": "p", "status": "published", "cover": 2, "focus": "40% 50%", "title": {"en": "Charles American Food", "ar": "Charles American Food"}, "media": [{"set": "images/work/charles-american-food/dsc-0003-retouch", "widths": [800, 1600, 2400], "w": 3375, "h": 6000, "alt": {"en": "Charles American Food: the Charles flag outside the restaurant at night", "ar": "Charles American Food: علم Charles أمام المطعم ليلًا"}, "treatment": "retouched", "source": "DSC_0003.jpg"}, {"set": "images/work/charles-american-food/dsc-0032-retouch", "widths": [800, 1600, 2400], "w": 4000, "h": 6000, "alt": {"en": "Charles American Food: a pizza baking under the oven light", "ar": "Charles American Food: بيتزا تُخبز تحت ضوء الفرن"}, "treatment": "retouched", "source": "DSC_0032.jpg"}, {"set": "images/work/charles-american-food/dsc-0031-retouch", "widths": [800, 1600, 2239], "w": 2239, "h": 3981, "alt": {"en": "Charles American Food: pizza baking in the oven", "ar": "Charles American Food: بيتزا تُخبز داخل الفرن"}, "treatment": "retouched", "source": "DSC_0031.jpg"}, {"set": "images/work/charles-american-food/dsc-0030-retouch", "widths": [800, 1600, 2400], "w": 2445, "h": 4346, "alt": {"en": "Charles American Food: a gloved hand turning a pizza pan in the oven", "ar": "Charles American Food: يد بقفاز تدير صينية البيتزا داخل الفرن"}, "treatment": "retouched", "source": "DSC_0030.jpg"}, {"set": "images/work/charles-american-food/dsc-0068-retouch", "widths": [800, 1600, 2400], "w": 6000, "h": 4000, "alt": {"en": "Charles American Food: pasta baking in the oven", "ar": "Charles American Food: مكرونة تُخبز داخل الفرن"}, "treatment": "retouched", "source": "DSC_0068.jpg"}, {"set": "images/work/charles-american-food/dsc-0070-retouch", "widths": [800, 1600, 2400], "w": 2824, "h": 5021, "alt": {"en": "Charles American Food: finished baked pasta with golden cheese", "ar": "Charles American Food: مكرونة بالفرن جاهزة بجبن ذهبي"}, "treatment": "retouched", "source": "DSC_0070.jpg"}, {"held": true, "set": "images/work/charles-american-food/ai-golden-baked-pasta", "widths": [800], "w": 941, "h": 1672, "alt": {"en": "AI-generated image: baked pasta with melted cheese", "ar": "صورة مولّدة بالذكاء الاصطناعي: مكرونة بالفرن مع جبن ذائب"}, "treatment": "ai-elements", "approved": false, "source": "Golden Baked Pasta with Bubbly Cheese.png"}]},
 ];
 
+/* Featured film — The Art of Beauty (vertical 9:16, 25 s, soft sound design, no music, no dialogue).
+   Shown at the top of the Portfolio section. Approved wording: title, subtitle, label and credits — do not change spelling.
+   Media: video/bride-b-modern-beauty-reel(.mp4 | -720.mp4) · images/work/the-art-of-beauty/*-poster(.jpg | -alt.jpg) */
+const FILM = {
+  label:    { en: "Modern Bridal Beauty", ar: "مكياج عرائس عصري" },
+  eyebrow:  { en: "Featured Film", ar: "فيلم مميز" },
+  subtitle: { en: "A Bridal Beauty Film", ar: "فيلم تجميل للعروس" },
+  desc:     { en: "A bridal makeup story in detail, from the first brushstroke to the final veil reveal.",
+              ar: "قصة مكياج عروس بكل تفاصيلها، من أول لمسة فرشاة حتى لحظة كشف الطرحة." },
+  specs: [ { en: "Vertical film · 9:16", ar: "فيلم عمودي · 9:16" }, { en: "0:25", ar: "0:25" }, { en: "Soft sound design", ar: "مؤثرات صوتية هادئة" } ],
+  credits: [
+    { role: { en: "Makeup Artist", ar: "خبيرة المكياج" }, name: "Naiara El Khatib" },
+    { role: { en: "Bridal Veil Styling", ar: "تنسيق طرحة العروس" }, name: "Malak Vel Designer" },
+    { role: { en: "Photography & Videography", ar: "التصوير الفوتوغرافي والفيديو" }, name: "Marwan El Menshawy" }
+  ],
+  posterAlt: { en: "Bride in a lace veil with soft pink glam makeup", ar: "عروس بطرحة دانتيل ومكياج وردي ناعم" },
+  videoLabel: { en: "The Art of Beauty, a 25-second bridal makeup film", ar: "The Art of Beauty، فيلم مكياج عروس مدته 25 ثانية" },
+  ui: {
+    watch: { en: "Watch the film", ar: "شاهد الفيلم" },
+    open:  { en: "Open the film: The Art of Beauty", ar: "فتح الفيلم: The Art of Beauty" },
+    play:  { en: "Play film", ar: "تشغيل الفيلم" },
+    pause: { en: "Pause film", ar: "إيقاف الفيلم مؤقتًا" },
+    soundOn:  { en: "Turn sound on", ar: "تشغيل الصوت" },
+    soundOff: { en: "Turn sound off", ar: "كتم الصوت" }
+  }
+};
+
 const SKILLS = [
   { en: "Photography", ar: "التصوير الفوتوغرافي" },
   { en: "Visual Storytelling", ar: "السرد البصري" },
@@ -1153,7 +1301,8 @@ const SKILLS = [
   { en: "Media Coverage", ar: "التغطية الإعلامية" },
   { en: "Composition", ar: "التكوين البصري" },
   { en: "Creative Direction", ar: "الإخراج الإبداعي" },
-  { en: "Visual Content Creation", ar: "صناعة المحتوى البصري" }
+  { en: "Visual Content Creation", ar: "صناعة المحتوى البصري" },
+  { en: "Photo & Video Editing", ar: "تعديل الصور والفيديو" }
 ];
 
 /* Testimonials — PLACEHOLDERS ONLY. Replace with genuine client feedback and set placeholder:false. */
@@ -1348,6 +1497,7 @@ const ICONS = {
   gem: '<path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
   phone: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="m10 9 5 3-5 3z"/>',
   clapper: '<path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
+  sliders: '<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
   arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
   upright: '<path d="M7 17 17 7"/><path d="M7 7h10v10"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
@@ -1465,6 +1615,18 @@ function renderGallery(animate) {
   }).join("");
   observe();
 }
+function renderFilm() {
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set("ffLabel", L(FILM.label)); set("ffEyebrow", L(FILM.eyebrow)); set("ffSub", L(FILM.subtitle)); set("fmSub", L(FILM.subtitle));
+  set("ffDesc", L(FILM.desc)); set("ffWatchTxt", L(FILM.ui.watch));
+  $("#ffSpecs").innerHTML = FILM.specs.map(s => `<li><span dir="auto">${esc(L(s))}</span></li>`).join("");
+  const dl = FILM.credits.map(c => `<div><dt>${esc(L(c.role))}</dt><dd dir="ltr">${esc(c.name)}</dd></div>`).join("");
+  $("#ffCredits").innerHTML = dl; $("#fmCredits").innerHTML = dl;
+  $("#ffPoster").alt = L(FILM.posterAlt);
+  $("#ffVideo").setAttribute("aria-label", L(FILM.videoLabel)); $("#fmVideo").setAttribute("aria-label", L(FILM.videoLabel));
+  $("#ffOpen").setAttribute("aria-label", L(FILM.ui.open));
+  if (typeof ffState === "function") ffState();
+}
 function renderFacts() {
   // 15 = years of photography (confirmed by Marwan); other figures come from the content data
   const n = PROJECTS.filter(p => p.status === "published").length;
@@ -1561,7 +1723,7 @@ function applyLang(first) {
   $$("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
   $$("[data-split]").forEach(el => splitWords(el, t(el.dataset.split)));
   $$(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === lang));
-  renderNav(); renderSlots(); renderStrip(); renderServices(); renderFilters(); renderGallery(false);
+  renderNav(); renderSlots(); renderStrip(); renderServices(); renderFilm(); renderFilters(); renderGallery(false);
   renderFacts(); renderExperience(); renderTestimonials(); renderPress(); renderPosts(); renderContact();
   $$(".err").forEach(e => (e.textContent = ""));
   $$("[aria-invalid]").forEach(e => e.removeAttribute("aria-invalid"));
@@ -1638,7 +1800,7 @@ $("#filters").addEventListener("click", e => {
   renderGallery(true);
 });
 const lb = $("#lightbox"); let lbList = [], lbIdx = 0;
-function syncLock() { document.body.style.overflow = (lb.open || $("#article").open || $("#project").open || document.body.classList.contains("menu-open")) ? "hidden" : ""; }
+function syncLock() { document.body.style.overflow = (lb.open || $("#article").open || $("#project").open || $("#filmModal").open || document.body.classList.contains("menu-open")) ? "hidden" : ""; }
 function buildLbList(p) { const all = realMedia(p); lbList = all.map((m, ii) => ({ p, m, ii, n: all.length })); }
 function showLb(dir) {
   const it = lbList[lbIdx]; if (!it) return;
@@ -1846,6 +2008,64 @@ $("#installGo").addEventListener("click", async () => {
 });
 $("#installX").addEventListener("click", () => hideInstall(true));
 $$(".lang button").forEach(b => b.addEventListener("click", () => { if (!inst.hidden) installText(); }));
+
+/* ---------- featured film: play in view, pause off-screen, sound toggle, viewer ---------- */
+const ff = { frame: $("#ffFrame"), v: $("#ffVideo"), userPaused: false, inView: false };
+const fm = $("#filmModal"), fmv = $("#fmVideo");
+// <source media> is not reliable for video, so pick the file before setting src: 720p on small screens, 1080p above.
+const filmSrc = () => (matchMedia("(max-width: 768px)").matches ? ff.v.dataset.srcSm : ff.v.dataset.srcLg);
+function ffPlay() {
+  if (!ff.v.getAttribute("src")) ff.v.src = filmSrc();       // nothing is downloaded until the first play
+  const p = ff.v.play(); if (p && p.catch) p.catch(() => ffState());
+}
+function ffState() {
+  const paused = ff.v.paused, muted = ff.v.muted;
+  ff.frame.classList.toggle("paused", paused); ff.frame.classList.toggle("muted", muted);
+  const pl = L(paused ? FILM.ui.play : FILM.ui.pause);
+  $("#ffPlay").setAttribute("aria-label", pl);
+  $("#ffSound").setAttribute("aria-label", L(muted ? FILM.ui.soundOn : FILM.ui.soundOff));
+}
+const ffAuto = () => ff.inView && !ff.userPaused && !reduced && !fm.open && !document.hidden;
+["play", "pause", "volumechange"].forEach(ev => ff.v.addEventListener(ev, ffState));
+ff.v.addEventListener("playing", () => ff.frame.classList.add("playing"));
+function ffToggle() { if (ff.v.paused) { ff.userPaused = false; ffPlay(); } else { ff.userPaused = true; ff.v.pause(); } }
+$("#ffPlay").addEventListener("click", ffToggle);
+$("#ffBig").addEventListener("click", ffToggle);
+$("#ffSound").addEventListener("click", () => {
+  ff.v.muted = !ff.v.muted;
+  if (!ff.v.muted && ff.v.paused) { ff.userPaused = false; ffPlay(); }
+});
+// Autoplay only while on screen (and never with reduced motion: the poster and play button show instead)
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([e]) => {
+    ff.inView = e.isIntersecting;
+    if (ffAuto()) ffPlay(); else if (!ff.inView && !ff.v.paused) ff.v.pause();
+  }, { threshold: .35 }).observe(ff.frame);
+}
+document.addEventListener("visibilitychange", () => { if (document.hidden) ff.v.pause(); else if (ffAuto()) ffPlay(); });
+
+function openFilm() {
+  const t0 = ff.v.currentTime || 0;
+  ff.v.pause();
+  fmv.muted = ff.v.muted;
+  if (!fmv.getAttribute("src")) fmv.src = filmSrc();
+  const seek = () => { try { fmv.currentTime = t0; } catch (e) {} };
+  if (fmv.readyState >= 1) seek(); else fmv.addEventListener("loadedmetadata", seek, { once: true });
+  fm.showModal(); syncLock();
+  if (!reduced) { const p = fmv.play(); if (p && p.catch) p.catch(() => {}); }
+}
+$("#ffOpen").addEventListener("click", openFilm);
+$("#ffWatch").addEventListener("click", openFilm);
+$("#fmClose").addEventListener("click", () => fm.close());
+fm.addEventListener("click", e => { if (e.target === fm || e.target.id === "fmStage") fm.close(); });   // click outside the video
+fm.addEventListener("close", () => {                                                                   // Esc, close button or outside click
+  fmv.pause();
+  ff.v.muted = fmv.muted;
+  if (ff.v.getAttribute("src") && fmv.currentTime) { try { ff.v.currentTime = fmv.currentTime; } catch (e) {} }
+  syncLock();
+  if (ffAuto()) ffPlay();
+});
+ffState();
 
 /* ---------- boot ---------- */
 $("#yr").textContent = new Date().getFullYear();
