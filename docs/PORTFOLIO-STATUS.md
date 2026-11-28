@@ -59,3 +59,8 @@ Each is listed in `PROJECTS` with `pending: true`. It appears as a labelled plac
   - `images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster-alt.jpg` (used as the Photo & Video Editing service image)
 - New service: Photo & Video Editing (7 services in total). VideoObject structured data added in `<head>`.
 - Open question: the Bridal Editorial credit says "Nayera"; the film credit says "Naiara El Khatib". Check whether this is the same artist and align the spelling.
+
+## Update 2026-11-28 — Editing service video
+- The Photo & Video Editing service now shows a muted 6.4 s loop instead of a still: `video/editing-reel-loop.mp4` (864x1080, 4:5, ~1 MB, no audio), poster `images/work/editing/editing-reel-poster.jpg`.
+- Source: the final hero shots ("A moment of Timeless Beauty") of Bride_A_Luxury_Editorial_V5_Final_Preview and Bride_B_Signature_Luxury_Editorial_V1, taken from their finished graded shot files (segments_v5/seg_20_198, segments_b1/seg_20_320), joined with soft white flashes so the loop is seamless.
+- It plays only while that service is open and the section is on screen; it pauses otherwise, and with reduced motion only the poster shows.

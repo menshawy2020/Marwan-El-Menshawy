@@ -152,7 +152,7 @@ html[lang="ar"] .h-sec{ line-height:1.25; font-weight:700; }
    PLACEHOLDER FRAMES (replaced automatically once you add src)
    ========================================================= */
 .media{ position:relative; overflow:hidden; background:var(--card); }
-.media img{ width:100%; height:100%; object-fit:cover; }
+.media img,.media video.svc-vid{ width:100%; height:100%; object-fit:cover; display:block; background:var(--card); }
 .ph{ position:absolute; inset:0; background:var(--g); }
 .ph::before{ content:""; position:absolute; inset:0; background-image:var(--grain); opacity:.35; mix-blend-mode:overlay; }
 .ph::after{ content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 40%, transparent 35%, rgba(0,0,0,.65) 100%); }
@@ -1232,8 +1232,10 @@ const SERVICES = [
     title: { en: "Behind-the-Scenes Coverage", ar: "تغطية الكواليس" },
     desc:  { en: "Documenting the people, processes, and stories behind experiences.", ar: "توثيق الأشخاص والعمليات والقصص التي تقف خلف كل تجربة." } },
   { id: "editing", icon: "sliders", tone: 2,
-    img: { src: "images/work/the-art-of-beauty/bride-b-modern-beauty-reel-poster-alt.jpg", from: "The Art of Beauty",
-           alt: { en: "Close-up of bridal eye and lip makeup from the film The Art of Beauty", ar: "لقطة قريبة لمكياج العين والشفاه للعروس من فيلم The Art of Beauty" } },
+    // Muted loop of the best moments from two finished edits: the final hero shots of
+    // "Bride A — Luxury Editorial V5" and "Bride B — Signature Luxury Editorial V1" (6.4 s, 4:5, no audio)
+    video: { src: "video/editing-reel-loop.mp4", poster: "images/work/editing/editing-reel-poster.jpg", focus: "50% 32%",
+             alt: { en: "Edited bridal beauty close-ups from two luxury bridal films", ar: "لقطات قريبة معدّلة لجمال العروس من فيلمين فاخرين للعرائس" } },
     title: { en: "Photo & Video Editing", ar: "تعديل الصور والفيديو" },
     desc:  { en: "Professional photo and video editing: colour grading, retouching and polished final cuts, ready for the web and social media.", ar: "تعديل احترافي للصور والفيديو: تصحيح الألوان، والريتوش، ومونتاج نهائي متقن جاهز للويب ووسائل التواصل الاجتماعي." } }
 ];
@@ -1547,6 +1549,7 @@ function renderStrip() {
   $("#strip").innerHTML = items + items;
 }
 function svcVisual(s, i, sizes) {
+  if (s.video) return `<div class="media"><video class="svc-vid" muted loop playsinline preload="none" disablepictureinpicture poster="${esc(s.video.poster)}" data-src="${esc(s.video.src)}" aria-label="${esc(L(s.video.alt))}"${s.video.focus ? ` style="object-position:${esc(s.video.focus)}"` : ""}></video></div>`;
   if (s.img) return `<div class="media">${media(s.img, null, s.img.alt, false, sizes)}</div>${PREVIEW && s.img.temporary ? `<span class="tags svc-tags"><span class="tag tag-tmp">${esc(t("tagTmp"))}</span></span>` : ""}`;
   return `<div class="svc-empty" role="img" aria-label="${esc(L(s.title))}"><span class="big" aria-hidden="true">${pad2(i + 1)}</span><span class="eic">${icon(s.icon)}</span>${PREVIEW ? `<span class="tags svc-tags"><span class="tag tag-tmp">${esc(t("svcPending"))}</span></span>` : ""}</div>`;
 }
@@ -1573,10 +1576,23 @@ function renderServices() {
   const sel = $("#f-service"), keep = sel.value;
   sel.innerHTML = `<option value="">${esc(t("fChoose"))}</option>` + SERVICES.map(s => `<option value="${s.id}">${esc(L(s.title))}</option>`).join("") + `<option value="other">${esc(t("fOther"))}</option>`;
   sel.value = keep;
+  if (typeof svcVideos === "function") svcVideos();
 }
 function setService(i) {
   $$(".svc-item").forEach(li => { const on = +li.dataset.i === i; li.classList.toggle("on", on); $(".svc-btn", li).setAttribute("aria-expanded", on); });
   $$("#svcStage .layer").forEach(l => l.classList.toggle("on", +l.dataset.i === i));
+  svcVideos();
+}
+/* Service video (Photo & Video Editing): plays only while its service is open, the section is on screen and the
+   copy is displayed (desktop stage or mobile panel). Not before: nothing downloads until then. No autoplay with reduced motion. */
+let svcInView = false;
+function svcVideos() {
+  $$("#services video.svc-vid").forEach(v => {
+    const box = v.closest(".layer, .svc-item");
+    const show = svcInView && !reduced && !document.hidden && box && box.classList.contains("on") && v.offsetParent !== null;
+    if (show) { if (!v.getAttribute("src")) v.src = v.dataset.src; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    else if (!v.paused) v.pause();
+  });
 }
 // Preview mode: ?preview=1 (any normal host) or #preview (hosts that drop query strings, e.g. the private preview page)
 const PREVIEW = new URLSearchParams(location.search).has("preview") || location.hash === "#preview";
@@ -2008,6 +2024,10 @@ $("#installGo").addEventListener("click", async () => {
 });
 $("#installX").addEventListener("click", () => hideInstall(true));
 $$(".lang button").forEach(b => b.addEventListener("click", () => { if (!inst.hidden) installText(); }));
+
+if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { svcInView = e.isIntersecting; svcVideos(); }, { threshold: .2 }).observe($("#services"));
+document.addEventListener("visibilitychange", svcVideos);
+addEventListener("resize", () => { clearTimeout(svcVideos.t); svcVideos.t = setTimeout(svcVideos, 200); });
 
 /* ---------- featured film: play in view, pause off-screen, sound toggle, viewer ---------- */
 const ff = { frame: $("#ffFrame"), v: $("#ffVideo"), userPaused: false, inView: false };
